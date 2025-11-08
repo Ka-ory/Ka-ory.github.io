@@ -4,111 +4,125 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio de Kamil CINAR</title>
-    <style>
-        body { 
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6; 
-            max-width: 800px; 
-            margin: 40px auto; 
-            padding: 0 20px;
-            color: #333;
-        }
-        h1, h2 { 
-            color: #111;
-        }
-        .projet { 
-            border: 1px solid #e1e1e1; 
-            padding: 10px 20px; 
-            margin-bottom: 15px; 
-            border-radius: 8px; 
-            background-color: #f9f9f9;
-        }
-        .projet h3 { 
-            margin-top: 0; 
-        }
-        .projet a { 
-            font-weight: bold;
-            color: #0366d6;
-            text-decoration: none;
-        }
-        .projet a:hover {
-            text-decoration: underline;
-        }
-        .tags {
-            margin-top: 10px;
-        }
-        .tags span {
-            background-color: #eef;
-            color: #0366d6;
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-size: 0.9em;
-        }
-        footer {
-            margin-top: 40px;
-            border-top: 1px solid #eee;
-            padding-top: 20px;
-            font-size: 0.9em;
-        }
-    </style>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <header>
-        <h1>Portfolio de Kamil CINAR</h1>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="#accueil" class="navbar-logo">Kamil CINAR</a>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#projets" class="nav-link">Projets</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#apropos" class="nav-link">À Propos</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero-section" id="accueil">
+        <h1>Kamil CINAR</h1>
         <p>
-            Bonjour ! Je suis Kamil CINAR, étudiant en BUT Informatique. 
-            Vous trouverez ci-dessous une sélection de mes projets universitaires et personnels.
+            Étudiant en BUT Informatique, développeur passionné par la création de solutions logicielles modernes et performantes.
         </p>
     </header>
 
     <main>
-        <h2>Mes Projets</h2>
+        
+        <section id="projets" class="animate-on-scroll">
+            <h2>Mes Projets</h2>
 
-        <article class="projet">
-            <h3>[Nom de votre Projet 1]</h3>
-            <p>
-                [Description courte de votre projet : quel était le but ? Quel problème avez-vous résolu ? 
-                C'était un projet pour le cours de...]
-            </p>
-            <div class="tags">
-                <span>Python</span>
-                <span>Flask</span>
-                <span>JavaScript</span>
-            </div>
-            <p>
-                <a href="[LIEN VERS LE REPO GITHUB DE CE PROJET]" target="_blank" rel="noopener noreferrer">
-                    Voir le code sur GitHub &rarr;
-                </a>
-            </p>
-        </article>
-        <article class="projet">
-            <h3>[Nom de votre Projet 2]</h3>
-            <p>
-                [Description courte de ce deuxième projet. Peut-être un projet de groupe ? 
-                Précisez votre rôle.]
-            </p>
-            <div class="tags">
-                <span>Java</span>
-                <span>Spring Boot</span>
-                <span>PostgreSQL</span>
-            </div>
-            <p>
-                <a href="[LIEN VERS LE REPO GITHUB DE CE PROJET]" target="_blank" rel="noopener noreferrer">
-                    Voir le code sur GitHub &rarr;
-                </a>
-            </p>
-        </article>
-        </main>
+            <div class="project-grid-container">
 
-    <footer>
-        <p>
-            Retrouvez-moi aussi sur 
-            <a href="https://github.com/votre-username" target="_blank" rel="noopener noreferrer">mon profil GitHub</a> 
-            et sur 
-            <a href="[VOTRE LIEN LINKEDIN]" target="_blank" rel="noopener noreferrer">LinkedIn</a>.
-        </p>
+                <article class="project-card">
+                    <div class="project-image-placeholder">
+                        <img src="[LIEN VERS VOTRE IMAGE/GIF]" alt="Aperçu du Projet 1">
+                    </div>
+                    <div class="project-card-content">
+                        <h3>[Nom Projet 1]</h3>
+                        <p>
+                            [Description courte et percutante : Le problème, votre solution, le résultat.]
+                        </p>
+                        <div class="tags">
+                            <span>Python</span>
+                            <span>Flask</span>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="[LIEN GITHUB]" target="_blank" rel="noopener noreferrer" class="link-button">Voir le Code</a>
+                            <a href="[LIEN DÉMO LIVE]" target="_blank" rel="noopener noreferrer" class="link-button">Voir la Démo</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-image-placeholder">
+                         <img src="[LIEN VERS VOTRE IMAGE/GIF]" alt="Aperçu du Projet 2">
+                    </div>
+                    <div class="project-card-content">
+                        <h3>[Nom Projet 2]</h3>
+                        <p>
+                            [Description courte et percutante : Le problème, votre solution, le résultat.]
+                        </p>
+                        <div class="tags">
+                            <span>Java</span>
+                            <span>Spring Boot</span>
+                            <span>PostgreSQL</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="[LIEN GITHUB]" target="_blank" rel="noopener noreferrer" class="link-button">Voir le Code</a>
+                            <a href="[LIEN DÉMO LIVE]" target="_blank" rel="noopener noreferrer" class="link-button">Voir la Démo</a>
+                        </div>
+                    </div>
+                </article>
+
+                </div>
+        </section>
+
+        <section id="apropos" class="animate-on-scroll">
+            <h2>À Propos de Moi</h2>
+            <div class="about-container">
+                <div class="about-text">
+                    <p>
+                        [Rédigez ici un paragraphe ou deux sur vous. Qui êtes-vous ? Qu'est-ce qui vous passionne dans l'informatique ? 
+                        Quelle est votre spécialité (backend, frontend, data...) ?]
+                    </p>
+                    <p>
+                        [Que recherchez-vous ? (Un stage, une alternance, un premier emploi...) 
+                        Mentionnez quelques compétences clés ici.]
+                    </p>
+                    <a href="[LIEN VERS VOTRE CV EN PDF]" class="link-button" target="_blank" rel="noopener noreferrer">Télécharger mon CV</a>
+                </div>
+                <div class="about-photo-placeholder">
+                    <img src="[LIEN VERS VOTRE PHOTO]" alt="Photo de Kamil Cinar">
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="contact">
+        <h2>Restons en contact</h2>
+        <p>N'hésitez pas à me contacter, que ce soit pour une opportunité ou simplement pour échanger.</p>
+        <div class="social-links">
+            <a href="mailto:kamil.cinarpro@gmail.com" class="link-button">Envoyer un E-mail</a>
+            <a href="[VOTRE LINKEDIN]" target="_blank" rel="noopener noreferrer" class="link-button">LinkedIn</a>
+            <a href="[VOTRE GITHUB]" target="_blank" rel="noopener noreferrer" class="link-button">GitHub</a>
+        </div>
+        <p class="copyright">&copy; 2025 Kamil CINAR. Tous droits réservés.</p>
     </footer>
+
+    <script src="main.js" defer></script>
 
 </body>
 </html>
