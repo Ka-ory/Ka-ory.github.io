@@ -7,32 +7,36 @@
 /* =================================== */
 /* FOND ÉTOILÉ (NOUVEAU)               */
 /* =================================== */
+/* =================================== */
+/* FOND ÉTOILÉ (AMÉLIORÉ)              */
+/* =================================== */
 html {
-    height: 100%; /* S'assure qu'il prend toute la hauteur */
-    background-color: #0a0a0a; /* Le fond de base (noir) */
+    height: 100%;
+    background-color: #0a0a0a;
 
-    /* Superposition de 3 couches d'étoiles (violettes) */
+    /* * On utilise RGBA pour la transparence.
+     * On augmente 'background-size' pour espacer les étoiles.
+     */
     background-image: 
-        /* Petites étoiles (violet très clair) */
-        radial-gradient(circle, #DABFFF 0.5px, transparent 0.5px),
-        /* Moyennes étoiles (violet moyen) */
-        radial-gradient(circle, #B985F4 1px, transparent 1px),
-        /* Grosses étoiles (votre nouvelle couleur principale) */
-        radial-gradient(circle, #9400D3 1px, transparent 1px);
+        /* Petites étoiles (violet très clair, 50% transparent) */
+        radial-gradient(circle, rgba(218, 191, 255, 0.5) 0.5px, transparent 0.5px),
+        /* Moyennes étoiles (violet principal, 60% transparent) */
+        radial-gradient(circle, rgba(148, 0, 211, 0.6) 1px, transparent 1px),
+        /* Grosses étoiles (violet principal, 40% transparent) */
+        radial-gradient(circle, rgba(148, 0, 211, 0.4) 1px, transparent 1px);
     
-    /* Tailles/densités : plus le nombre est petit, plus il y a d'étoiles */
+    /* Tailles/densités : Nombres BEAUCOUP plus grands */
     background-size: 
-        30px 30px,  /* Petites étoiles très denses */
-        60px 60px,  /* Moyennes étoiles */
-        90px 90px;  /* Grosses étoiles plus espacées */
+        100px 100px, /* Petites étoiles */
+        230px 230px, /* Moyennes étoiles */
+        400px 400px; /* Grosses étoiles (très espacées) */
     
-    /* Décalage pour qu'elles ne soient pas alignées en grille parfaite */
+    /* Nouveaux décalages */
     background-position: 
         0 0, 
-        10px 15px,
-        25px 30px;
+        30px 40px,
+        70px 80px;
     
-    /* On fixe le fond : il ne bouge pas quand on défile */
     background-attachment: fixed;
 }
 
@@ -50,11 +54,16 @@ html {
 body {
     font-family: 'Inter', -apple-system, sans-serif;
     line-height: 1.6;
-    background-color: transparent; /* Fond noir intense */
+    /* FOND OPAQUE à 90% (comme Steam) */
+    background-color: rgba(10, 10, 10, 0.9); 
     color: #cccccc;
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 20px;
+
+    /* Requis pour les étoiles filantes (étapes 3) */
+    position: relative;
+    overflow-x: hidden;
 }
 
 section {
@@ -572,4 +581,71 @@ footer p {
     .hero-section p {
         font-size: 1.1rem;
     }
+}
+
+/* =================================== */
+/* ÉTOILES FILANTES (NOUVEAU)          */
+/* =================================== */
+
+/* * On utilise :before et :after sur le body
+ * pour créer 2 étoiles filantes.
+ * Elles sont 'fixed' pour rester à l'écran,
+ * et 'z-index: -1' pour passer DERRIÈRE votre contenu.
+*/
+
+body:before,
+body:after {
+    content: '';
+    position: fixed;
+    top: 50%; /* Position verticale de départ */
+    left: 0;
+    width: 200px; /* Longueur de la queue */
+    height: 1px;
+    /* La "queue" est un dégradé */
+    background: linear-gradient(to right, rgba(148, 0, 211, 0.8), transparent);
+    
+    /* On cache l'étoile au début */
+    transform: translateX(-100%) rotate(-45deg);
+    
+    /* z-index -1 : derrière le contenu, mais 
+       devant le fond 'html' (car 'body' a 'position: relative') */
+    z-index: -1; 
+}
+
+/* 2ème étoile (plus petite, plus rapide) */
+body:after {
+    width: 100px;
+    top: 20%;
+    background: linear-gradient(to right, rgba(218, 191, 255, 0.6), transparent);
+}
+
+
+/* Animation : "shoot-star" */
+@keyframes shoot-star {
+    0% {
+        /* Démarre hors écran (à gauche) */
+        transform: translateX(-100%) rotate(-45deg);
+        opacity: 1;
+    }
+    80% {
+        /* Traverse l'écran */
+        transform: translateX(calc(100vw + 100%)) rotate(-45deg);
+        opacity: 1;
+    }
+    100% {
+        /* Disparaît complètement à la fin */
+        transform: translateX(calc(100vw + 100%)) rotate(-45deg);
+        opacity: 0;
+    }
+}
+
+/* On applique l'animation à nos 2 étoiles */
+body:before {
+    /* "shoot-star" | dure 8s | en boucle | démarre après 3s */
+    animation: shoot-star 8s linear infinite 3s;
+}
+
+body:after {
+    /* 2ème étoile : dure 5s | en boucle | démarre après 5s */
+    animation: shoot-star 5s linear infinite 5s;
 }
