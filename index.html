@@ -10,7 +10,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-</head>
+    
+    </head>
 <body>
 
     <nav class="navbar">
@@ -18,10 +19,16 @@
             <a href="#accueil" class="navbar-logo">Kamil -----</a>
             <ul class="nav-menu">
                 <li class="nav-item">
-                    <a href="#projets" class="nav-link">Projets</a>
+                    <a href="#apropos" class="nav-link">À Propos</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#apropos" class="nav-link">À Propos</a>
+                    <a href="#competences" class="nav-link">Compétences</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#projets" class="nav-link">Projets</a>
+                </li>
+                 <li class="nav-item">
+                    <a href="#parcours" class="nav-link">Parcours</a>
                 </li>
                 <li class="nav-item">
                     <a href="#contact" class="nav-link">Contact</a>
@@ -39,11 +46,87 @@
 
     <main>
         
+        <section id="apropos" class="animate-on-scroll">
+            <h2>À Propos de Moi</h2>
+            <div class="about-container">
+                <div class="about-text">
+                    <p>
+                        [Rédigez ici un paragraphe ou deux sur vous. Qui êtes-vous ? Qu'est-ce qui vous passionne dans l'informatique ? 
+                        Quelle est votre spécialité (backend, frontend, data...) ?]
+                    </p>
+                    <p>
+                        [Que recherchez-vous ? (Un stage, une alternance, un premier emploi...) 
+                        Mentionnez quelques compétences clés ici.]
+                    </p>
+                    <ul class="about-interests">
+                        <li><i class="fas fa-check"></i> [Qualité 1, ex: Résolution de problèmes]</li>
+                        <li><i class="fas fa-check"></i> [Qualité 2, ex: Esprit d'équipe]</li>
+                        <li><i class="fas fa-check"></i> [Intérêt 3, ex: Veille technologique]</li>
+                    </ul>
+                    <a href="[LIEN VERS VOTRE CV EN PDF]" class="link-button" target="_blank" rel="noopener noreferrer">Télécharger mon CV</a>
+                </div>
+                <div class="about-photo-placeholder">
+                    <img src="[LIEN VERS VOTRE PHOTO]" alt="Photo de Kamil Cinar">
+                </div>
+            </div>
+        </section>
+
+        <section id="competences" class="animate-on-scroll">
+            <h2>Mes Compétences</h2>
+            <p class="section-intro">[Petite phrase d'intro, ex: Voici les technologies avec lesquelles je travaille le plus.]</p>
+            
+            <div class="skills-grid">
+                
+                <div class="skill-category-card">
+                    <h3><i class="fas fa-code"></i> Frontend</h3> <ul>
+                        <li><img src="[ICONE_JS]" alt="JavaScript Logo"> JavaScript (ES6+)</li>
+                        <li><img src="[ICONE_REACT]" alt="React Logo"> React</li>
+                        <li><img src="[ICONE_HTML]" alt="HTML5 Logo"> HTML5</li>
+                        <li><img src="[ICONE_CSS]" alt="CSS3 Logo"> CSS3 & SASS</li>
+                        <li>[Autre...]</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category-card">
+                    <h3><i class="fas fa-database"></i> Backend</h3>
+                    <ul>
+                        <li><img src="[ICONE_PYTHON]" alt="Python Logo"> Python (Flask/Django)</li>
+                        <li><img src="[ICONE_JAVA]" alt="Java Logo"> Java (Spring Boot)</li>
+                        <li><img src="[ICONE_NODE]" alt="Node.js Logo"> Node.js</li>
+                        <li><img src="[ICONE_SQL]" alt="Database Logo"> SQL (PostgreSQL, MySQL)</li>
+                        <li>[Autre...]</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category-card">
+                    <h3><i class="fas fa-tools"></i> Outils & DevOps</h3>
+                    <ul>
+                        <li><img src="[ICONE_GIT]" alt="Git Logo"> Git & GitHub</li>
+                        <li><img src="[ICONE_DOCKER]" alt="Docker Logo"> Docker</li>
+                        <li><img src="[ICONE_LINUX]" alt="Linux Logo"> Linux</li>
+                        <li><img src="[ICONE_VSCODE]" alt="VS Code Logo"> VS Code</li>
+                        <li>[Autre...]</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category-card">
+                    <h3><i class="fas fa-lightbulb"></i> Soft Skills</h3>
+                    <ul>
+                        <li>[Communication]</li>
+                        <li>[Travail d'équipe / Agile]</li>
+                        <li>[Autonomie]</li>
+                        <li>[Curiosité]</li>
+                        <li>[Etc.]</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+
         <section id="projets" class="animate-on-scroll">
             <h2>Mes Projets</h2>
-
             <div class="project-grid-container">
-
                 <article class="project-card">
                     <div class="project-image-placeholder">
                         <img src="[LIEN VERS VOTRE IMAGE/GIF]" alt="Aperçu du Projet 1">
@@ -67,7 +150,7 @@
 
                 <article class="project-card">
                     <div class="project-image-placeholder">
-                         <img src="[LIEN VERS VOTRE IMAGE/GIF]" alt="Aperçu du Projet 2">
+                        <img src="[LIEN VERS VOTRE IMAGE/GIF]" alt="Aperçu du Projet 2">
                     </div>
                     <div class="project-card-content">
                         <h3>[Nom Projet 2]</h3>
@@ -85,29 +168,48 @@
                         </div>
                     </div>
                 </article>
-
                 </div>
         </section>
 
-        <section id="apropos" class="animate-on-scroll">
-            <h2>À Propos de Moi</h2>
-            <div class="about-container">
-                <div class="about-text">
-                    <p>
-                        [Rédigez ici un paragraphe ou deux sur vous. Qui êtes-vous ? Qu'est-ce qui vous passionne dans l'informatique ? 
-                        Quelle est votre spécialité (backend, frontend, data...) ?]
-                    </p>
-                    <p>
-                        [Que recherchez-vous ? (Un stage, une alternance, un premier emploi...) 
-                        Mentionnez quelques compétences clés ici.]
-                    </p>
-                    <a href="[LIEN VERS VOTRE CV EN PDF]" class="link-button" target="_blank" rel="noopener noreferrer">Télécharger mon CV</a>
-                </div>
-                <div class="about-photo-placeholder">
-                    <img src="[LIEN VERS VOTRE PHOTO]" alt="Photo de Kamil Cinar">
-                </div>
+        <section id="parcours" class="animate-on-scroll">
+            <h2>Mon Parcours</h2>
+            <div class="timeline-container">
+
+                <div class="timeline-column">
+                    <h3>Éducation</h3>
+                    <div class="timeline-item">
+                        <span class="timeline-date">[2023 - 2026 (prévu)]</span>
+                        <h4>BUT Informatique</h4>
+                        <p class="timeline-location">[Nom de l'IUT, Ville]</p>
+                        <p>[Description : Parcours A, B, C ? Matières principales apprises, projets clés...]</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-date">[Année d'obtention]</span>
+                        <h4>Baccalauréat Général</h4>
+                        <p class="timeline-location">[Nom du Lycée, Ville]</p>
+                        <p>[Spécialités : NSI, Mathématiques, etc.]</p>
+                    </div>
+                    </div>
+
+                <div class="timeline-column">
+                    <h3>Expérience Professionnelle</h3>
+                    <div class="timeline-item">
+                        <span class="timeline-date">[Période : ex. Été 2024]</span>
+                        <h4>[Titre du poste : Stage, Alternance, Projet Tuteuré...]</h4>
+                        <p class="timeline-location">[Nom de l'entreprise ou "Projet Académique"]</p>
+                        <p>[Courte description de vos missions, des technos utilisées, ce que vous avez accompli ou appris.]</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-date">[Période]</span>
+                        <h4>[Autre expérience]</h4>
+                        <p class="timeline-location">[Lieu]</p>
+                        <p>[Même si ce n'est pas de l'info (job étudiant...), cela peut montrer des "soft skills".]</p>
+                    </div>
+                    </div>
+
             </div>
         </section>
+
 
     </main>
 
