@@ -1,338 +1,149 @@
 /* =================================== */
-/* RESET ET STYLES GLOBAUX (DARK MODE) */
+/* "À PROPOS" - AJUSTEMENTS          */
 /* =================================== */
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth; /* Défilement fluide */
-}
-
-body {
-    font-family: 'Inter', -apple-system, sans-serif;
-    line-height: 1.6;
-    background-color: #0a0a0a; /* Fond noir intense */
-    color: #cccccc;
-    max-width: 1100px; /* On élargit un peu pour la grille */
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-section {
-    margin-bottom: 80px; /* Plus d'espace entre les sections */
-    padding-top: 70px; /* Compensation pour le navbar sticky */
-    margin-top: -70px; /* Permet aux ancres de bien se positionner */
-}
-
-h1, h2, h3 {
-    color: #ffffff;
-    margin-bottom: 10px;
-}
-
-h1 { font-size: 3rem; }
-h2 { 
-    font-size: 2.2rem; 
-    border-bottom: 1px solid #333; 
-    padding-bottom: 10px; 
-    margin-bottom: 40px; 
-}
-h3 { font-size: 1.5rem; color: #eee; }
-
-a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
-/* =================================== */
-/* STYLES DU NAVBAR                 */
-/* =================================== */
-.navbar {
-    background: rgba(10, 10, 10, 0.85); /* Fond semi-transparent */
-    backdrop-filter: blur(10px); /* Effet de flou (moderne) */
-    height: 70px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.1rem;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    border-bottom: 1px solid #222;
-    width: 100%; /* Prend toute la largeur de la fenêtre */
-    
-    /* Centre le contenu dans le conteneur principal */
-    left: 50%;
-    transform: translateX(-50%);
-    max-width: 1100px; /* Doit correspondre au max-width du body */
-}
-
-.navbar-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding: 0 20px; /* Ajouté pour l'alignement */
-}
-
-.navbar-logo {
-    color: #fff;
-    font-size: 1.5rem;
-    font-weight: 700;
-}
-.navbar-logo:hover { text-decoration: none; }
-
-.nav-menu {
-    display: flex;
-    list-style: none;
-}
-
-.nav-item {
-    margin-left: 20px;
-}
-
-.nav-link {
-    color: #cccccc;
-    padding: 8px 12px;
-    border-radius: 4px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.nav-link:hover {
-    background-color: #222;
-    color: #fff;
-    text-decoration: none;
-}
-/* Style pour le lien "actif" (via JS) */
-.nav-link.active {
-    color: #ffffff;
-    font-weight: 700;
-}
-
-/* =================================== */
-/* STYLE SECTION "HÉROS" (HEADER) */
-/* =================================== */
-.hero-section {
-    padding: 100px 0;
-    text-align: left;
-    border-bottom: 1px solid #222;
-}
-
-.hero-section h1 {
-    font-size: 3.5rem;
+.about-interests {
+    list-style: none; /* Enlève les puces */
+    margin-top: 20px;
     margin-bottom: 20px;
 }
+.about-interests li {
+    color: #bbb;
+    margin-bottom: 5px;
+}
+.about-interests i {
+    color: #007bff; /* Icône en bleu */
+    margin-right: 8px;
+}
 
-.hero-section p {
-    font-size: 1.3rem;
+
+/* =================================== */
+/* NOUVEAU : SECTION COMPÉTENCES     */
+/* =================================== */
+.section-intro {
     color: #aaa;
-    max-width: 700px; /* Limite la largeur du texte */
+    text-align: center;
+    max-width: 600px;
+    margin: -20px auto 40px auto;
+    font-size: 1.1rem;
 }
 
-/* =================================== */
-/* GRILLE DE PROJETS (NOUVEAU)     */
-/* =================================== */
-.project-grid-container {
+.skills-grid {
     display: grid;
-    /* Crée 2 colonnes de taille égale */
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 30px; /* Espace entre les cartes */
+    /* Crée des colonnes auto (min 250px) */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
 }
 
-.project-card {
+.skill-category-card {
     background-color: #121212;
     border: 1px solid #2a2a2a;
     border-radius: 8px;
-    overflow: hidden; /* Pour que l'image respecte les coins arrondis */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 25px;
+    transition: border-color 0.3s ease;
 }
-
-.project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 123, 255, 0.15); /* Ombre bleue plus visible */
+.skill-category-card:hover {
     border-color: #007bff;
 }
 
-.project-image-placeholder {
-    width: 100%;
-    height: 220px; /* Hauteur fixe pour l'image */
-    background-color: #1c1c1c; /* Si l'image ne charge pas */
-    overflow: hidden; /* Cache les parties de l'image qui dépassent */
+.skill-category-card h3 {
+    font-size: 1.3rem;
+    color: #ffffff;
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    /* Pour aligner icône et titre */
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-.project-image-placeholder img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* L'image couvre la zone, en étant coupée si besoin */
-    transition: transform 0.3s ease;
+.skill-category-card ul {
+    list-style: none; /* Enlève les puces */
 }
 
-.project-card:hover .project-image-placeholder img {
-    transform: scale(1.05); /* Léger zoom sur l'image au survol */
+.skill-category-card li {
+    color: #cccccc;
+    font-size: 1rem;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espace entre l'icône et le texte */
+}
+/* Style pour vos petites icônes de techno */
+.skill-category-card li img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
 }
 
-.project-card-content {
-    padding: 25px;
+
+/* =================================== */
+/* NOUVEAU : SECTION PARCOURS (TIMELINE) */
+/* =================================== */
+.timeline-container {
+    display: flex;
+    gap: 40px;
 }
 
-.tags {
-    margin: 15px 0;
+.timeline-column {
+    flex: 1; /* Chaque colonne prend 50% */
 }
 
-.tags span {
-    background-color: rgba(0, 123, 255, 0.1);
-    color: #79b8ff;
-    padding: 5px 12px;
-    border-radius: 16px;
+.timeline-column h3 {
+    font-size: 1.5rem;
+    color: #eee;
+    margin-bottom: 25px;
+    border-left: 3px solid #007bff;
+    padding-left: 10px;
+}
+
+.timeline-item {
+    background-color: #121212;
+    border: 1px solid #2a2a2a;
+    border-left: 3px solid #444; /* Ligne de temps grise */
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+    position: relative;
+    transition: border-color 0.3s ease;
+}
+.timeline-item:hover {
+    border-left-color: #007bff; /* Surligne au survol */
+}
+
+.timeline-date {
+    display: block;
     font-size: 0.9em;
     font-weight: 500;
-    display: inline-block;
-    margin-right: 5px;
+    color: #007bff;
     margin-bottom: 5px;
 }
 
-.project-links {
-    margin-top: 20px;
-    display: flex;
-    gap: 15px; /* Espace entre les boutons */
-}
-
-/* =================================== */
-/* STYLE BOUTON (NOUVEAU)        */
-/* =================================== */
-.link-button {
-    display: inline-block;
-    padding: 10px 20px;
-    border: 1px solid #007bff;
-    color: #007bff;
-    border-radius: 5px;
-    font-weight: 500;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.link-button:hover {
-    background-color: #007bff;
+.timeline-item h4 {
+    font-size: 1.2rem;
     color: #ffffff;
-    text-decoration: none;
+    margin-bottom: 5px;
+}
+
+.timeline-location {
+    font-style: italic;
+    color: #999;
+    margin-bottom: 10px;
 }
 
 /* =================================== */
-/* SECTION À PROPOS (NOUVEAU)      */
-/* =================================== */
-.about-container {
-    display: flex;
-    align-items: center;
-    gap: 40px; /* Espace entre texte et photo */
-}
-
-.about-text {
-    flex: 2; /* Le texte prend 2/3 de la place */
-}
-.about-text p {
-    margin-bottom: 15px;
-}
-
-.about-photo-placeholder {
-    flex: 1; /* La photo prend 1/3 de la place */
-    height: 300px; /* Hauteur fixe */
-    min-width: 250px;
-    background-color: #1c1c1c;
-    border-radius: 8px;
-    overflow: hidden; /* Pour arrondir l'image */
-}
-.about-photo-placeholder img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Assure que la photo remplit l'espace */
-}
-
-
-/* =================================== */
-/* PIED DE PAGE (CONTACT) (AMÉLIORÉ) */
-/* =================================== */
-footer {
-    border-top: 1px solid #222;
-    padding: 60px 20px 30px 20px;
-    text-align: center;
-}
-footer h2 {
-    border: none;
-    margin-bottom: 15px;
-}
-footer p {
-    color: #aaa;
-    margin-bottom: 30px;
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
-}
-.social-links {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap; /* Pour les petits écrans */
-}
-.copyright {
-    margin-top: 40px;
-    font-size: 0.9em;
-    color: #777;
-}
-
-/* =================================== */
-/* ANIMATION "FADE-IN" (NOUVEAU) */
-/* =================================== */
-.animate-on-scroll {
-    /* Caché par défaut */
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-.animate-on-scroll.is-visible {
-    /* Révélé par JS */
-    opacity: 1;
-    transform: translateY(0);
-}
-
-
-/* =================================== */
-/* RESPONSIVE (POUR TÉLÉPHONE)     */
+/* AJUSTEMENT RESPONSIVE POUR PARCOURS */
 /* =================================== */
 @media (max-width: 768px) {
-    .project-grid-container {
-        /* 1 seule colonne sur mobile */
-        grid-template-columns: 1fr; 
+    .timeline-container {
+        /* Empile les colonnes sur mobile */
+        flex-direction: column;
+        gap: 0; /* On enlève le gap horizontal */
     }
-
-    .about-container {
-        /* Empile le texte et la photo */
-        flex-direction: column; 
+    .timeline-column h3 {
+        margin-top: 40px; /* Espace entre les 2 colonnes */
     }
-
-    .hero-section h1 {
-        font-size: 2.5rem;
-    }
-    .hero-section p {
-        font-size: 1.1rem;
-    }
-
-    /* Cache le menu pour le futur menu "burger" */
-    .nav-menu {
-        /* On pourrait cacher et ajouter un bouton burger ici */
-        /* Pour l'instant, on réduit la taille */
-        font-size: 0.9rem;
-    }
-    .nav-item {
-        margin-left: 10px;
+    .timeline-column:first-child h3 {
+        margin-top: 0;
     }
 }
