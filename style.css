@@ -45,7 +45,7 @@ h2 {
 h3 { font-size: 1.5rem; color: #eee; }
 
 a {
-    color: #007bff;
+    color: #9400D3;
     text-decoration: none;
 }
 
@@ -211,15 +211,15 @@ img {
 .link-button {
     display: inline-block;
     padding: 10px 20px;
-    border: 1px solid #007bff;
-    color: #007bff;
+    border: 1px solid #9400D3;
+    color: #9400D3;
     border-radius: 5px;
     font-weight: 500;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .link-button:hover {
-    background-color: #007bff;
+    background-color: #9400D3;
     color: #ffffff;
     text-decoration: none;
 }
@@ -267,7 +267,7 @@ img {
     margin-bottom: 5px;
 }
 .about-interests i {
-    color: #007bff;
+    color: #9400D3;
     margin-right: 8px;
 }
 
@@ -297,7 +297,7 @@ img {
     transition: border-color 0.3s ease;
 }
 .skill-category-card:hover {
-    border-color: #007bff;
+    border-color: #9400D3;
 }
 
 .skill-category-card h3 {
@@ -346,7 +346,7 @@ img {
     font-size: 1.5rem;
     color: #eee;
     margin-bottom: 25px;
-    border-left: 3px solid #007bff;
+    border-left: 3px solid #9400D3;
     padding-left: 10px;
 }
 
@@ -361,14 +361,14 @@ img {
     transition: border-color 0.3s ease;
 }
 .timeline-item:hover {
-    border-left-color: #007bff;
+    border-left-color: #9400D3;
 }
 
 .timeline-date {
     display: block;
     font-size: 0.9em;
     font-weight: 500;
-    color: #007bff;
+    color: #9400D3;
     margin-bottom: 5px;
 }
 
@@ -509,7 +509,7 @@ footer p {
         color: #ffffff;
     }
     .nav-menu .nav-link.active {
-        color: #007bff;
+        color: #9400D3;
     }
 
     /* --- AUTRES STYLES RESPONSIVE --- */
