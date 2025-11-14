@@ -4,6 +4,39 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
 
+/* =================================== */
+/* FOND ÉTOILÉ (NOUVEAU)               */
+/* =================================== */
+html {
+    height: 100%; /* S'assure qu'il prend toute la hauteur */
+    background-color: #0a0a0a; /* Le fond de base (noir) */
+
+    /* Superposition de 3 couches d'étoiles (violettes) */
+    background-image: 
+        /* Petites étoiles (violet très clair) */
+        radial-gradient(circle, #DABFFF 0.5px, transparent 0.5px),
+        /* Moyennes étoiles (violet moyen) */
+        radial-gradient(circle, #B985F4 1px, transparent 1px),
+        /* Grosses étoiles (votre nouvelle couleur principale) */
+        radial-gradient(circle, #9400D3 1px, transparent 1px);
+    
+    /* Tailles/densités : plus le nombre est petit, plus il y a d'étoiles */
+    background-size: 
+        30px 30px,  /* Petites étoiles très denses */
+        60px 60px,  /* Moyennes étoiles */
+        90px 90px;  /* Grosses étoiles plus espacées */
+    
+    /* Décalage pour qu'elles ne soient pas alignées en grille parfaite */
+    background-position: 
+        0 0, 
+        10px 15px,
+        25px 30px;
+    
+    /* On fixe le fond : il ne bouge pas quand on défile */
+    background-attachment: fixed;
+}
+
+
 * {
     margin: 0;
     padding: 0;
@@ -17,7 +50,7 @@ html {
 body {
     font-family: 'Inter', -apple-system, sans-serif;
     line-height: 1.6;
-    background-color: #0a0a0a; /* Fond noir intense */
+    background-color: transparent; /* Fond noir intense */
     color: #cccccc;
     max-width: 1100px;
     margin: 0 auto;
