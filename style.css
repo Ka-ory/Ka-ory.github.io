@@ -615,32 +615,51 @@ body:after {
 }
 
 
-/* Animation : "shoot-star" */
+/* NOUVELLE Animation "shoot-star" (diagonale) */
 @keyframes shoot-star {
     0% {
-        /* Démarre hors écran (à gauche) */
-        transform: translateX(-100%) rotate(-45deg);
+        /* Démarrage (position 'body:before') */
+        transform: translate(0, 0) rotate(135deg);
         opacity: 1;
     }
     80% {
-        /* Traverse l'écran */
-        transform: translateX(calc(100vw + 100%)) rotate(-45deg);
+        /* Trajectoire en diagonale (bas et gauche) */
+        transform: translate(-100vw, 100vh) rotate(135deg);
         opacity: 1;
     }
     100% {
-        /* Disparaît complètement à la fin */
-        transform: translateX(calc(100vw + 100%)) rotate(-45deg);
+        /* Disparaît (assure la fin du cycle) */
+        transform: translate(-100vw, 100vh) rotate(135deg);
         opacity: 0;
     }
 }
 
-/* On applique l'animation à nos 2 étoiles */
-body:before {
-    /* "shoot-star" | dure 8s | en boucle | démarre après 3s */
-    animation: shoot-star 8s linear infinite 3s;
+/* =================================== */
+/* ÉTOILES FILANTES (TRAJECTOIRE CORRIGÉE) */
+/* =================================== */
+
+body:before,
+body:after {
+    content: '';
+    position: fixed;
+    /* NOUVELLE POSITION : en haut à droite */
+    top: -100px; /* Commence hors-écran (au-dessus) */
+    right: 0;
+    
+    width: 200px; /* Longueur de la queue */
+    height: 1px;
+    background: linear-gradient(to right, rgba(148, 0, 211, 0.8), transparent);
+    
+    /* NOUVELLE TRANSFORMATION : pointe en bas à gauche */
+    transform: rotate(135deg); 
+    
+    z-index: -1; 
 }
 
+/* 2ème étoile (plus petite, décalée) */
 body:after {
-    /* 2ème étoile : dure 5s | en boucle | démarre après 5s */
-    animation: shoot-star 5s linear infinite 5s;
+    width: 100px;
+    top: 0; /* Commence juste à la limite */
+    right: 300px; /* Commence décalée sur la gauche */
+    background: linear-gradient(to right, rgba(218, 191, 255, 0.6), transparent);
 }
