@@ -128,17 +128,19 @@ img {
     color: #cccccc;
     padding: 8px 12px;
     border-radius: 4px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
 }
 
 .nav-link:hover {
     background-color: #222;
     color: #fff;
     text-decoration: none;
+    text-shadow: 0 0 4px rgba(255, 255, 255, 0.7), 0 0 8px rgba(218, 191, 255, 0.5);
 }
 .nav-link.active {
     color: #ffffff;
     font-weight: 700;
+    text-shadow: 0 0 4px rgba(255, 255, 255, 0.7), 0 0 8px rgba(218, 191, 255, 0.5);
 }
 
 /* =================================== */
@@ -314,10 +316,12 @@ img {
     border: 1px solid #2a2a2a;
     border-radius: 8px;
     padding: 25px;
-    transition: border-color 0.3s ease;
+    transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 .skill-category-card:hover {
     border-color: #9400D3;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(148, 0, 211, 0.15);
 }
 
 .skill-category-card h3 {
@@ -612,37 +616,31 @@ body:after {
 }
 
 /* =================================== */
-/* NOUVEAU : HALO DE CURSEUR           */
+/* NOUVEAU : HALO DE CURSEUR (PLUS SUBTIL) */
 /* =================================== */
 .cursor-halo {
     position: fixed;
-    /* Cache-le par défaut, JS le déplace */
     left: -1000px; 
     top: -1000px;
     
-    width: 400px; /* Taille du halo */
-    height: 400px;
+    /* Taille réduite */
+    width: 300px;
+    height: 300px;
     border-radius: 50%;
     
-    /* Le dégradé violet */
+    /* Dégradé plus doux et plus serré */
     background: radial-gradient(
         circle, 
-        rgba(148, 0, 211, 0.15) 0%, /* Cœur violet (votre couleur) */
-        transparent 60%           /* Disparaît vers l'extérieur */
+        rgba(148, 0, 211, 0.08) 0%, /* <-- Beaucoup plus transparent */
+        transparent 50%           /* <-- fondu plus rapide */
     );
     
-    /* Centre le halo sur le curseur */
     transform: translate(-50%, -50%);
-    
-    /* Permet de cliquer "à travers" */
     pointer-events: none;
-    
-    /* Place-le derrière le contenu (z-index: 100) 
-       mais devant le canvas (z-index: -1) */
     z-index: 99;
     
-    /* Adoucit le mouvement */
-    transition: left 0.1s linear, top 0.1s linear;
+    /* Mouvement plus rapide pour un "lag" moins prononcé */
+    transition: left 0.05s linear, top 0.05s linear;
 }
 
 /* Optionnel : cache le halo sur mobile (inutile) */
