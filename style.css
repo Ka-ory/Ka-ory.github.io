@@ -61,7 +61,8 @@ h1, h2, h3 {
 h1 { font-size: 3rem; }
 h2 { 
     font-size: 2.2rem; 
-    border-bottom: 1px solid #333; 
+    /* border-bottom: 1px solid #333; */ /* <-- SUPPRIMÉE */
+    position: relative; /* <-- AJOUTÉE */
     padding-bottom: 10px; 
     margin-bottom: 40px; 
 }
@@ -649,4 +650,67 @@ body:after {
     .cursor-halo {
         display: none;
     }
+}
+
+/* =================================== */
+/* NOUVEAU : BARRE NÉON POUR LES TITRES */
+/* =================================== */
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0; /* Alignée avec le padding-bottom */
+    left: 0;
+    
+    width: 80px; /* Longueur de la barre */
+    height: 3px;
+    background-color: #DABFFF; /* Cœur blanc/violet clair */
+    
+    /* Le "glow" néon */
+    box-shadow: 
+        0 0 5px #DABFFF,
+        0 0 10px #DABFFF,
+        0 0 15px #9400D3, /* Votre violet principal */
+        0 0 25px #9400D3;
+    
+    /* Animation de "pulse" */
+    animation: neon-pulse 2.5s infinite alternate;
+}
+
+/* Animation de pulsation */
+@keyframes neon-pulse {
+    from {
+        opacity: 0.7;
+    }
+    to {
+        opacity: 1;
+        box-shadow: 
+            0 0 8px #DABFFF,
+            0 0 15px #DABFFF,
+            0 0 25px #9400D3,
+            0 0 35px #9400D3;
+    }
+}
+
+/* =================================== */
+/* NOUVEAU : ANIMATION DE CHARGEMENT   */
+/* =================================== */
+
+/* Définit les animations */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Applique les animations au Hero */
+.hero-section h1 {
+    /* (nom, durée, courbe, délai, état de fin) */
+    animation: fadeInDown 0.8s ease-out 0.3s backwards;
+}
+
+.hero-section p {
+    animation: fadeInUp 0.8s ease-out 0.6s backwards;
 }
