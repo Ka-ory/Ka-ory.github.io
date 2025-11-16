@@ -4,13 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio de Kamil CINAR</title>
-
     <link rel="stylesheet" href="style.css">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <canvas id="starfield"></canvas>
@@ -19,155 +17,136 @@
     <nav class="navbar">
         <div class="navbar-container">
             <a href="#accueil" class="navbar-logo">Kamil CINAR</a>
-
             <button class="nav-toggle" aria-label="Ouvrir le menu">
                 <span class="burger-bar"></span>
                 <span class="burger-bar"></span>
                 <span class="burger-bar"></span>
             </button>
-
             <ul class="nav-menu mobile-nav">
-                <li class="nav-item">
-                    <a href="#apropos" class="nav-link">À Propos</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#competences" class="nav-link">Compétences</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#projets" class="nav-link">Projets</a>
-                </li>
-                 <li class="nav-item">
-                    <a href="#parcours" class="nav-link">Parcours</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#contact" class="nav-link">Contact</a>
-                </li>
+                <li class="nav-item"><a href="#apropos" class="nav-link">À Propos</a></li>
+                <li class="nav-item"><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                <li class="nav-item"><a href="#formation" class="nav-link">Formation</a></li>
+                <li class="nav-item"><a href="#experience" class="nav-link">Expérience</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
         </div>
     </nav>
 
     <header class="hero-section" id="accueil">
         <h1>Kamil CINAR</h1>
-        <p>
-            Étudiant en BUT Informatique, développeur passionné par la création de solutions logicielles modernes et performantes.
-        </p>
+        <p>Étudiant en BUT Informatique, développeur passionné par la création de solutions logicielles modernes et performantes.</p>
+        <a href="[LIEN VERS VOTRE CV.PDF]" class="link-button" target="_blank" rel="noopener noreferrer" style="margin-top: 20px;">Télécharger mon CV</a>
     </header>
 
     <main>
         
         <section id="apropos" class="animate-on-scroll">
             <h2>À Propos de Moi</h2>
-            <div class="about-container">
-                <div class="about-text">
-                    <p>
-                        Actuellement en deuxième année de <strong>BUT Informatique à l'IUT d'Annecy</strong> (parcours IAMSI), je suis un développeur passionné par la construction de solutions logicielles de A à Z. J'aime autant concevoir une interface utilisateur réactive (Frontend) que bâtir la logique et les bases de données qui la font fonctionner (Backend).
-                    </p>
-                    <p>
-                        Je suis activement à la recherche d'une <strong>alternance ou d'un stage</strong> où je pourrais appliquer mes compétences en développement web, et contribuer concrètement à des projets stimulants.
-                    </p>
-                    <ul class="about-interests">
-                        <li><i class="fas fa-check"></i> Curieux (Apprentissage du piano, montage vidéo)</li>
-                        <li><i class="fas fa-check"></i> Polyglotte (Turc, Anglais B2, Espagnol A2)</li>
-                        <li><i class="fas fa-check"></i> Rigoureux et autonome</li>
+            <div class="about-grid">
+                
+                <div class="about-info-card">
+                    <h3>Infos & Contact</h3>
+                    <ul>
+                        <li><i class="fa fa-user"></i> 19 ans (01/05/2006)</li>
+                        <li><i class="fa fa-envelope"></i> kamil.cinarpro@gmail.com</li>
+                        <li><i class="fa fa-phone"></i> 06 23 35 91 09</li>
+                        <li><i class="fa fa-location-dot"></i> Annecy (74), France</li>
+                        <li><i class="fa fa-github"></i> <a href="[VOTRE LIEN GITHUB]" target="_blank" rel="noopener noreferrer">ka-ory</a></li>
                     </ul>
-                    <a href="[LIEN VERS VOTRE CV.PDF]" class="link-button" target="_blank" rel="noopener noreferrer">Télécharger mon CV</a>
                 </div>
-                <div class="about-photo-placeholder">
-                    <img src="[LIEN VERS TA PHOTO]" alt="Photo de Kamil Cinar">
+
+                <div class="about-info-card">
+                    <h3>Passions et Loisirs</h3>
+                    <ul>
+                        <li><i class="fa fa-music"></i> Apprentissage du piano</li>
+                        <li><i class="fa fa-video"></i> Réalisation et montage vidéo</li>
+                        <li><i class="fa fa-laptop-code"></i> Programmation & Veille tech</li>
+                    </ul>
+                </div>
+
+                <div class="about-info-card">
+                    <h3>Langues</h3>
+                    <ul>
+                        <li><strong>Turc :</strong> Bilingue (C2)</li>
+                        <li><strong>Anglais :</strong> Intermédiaire supérieur (B2)</li>
+                        <li><strong>Espagnol :</strong> Pré-intermédiaire (A2)</li>
+                        <li><strong>Japonais :</strong> Débutant (A0)</li>
+                    </ul>
+                </div>
+
+                <div class="about-info-card">
+                    <h3>Compétences Générales</h3>
+                    <ul>
+                        <li>Rigueur & Contrôle Qualité</li>
+                        <li>Gestion des priorités</li>
+                        <li>Orientation client & Service</li>
+                        <li>Autonomie & Curiosité</li>
+                    </ul>
                 </div>
             </div>
-        </section>
-
-        <section id="competences" class="animate-on-scroll">
-            <h2>Mes Compétences</h2>
-            <p class="section-intro">Voici les technologies et les outils que j'utilise pour concrétiser mes projets.</p>
             
+            <h3 class="subsection-title">Compétences Techniques</h3>
             <div class="skills-grid">
-                
                 <div class="skill-category-card">
-                    <h3><i class="fas fa-code"></i> Frontend</h3>
+                    <h4>Frontend</h4>
                     <ul>
-                        <li><img src="images/javascript.png" alt="JavaScript Logo"> JavaScript (ES6+)</li>
+                        <li><img src="images/javascript.png" alt="JS Logo"> JavaScript (ES6+)</li>
                         <li><img src="[ICONE_REACT]" alt="React Logo"> React</li>
                         <li><img src="[ICONE_HTML]" alt="HTML5 Logo"> HTML5</li>
-                        <li><img src="[ICONE_CSS]" alt="CSS3 Logo"> CSS3 (Sass/SCSS)</li>
-                        <li><img src="[ICONE_WEB]" alt="Responsive Logo"> Responsive Design</li>
+                        <li><img src="[ICONE_CSS]" alt="CSS3 Logo"> CSS3 (Sass)</li>
                     </ul>
                 </div>
-
                 <div class="skill-category-card">
-                    <h3><i class="fas fa-database"></i> Backend</h3>
+                    <h4>Backend</h4>
                     <ul>
                         <li><img src="[ICONE_PYTHON]" alt="Python Logo"> Python</li>
                         <li><img src="[ICONE_PHP]" alt="PHP Logo"> PHP</li>
                         <li><img src="[ICONE_SQL]" alt="SQL Logo"> SQL (MySQL)</li>
                         <li><img src="[ICONE_CMS]" alt="WordPress Logo"> WordPress</li>
-                        <li>[Autre BDD ? ex: PostgreSQL]</li>
                     </ul>
                 </div>
-
                 <div class="skill-category-card">
-                    <h3><i class="fas fa-tools"></i> Outils & Web</h3>
+                    <h4>Outils & Web</h4>
                     <ul>
                         <li><img src="[ICONE_GIT]" alt="Git Logo"> Git & GitHub</li>
                         <li><img src="[ICONE_VSCODE]" alt="VS Code Logo"> VS Code</li>
                         <li><img src="[ICONE_SEO]" alt="SEO Logo"> Principes de SEO</li>
-                        <li>[Outil 1, ex: Figma]</li>
-                        <li>[Outil 2, ex: Docker]</li>
                     </ul>
                 </div>
-
-                <div class="skill-category-card">
-                    <h3><i class="fas fa-lightbulb"></i> Soft Skills</h3>
-                    <ul>
-                        <li>Rigueur & Contrôle Qualité</li>
-                        <li>Gestion des priorités</li>
-                        <li>Orientation client</li>
-                        <li>Autonomie</li>
-                        <li>Curiosité</li>
-                    </ul>
-                </div>
-
             </div>
         </section>
 
-
-        <section id="projets" class="animate-on-scroll">
-            <h2>Mes Projets</h2>
+        <section id="portfolio" class="animate-on-scroll">
+            <h2>Portfolio</h2>
+            <p class="section-intro">[Petite phrase d'intro, ex: Voici les projets sur lesquels j'ai travaillé.]</p>
             <div class="project-grid-container">
                 <article class="project-card">
                     <div class="project-image-placeholder">
-                        <img src="[SCREENSHOT DE TON PROJET BUT2]" alt="Aperçu du Projet BUT2">
+                        <img src="[SCREENSHOT PROJET BUT2]" alt="Aperçu Projet BUT2">
                     </div>
                     <div class="project-card-content">
-                        <h3>[Nom de ton Projet BUT2]</h3>
-                        <p>
-                            [Description : Projet universitaire réalisé en [X mois / X personnes]... C'était quoi l'objectif ? Qu'est-ce que tu as fait ? Quel a été le résultat ?]
-                        </p>
+                        <h3>[Nom Projet BUT2]</h3>
+                        <p>[Description : Projet universitaire... Objectif ? Mon rôle ? Résultat ?]</p>
                         <div class="tags">
-                            <span>[Techno 1, ex: Java]</span>
-                            <span>[Techno 2, ex: SQL]</span>
-                            <span>[Techno 3, ex: Git]</span>
+                            <span>[Techno 1]</span>
+                            <span>[Techno 2]</span>
                         </div>
                         <div class="project-links">
-                            <a href="[LIEN GITHUB DU PROJET]" target="_blank" rel="noopener noreferrer" class="link-button">Voir le Code</a>
-                            <a href="[LIEN DÉMO (si existe)]" target="_blank" rel="noopener noreferrer" class="link-button">Voir la Démo</a>
+                            <a href="[LIEN GITHUB]" target="_blank" rel="noopener noreferrer" class="link-button">Voir le Code</a>
                         </div>
                     </div>
                 </article>
 
                 <article class="project-card">
                     <div class="project-image-placeholder">
-                        <img src="[SCREENSHOT DE TON PORTFOLIO]" alt="Aperçu de ce portfolio">
+                        <img src="[SCREENSHOT PORTFOLIO]" alt="Aperçu de ce portfolio">
                     </div>
                     <div class="project-card-content">
                         <h3>Mon Portfolio</h3>
-                        <p>
-                            Site personnel développé de zéro pour présenter mon profil et mes projets, avec un design "cyberpunk" et des animations en JavaScript.
-                        </p>
+                        <p>Site personnel développé de zéro pour présenter mon profil, avec un design "cyberpunk" et des animations en JavaScript.</p>
                         <div class="tags">
                             <span>HTML5</span>
-                            <span>CSS3 (Flexbox/Grid)</span>
+                            <span>CSS3</span>
                             <span>JavaScript (Canvas)</span>
                         </div>
                         <div class="project-links">
@@ -175,15 +154,13 @@
                         </div>
                     </div>
                 </article>
-                </div>
+            </div>
         </section>
 
-        <section id="parcours" class="animate-on-scroll">
-            <h2>Mon Parcours</h2>
+        <section id="formation" class="animate-on-scroll">
+            <h2>Formation</h2>
             <div class="timeline-container">
-
                 <div class="timeline-column">
-                    <h3>Éducation</h3>
                     <div class="timeline-item">
                         <span class="timeline-date">2023 - 2026 (prévu)</span>
                         <h4>BUT Informatique - Parcours IAMSI</h4>
@@ -196,42 +173,41 @@
                         <p class="timeline-location">Lycée du Granier, La Ravoire (73)</p>
                         <p>Spécialité Systèmes d'Information et de Gestion (SIG), Mention Assez Bien.</p>
                     </div>
-                    </div>
+                </div>
+            </div>
+        </section>
 
+        <section id="experience" class="animate-on-scroll">
+            <h2>Expérience</h2>
+            <div class="timeline-container">
                 <div class="timeline-column">
-                    <h3>Expérience Professionnelle</h3>
-                    
                     <div class="timeline-item">
                         <span class="timeline-date">Depuis le 01/11/2025 (CDI)</span>
                         <h4>Agent d'accueil en déchetterie</h4>
                         <p class="timeline-location">[Nom de l'entreprise, Ville]</p>
                         <p>[Description : Gestion des usagers, conseil sur le tri, maintenance du site...]</p>
                     </div>
-
                     <div class="timeline-item">
                         <span class="timeline-date">Avril 2025</span>
                         <h4>Préparateur de Véhicule</h4>
                         <p class="timeline-location">Jean Lain Occasions, Chambéry (73)</p>
                         <p>Contrôle qualité, préparation esthétique et gestion du parc. Développement de compétences en rigueur et orientation client.</p>
                     </div>
-                    </div>
-
+                </div>
             </div>
         </section>
 
-
+        <footer id="contact">
+            <h2>Restons en contact</h2>
+            <p>N'hésitez pas à me contacter, que ce soit pour une opportunité ou simplement pour échanger.</p>
+            <div class="social-links">
+                <a href="mailto:kamil.cinarpro@gmail.com" class="link-button">Envoyer un E-mail</a>
+                <a href="[VOTRE LIEN LINKEDIN]" target="_blank" rel="noopener noreferrer" class="link-button">LinkedIn</a>
+                <a href="[VOTRE LIEN GITHUB]" target="_blank" rel="noopener noreferrer" class="link-button">GitHub</a>
+            </div>
+            <p class="copyright">&copy; 2025 Kamil CINAR. Tous droits réservés.</p>
+        </footer>
     </main>
-
-    <footer id="contact">
-        <h2>Restons en contact</h2>
-        <p>N'hésitez pas à me contacter, que ce soit pour une opportunité ou simplement pour échanger.</p>
-        <div class="social-links">
-            <a href="mailto:kamil.cinarpro@gmail.com" class="link-button">Envoyer un E-mail</a>
-            <a href="[VOTRE LIEN LINKEDIN]" target="_blank" rel="noopener noreferrer" class="link-button">LinkedIn</a>
-            <a href="[VOTRE LIEN GITHUB]" target="_blank" rel="noopener noreferrer" class="link-button">GitHub</a>
-        </div>
-        <p class="copyright">&copy; 2025 Kamil CINAR. Tous droits réservés.</p>
-    </footer>
 
     <script src="main.js" defer></script>
 
