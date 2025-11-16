@@ -179,9 +179,7 @@ img {
 
 .project-card:hover {
     transform: translateY(-5px);
-    /* Ombre VIOLETTE */
     box-shadow: 0 8px 25px rgba(148, 0, 211, 0.15); 
-    /* Bordure VIOLETTE */
     border-color: #9400D3; 
 }
 
@@ -212,9 +210,8 @@ img {
 }
 
 .tags span {
-    /* Tags VIOLETS */
     background-color: rgba(148, 0, 211, 0.1);
-    color: #DABFFF; /* Violet clair */
+    color: #DABFFF;
     padding: 5px 12px;
     border-radius: 16px;
     font-size: 0.9em;
@@ -487,26 +484,20 @@ footer p {
 }
 
 /* =================================== */
-/* ÉTOILES FILANTES (CORRIGÉES)        */
+/* ÉTOILES FILANTES (CODE UNIQUE ET CORRIGÉ) */
 /* =================================== */
 
 body:before,
 body:after {
     content: '';
     position: fixed;
-    /* Position : en haut à droite */
     top: -100px;
     right: 0;
-    
     width: 200px;
     height: 1px;
-    background: linear-gradient(to right, rgba(148, 0, 211, 0.8), transparent);
-    
-    /* Pointeur en bas à gauche */
+    /* CORRIGÉ : "to left" pour le bon sens */
+    background: linear-gradient(to left, rgba(148, 0, 211, 0.8), transparent);
     transform: rotate(135deg); 
-    
-    /* BUG CORRIGÉ : Pas de z-index: -1. 
-       'auto' (par défaut) est correct. */
 }
 
 /* 2ème étoile */
@@ -514,7 +505,8 @@ body:after {
     width: 100px;
     top: 0;
     right: 300px;
-    background: linear-gradient(to right, rgba(218, 191, 255, 0.6), transparent);
+    /* CORRIGÉ : "to left" pour le bon sens */
+    background: linear-gradient(to left, rgba(218, 191, 255, 0.6), transparent);
 }
 
 /* Animation (diagonale) */
@@ -533,27 +525,13 @@ body:after {
     }
 }
 
-
-/* =================================== */
-/* ÉTOILES FILANTES (CORRIGÉES)        */
-/* =================================== */
-
-body:before,
-body:after {
-    /* ... (lignes 'content', 'position', 'top', 'right', 'width', 'height') ... */
-    
-    /* VÉRIFIEZ CETTE LIGNE : */
-    background: linear-gradient(to right, rgba(148, 0, 211, 0.8), transparent);
-    
-    /* ... (le reste) ... */
+/* APPLICATION DE L'ANIMATION (C'ÉTAIT ÇA QUI MANQUAIT) */
+body:before {
+    animation: shoot-star 8s linear infinite 3s;
 }
 
-/* 2ème étoile */
 body:after {
-    /* ... (lignes 'width', 'top', 'right') ... */
-
-    /* VÉRIFIEZ CETTE LIGNE AUSSI : */
-    background: linear-gradient(to right, rgba(218, 191, 255, 0.6), transparent);
+    animation: shoot-star 5s linear infinite 5s;
 }
 
 
