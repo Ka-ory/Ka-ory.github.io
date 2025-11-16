@@ -712,3 +712,11 @@ h2::after {
 .hero-section p {
     animation: fadeInUp 0.8s ease-out 0.6s backwards;
 }
+
+/* =================================== */
+/* CORRECTION : Centrer barre néon Footer */
+/* =================================== */
+footer h2::after {
+    left: 50%;
+    transform: translateX(-50%);
+}
