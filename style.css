@@ -8,12 +8,11 @@
 /* NOUVEAU : TOILE POUR ÉTOILES (CANVAS) */
 /* =================================== */
 #starfield {
-    position: fixed; /* Reste fixe en arrière-plan */
+    position: fixed; 
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    /* Derrière TOUT le contenu */
     z-index: -1; 
 }
 
@@ -23,7 +22,7 @@
 html {
     height: 100%;
     background-color: #0a0a0a;
-    scroll-behavior: smooth; /* Défilement fluide */
+    scroll-behavior: smooth; 
 }
 
 * {
@@ -35,14 +34,12 @@ html {
 body {
     font-family: 'Inter', -apple-system, sans-serif;
     line-height: 1.6;
-    /* FOND OPAQUE à 90% (comme Steam) */
     background-color: rgba(10, 10, 10, 0.9); 
     color: #cccccc;
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 20px;
 
-    /* Requis pour les étoiles filantes */
     position: relative;
     overflow-x: hidden;
 }
@@ -61,8 +58,7 @@ h1, h2, h3 {
 h1 { font-size: 3rem; }
 h2 { 
     font-size: 2.2rem; 
-    /* border-bottom: 1px solid #333; */ /* <-- SUPPRIMÉE */
-    position: relative; /* <-- AJOUTÉE */
+    position: relative; 
     padding-bottom: 10px; 
     margin-bottom: 40px; 
 }
@@ -440,7 +436,7 @@ footer p {
 }
 
 /* =================================== */
-/* ANIMATION "FADE-IN"               */
+/*   ANIMATION   FADE-IN               */
 /* =================================== */
 .animate-on-scroll {
     opacity: 0;
@@ -489,7 +485,7 @@ footer p {
 }
 
 /* =================================== */
-/* ÉTOILES FILANTES (CODE UNIQUE ET CORRIGÉ) */
+/*           ÉTOILES FILANTES          */
 /* =================================== */
 
 body:before,
@@ -500,21 +496,17 @@ body:after {
     right: 0;
     width: 200px;
     height: 1px;
-    /* CORRIGÉ : "to left" pour le bon sens */
     background: linear-gradient(to left, rgba(148, 0, 211, 0.8), transparent);
     transform: rotate(135deg); 
 }
 
-/* 2ème étoile */
 body:after {
     width: 100px;
     top: 0;
     right: 300px;
-    /* CORRIGÉ : "to left" pour le bon sens */
     background: linear-gradient(to left, rgba(218, 191, 255, 0.6), transparent);
 }
 
-/* Animation (diagonale) */
 @keyframes shoot-star {
     0% {
         transform: translate(0, 0) rotate(135deg);
@@ -530,7 +522,6 @@ body:after {
     }
 }
 
-/* APPLICATION DE L'ANIMATION (C'ÉTAIT ÇA QUI MANQUAIT) */
 body:before {
     animation: shoot-star 8s linear infinite 3s;
 }
@@ -540,11 +531,10 @@ body:after {
 }
 
 /* =================================== */
-/* RESPONSIVE (POUR TÉLÉPHONE) (FUSIONNÉ) */
+/*       RESPONSIVE TÉLÉPHONE          */
 /* =================================== */
 @media (max-width: 768px) {
 
-    /* --- LOGIQUE MENU BURGER --- */
     .nav-toggle {
         display: block; 
     }
@@ -586,7 +576,6 @@ body:after {
         color: #9400D3;
     }
 
-    /* --- AUTRES STYLES RESPONSIVE --- */
 
     .project-grid-container {
         grid-template-columns: 1fr; 
@@ -616,34 +605,31 @@ body:after {
 }
 
 /* =================================== */
-/* NOUVEAU : HALO DE CURSEUR (PLUS SUBTIL) */
+/*          HALO DE CURSEUR            */
 /* =================================== */
 .cursor-halo {
     position: fixed;
     left: -1000px; 
     top: -1000px;
     
-    /* Taille réduite */
     width: 120px;
     height: 120px;
     border-radius: 50%;
     
-    /* Dégradé plus doux et plus serré */
+
     background: radial-gradient(
         circle, 
-        rgba(148, 0, 211, 0.08) 0%, /* <-- Beaucoup plus transparent */
-        transparent 60%           /* <-- fondu plus rapide */
+        rgba(148, 0, 211, 0.08) 0%, 
+        transparent 60%           
     );
     
     transform: translate(-50%, -50%);
     pointer-events: none;
     z-index: 99;
     
-    /* Mouvement plus rapide pour un "lag" moins prononcé */
     transition: left 0.05s linear, top 0.05s linear;
 }
 
-/* Optionnel : cache le halo sur mobile (inutile) */
 @media (max-width: 768px) {
     .cursor-halo {
         display: none;
@@ -651,30 +637,27 @@ body:after {
 }
 
 /* =================================== */
-/* NOUVEAU : BARRE NÉON POUR LES TITRES */
+/*      BARRE NÉON POUR LES TITRES     */
 /* =================================== */
 h2::after {
     content: '';
     position: absolute;
-    bottom: 0; /* Alignée avec le padding-bottom */
+    bottom: 0; 
     left: 0;
     
-    width: 80px; /* Longueur de la barre */
+    width: 80px; 
     height: 3px;
-    background-color: #DABFFF; /* Cœur blanc/violet clair */
+    background-color: #DABFFF; 
     
-    /* Le "glow" néon */
     box-shadow: 
         0 0 5px #DABFFF,
         0 0 10px #DABFFF,
-        0 0 15px #9400D3, /* Votre violet principal */
+        0 0 15px #9400D3, 
         0 0 25px #9400D3;
     
-    /* Animation de "pulse" */
     animation: neon-pulse 2.5s infinite alternate;
 }
 
-/* Animation de pulsation */
 @keyframes neon-pulse {
     from {
         opacity: 0.7;
@@ -690,10 +673,9 @@ h2::after {
 }
 
 /* =================================== */
-/* NOUVEAU : ANIMATION DE CHARGEMENT   */
+/*       ANIMATION DE CHARGEMENT       */
 /* =================================== */
 
-/* Définit les animations */
 @keyframes fadeInDown {
     from { opacity: 0; transform: translateY(-20px); }
     to   { opacity: 1; transform: translateY(0); }
@@ -703,9 +685,7 @@ h2::after {
     to   { opacity: 1; transform: translateY(0); }
 }
 
-/* Applique les animations au Hero */
 .hero-section h1 {
-    /* (nom, durée, courbe, délai, état de fin) */
     animation: fadeInDown 0.8s ease-out 0.3s backwards;
 }
 
@@ -714,7 +694,7 @@ h2::after {
 }
 
 /* =================================== */
-/* CORRECTION : Centrer barre néon Footer */
+/*      Centrer barre néon Footer      */
 /* =================================== */
 footer h2::after {
     left: 50%;
