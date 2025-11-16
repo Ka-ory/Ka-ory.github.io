@@ -5,33 +5,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
 
 /* =================================== */
-/* FOND ÉTOILÉ (NOUVEAU)               */
-/* =================================== */
-/* =================================== */
-/* FOND ÉTOILÉ (AMÉLIORÉ)              */
+/* FOND ÉTOILÉ (PLUS SUBTIL)           */
 /* =================================== */
 html {
     height: 100%;
     background-color: #0a0a0a;
 
-    /* * On utilise RGBA pour la transparence.
-     * On augmente 'background-size' pour espacer les étoiles.
-     */
+    /* Opacité des étoiles (rgba) très réduite */
     background-image: 
-        /* Petites étoiles (violet très clair, 50% transparent) */
-        radial-gradient(circle, rgba(218, 191, 255, 0.5) 0.5px, transparent 0.5px),
-        /* Moyennes étoiles (violet principal, 60% transparent) */
-        radial-gradient(circle, rgba(148, 0, 211, 0.6) 1px, transparent 1px),
-        /* Grosses étoiles (violet principal, 40% transparent) */
-        radial-gradient(circle, rgba(148, 0, 211, 0.4) 1px, transparent 1px);
+        /* Petites étoiles (violet très clair, 10% transparent) */
+        radial-gradient(circle, rgba(218, 191, 255, 0.1) 0.5px, transparent 0.5px),
+        /* Moyennes étoiles (violet principal, 15% transparent) */
+        radial-gradient(circle, rgba(148, 0, 211, 0.15) 1px, transparent 1px),
+        /* Grosses étoiles (violet principal, 10% transparent) */
+        radial-gradient(circle, rgba(148, 0, 211, 0.1) 1px, transparent 1px);
     
-    /* Tailles/densités : Nombres BEAUCOUP plus grands */
+    /* Tailles/densités (inchangées) */
     background-size: 
-        100px 100px, /* Petites étoiles */
-        230px 230px, /* Moyennes étoiles */
-        400px 400px; /* Grosses étoiles (très espacées) */
+        100px 100px,
+        230px 230px,
+        400px 400px;
     
-    /* Nouveaux décalages */
+    /* Décalages (inchangés) */
     background-position: 
         0 0, 
         30px 40px,
