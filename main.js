@@ -1,10 +1,10 @@
-// Fichier main.js
+// Fichier main.js COMPLET ET CORRIGÉ
 
 // Attend que tout le contenu de la page soit chargé
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => { // <--- UN SEUL listener START
 
     // =============================================
-    // ANIMATION "FADE-IN" AU DÉFILEMENT (NOUVEAU)
+    // NOUVEAU : GÉNÉRATION D'ÉTOILES ALÉATOIRES
     // =============================================
     const canvas = document.getElementById('starfield');
     
@@ -55,11 +55,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ... Le reste de votre code (IntersectionObserver, Burger Menu, etc.)
-    // ... S'ils ne sont pas déjà dans un 'DOMContentLoaded', 
-    // ... laissez-les où ils sont.
-});
-    // Sélectionne tous les éléments qu'on veut animer
+    // =============================================
+    // ANIMATION "FADE-IN" AU DÉFILEMENT
+    // =============================================
+    // (Ce code est maintenant à l'intérieur du listener)
     const elementsToAnimate = document.querySelectorAll('.animate-on-scroll');
 
     // Crée un "observateur"
@@ -84,10 +83,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // =============================================
-    // MISE À JOUR DU NAVBAR AU DÉFILEMENT (ACTIF)
+    // MISE À JOUR DU NAVBAR AU DÉFILEMENT
     // =============================================
-
-    // Sélectionne toutes les sections qui ont un ID
+    // (Ce code est maintenant à l'intérieur du listener)
     const sections = document.querySelectorAll('section[id], header[id]');
     
     // Sélectionne tous les liens dans le menu de navigation
@@ -120,4 +118,4 @@ document.addEventListener('DOMContentLoaded', () => {
     // Écoute l'événement 'scroll'
     window.addEventListener('scroll', onScroll);
 
-});
+}); // <--- UN SEUL listener END (le '});' erroné est supprimé)
