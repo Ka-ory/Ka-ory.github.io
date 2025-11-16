@@ -624,15 +624,15 @@ body:after {
     top: -1000px;
     
     /* Taille réduite */
-    width: 300px;
-    height: 300px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     
     /* Dégradé plus doux et plus serré */
     background: radial-gradient(
         circle, 
         rgba(148, 0, 211, 0.08) 0%, /* <-- Beaucoup plus transparent */
-        transparent 50%           /* <-- fondu plus rapide */
+        transparent 60%           /* <-- fondu plus rapide */
     );
     
     transform: translate(-50%, -50%);
