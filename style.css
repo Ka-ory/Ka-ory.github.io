@@ -5,45 +5,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
 
 /* =================================== */
-/* FOND ÉTOILÉ (PLUS SUBTIL)           */
+/* NOUVEAU : TOILE POUR ÉTOILES (CANVAS) */
+/* =================================== */
+#starfield {
+    position: fixed; /* Reste fixe en arrière-plan */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Derrière TOUT le contenu */
+    z-index: -1; 
+}
+
+/* =================================== */
+/* FOND (simplifié)                    */
 /* =================================== */
 html {
     height: 100%;
     background-color: #0a0a0a;
-
-    /* Opacité des étoiles (rgba) très réduite */
-    background-image: 
-        /* Petites étoiles (violet très clair, 10% transparent) */
-        radial-gradient(circle, rgba(218, 191, 255, 0.1) 0.5px, transparent 0.5px),
-        /* Moyennes étoiles (violet principal, 15% transparent) */
-        radial-gradient(circle, rgba(148, 0, 211, 0.15) 1px, transparent 1px),
-        /* Grosses étoiles (violet principal, 10% transparent) */
-        radial-gradient(circle, rgba(148, 0, 211, 0.1) 1px, transparent 1px);
-    
-    /* Tailles/densités (inchangées) */
-    background-size: 
-        100px 100px,
-        230px 230px,
-        400px 400px;
-    
-    /* Décalages (inchangés) */
-    background-position: 
-        0 0, 
-        30px 40px,
-        70px 80px;
-    
-    background-attachment: fixed;
+    scroll-behavior: smooth; /* Défilement fluide */
 }
-
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth; /* Défilement fluide */
 }
 
 body {
@@ -56,7 +42,7 @@ body {
     margin: 0 auto;
     padding: 0 20px;
 
-    /* Requis pour les étoiles filantes (étapes 3) */
+    /* Requis pour les étoiles filantes */
     position: relative;
     overflow-x: hidden;
 }
@@ -176,7 +162,7 @@ img {
 }
 
 /* =================================== */
-/* GRILLE DE PROJETS                   */
+/* GRILLE DE PROJETS (THÈME VIOLET)     */
 /* =================================== */
 .project-grid-container {
     display: grid;
@@ -189,13 +175,15 @@ img {
     border: 1px solid #2a2a2a;
     border-radius: 8px;
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .project-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 123, 255, 0.15);
-    border-color: #79b8ff;
+    /* Ombre VIOLETTE */
+    box-shadow: 0 8px 25px rgba(148, 0, 211, 0.15); 
+    /* Bordure VIOLETTE */
+    border-color: #9400D3; 
 }
 
 .project-image-placeholder {
@@ -225,8 +213,9 @@ img {
 }
 
 .tags span {
-    background-color: rgba(0, 123, 255, 0.1);
-    color: #79b8ff;
+    /* Tags VIOLETS */
+    background-color: rgba(148, 0, 211, 0.1);
+    color: #DABFFF; /* Violet clair */
     padding: 5px 12px;
     border-radius: 16px;
     font-size: 0.9em;
@@ -291,9 +280,6 @@ img {
     object-fit: cover;
 }
 
-/* =================================== */
-/* "À PROPOS" - AJUSTEMENTS (NOUVEAU)  */
-/* =================================== */
 .about-interests {
     list-style: none;
     margin-top: 20px;
@@ -310,7 +296,7 @@ img {
 
 
 /* =================================== */
-/* SECTION COMPÉTENCES (NOUVEAU)       */
+/* SECTION COMPÉTENCES                 */
 /* =================================== */
 .section-intro {
     color: #aaa;
@@ -368,7 +354,7 @@ img {
 
 
 /* =================================== */
-/* SECTION PARCOURS (TIMELINE) (NOUVEAU) */
+/* SECTION PARCOURS (TIMELINE)         */
 /* =================================== */
 .timeline-container {
     display: flex;
@@ -395,7 +381,7 @@ img {
     padding: 20px;
     margin-bottom: 20px;
     position: relative;
-    transition: border-color 0.3s ease;
+    transition: border-color 0.3s ease, border-left-color 0.3s ease;
 }
 .timeline-item:hover {
     border-left-color: #9400D3;
@@ -466,7 +452,7 @@ footer p {
 }
 
 /* =================================== */
-/* STYLES DU MENU BURGER (NOUVEAU)     */
+/* STYLES DU MENU BURGER               */
 /* =================================== */
 
 .nav-toggle {
@@ -499,6 +485,62 @@ footer p {
 }
 .nav-toggle.is-active .burger-bar:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
+}
+
+/* =================================== */
+/* ÉTOILES FILANTES (CORRIGÉES)        */
+/* =================================== */
+
+body:before,
+body:after {
+    content: '';
+    position: fixed;
+    /* Position : en haut à droite */
+    top: -100px;
+    right: 0;
+    
+    width: 200px;
+    height: 1px;
+    background: linear-gradient(to right, rgba(148, 0, 211, 0.8), transparent);
+    
+    /* Pointeur en bas à gauche */
+    transform: rotate(135deg); 
+    
+    /* BUG CORRIGÉ : Pas de z-index: -1. 
+       'auto' (par défaut) est correct. */
+}
+
+/* 2ème étoile */
+body:after {
+    width: 100px;
+    top: 0;
+    right: 300px;
+    background: linear-gradient(to right, rgba(218, 191, 255, 0.6), transparent);
+}
+
+/* Animation (diagonale) */
+@keyframes shoot-star {
+    0% {
+        transform: translate(0, 0) rotate(135deg);
+        opacity: 1;
+    }
+    80% {
+        transform: translate(-100vw, 100vh) rotate(135deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-100vw, 100vh) rotate(135deg);
+        opacity: 0;
+    }
+}
+
+/* Application de l'animation */
+body:before {
+    animation: shoot-star 8s linear infinite 3s;
+}
+
+body:after {
+    animation: shoot-star 5s linear infinite 5s;
 }
 
 
@@ -539,7 +581,7 @@ footer p {
 
     .nav-menu .nav-item {
         margin: 20px 0;
-        margin-left: 0; /* Annule le margin-left du desktop */
+        margin-left: 0;
     }
     .nav-menu .nav-link {
         font-size: 1.5rem;
@@ -576,90 +618,4 @@ footer p {
     .hero-section p {
         font-size: 1.1rem;
     }
-}
-
-/* =================================== */
-/* ÉTOILES FILANTES (NOUVEAU)          */
-/* =================================== */
-
-/* * On utilise :before et :after sur le body
- * pour créer 2 étoiles filantes.
- * Elles sont 'fixed' pour rester à l'écran,
- * et 'z-index: -1' pour passer DERRIÈRE votre contenu.
-*/
-
-body:before,
-body:after {
-    content: '';
-    position: fixed;
-    top: 50%; /* Position verticale de départ */
-    left: 0;
-    width: 200px; /* Longueur de la queue */
-    height: 1px;
-    /* La "queue" est un dégradé */
-    background: linear-gradient(to right, rgba(148, 0, 211, 0.8), transparent);
-    
-    /* On cache l'étoile au début */
-    transform: translateX(-100%) rotate(-45deg);
-    
-    /* z-index -1 : derrière le contenu, mais 
-       devant le fond 'html' (car 'body' a 'position: relative') */
-    z-index: -1; 
-}
-
-/* 2ème étoile (plus petite, plus rapide) */
-body:after {
-    width: 100px;
-    top: 20%;
-    background: linear-gradient(to right, rgba(218, 191, 255, 0.6), transparent);
-}
-
-
-/* NOUVELLE Animation "shoot-star" (diagonale) */
-@keyframes shoot-star {
-    0% {
-        /* Démarrage (position 'body:before') */
-        transform: translate(0, 0) rotate(135deg);
-        opacity: 1;
-    }
-    80% {
-        /* Trajectoire en diagonale (bas et gauche) */
-        transform: translate(-100vw, 100vh) rotate(135deg);
-        opacity: 1;
-    }
-    100% {
-        /* Disparaît (assure la fin du cycle) */
-        transform: translate(-100vw, 100vh) rotate(135deg);
-        opacity: 0;
-    }
-}
-
-/* =================================== */
-/* ÉTOILES FILANTES (TRAJECTOIRE CORRIGÉE) */
-/* =================================== */
-
-body:before,
-body:after {
-    content: '';
-    position: fixed;
-    /* NOUVELLE POSITION : en haut à droite */
-    top: -100px; /* Commence hors-écran (au-dessus) */
-    right: 0;
-    
-    width: 200px; /* Longueur de la queue */
-    height: 1px;
-    background: linear-gradient(to right, rgba(148, 0, 211, 0.8), transparent);
-    
-    /* NOUVELLE TRANSFORMATION : pointe en bas à gauche */
-    transform: rotate(135deg); 
-    
-    z-index: -1; 
-}
-
-/* 2ème étoile (plus petite, décalée) */
-body:after {
-    width: 100px;
-    top: 0; /* Commence juste à la limite */
-    right: 300px; /* Commence décalée sur la gauche */
-    background: linear-gradient(to right, rgba(218, 191, 255, 0.6), transparent);
 }
