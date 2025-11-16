@@ -6,7 +6,59 @@ document.addEventListener('DOMContentLoaded', () => {
     // =============================================
     // ANIMATION "FADE-IN" AU DÉFILEMENT (NOUVEAU)
     // =============================================
+    const canvas = document.getElementById('starfield');
     
+    // On vérifie si le canvas existe avant de continuer
+    if (canvas) {
+        const ctx = canvas.getContext('2d');
+
+        const setCanvasSize = () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        };
+
+        const drawStars = () => {
+            // Nettoie la toile
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Nombre d'étoiles (ajustez si vous voulez)
+            const starCount = 200; 
+
+            for (let i = 0; i < starCount; i++) {
+                // Position X aléatoire
+                const x = Math.random() * canvas.width;
+                // Position Y aléatoire
+                const y = Math.random() * canvas.height;
+                // Taille aléatoire (entre 0.5px et 2px)
+                const radius = Math.random() * 1.5 + 0.5;
+                // Opacité aléatoire (pour l'effet de profondeur)
+                const opacity = Math.random() * 0.5 + 0.2; 
+
+                // Couleur (violet clair)
+                ctx.fillStyle = `rgba(218, 191, 255, ${opacity})`;
+
+                // Dessine le cercle
+                ctx.beginPath();
+                ctx.arc(x, y, radius, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        };
+
+        // Initialisation
+        setCanvasSize();
+        drawStars();
+
+        // (Optionnel) Recalcule si la fenêtre change de taille
+        window.addEventListener('resize', () => {
+            setCanvasSize();
+            drawStars();
+        });
+    }
+
+    // ... Le reste de votre code (IntersectionObserver, Burger Menu, etc.)
+    // ... S'ils ne sont pas déjà dans un 'DOMContentLoaded', 
+    // ... laissez-les où ils sont.
+});
     // Sélectionne tous les éléments qu'on veut animer
     const elementsToAnimate = document.querySelectorAll('.animate-on-scroll');
 
