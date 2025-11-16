@@ -192,5 +192,18 @@ document.addEventListener('DOMContentLoaded', () => { // <--- UN SEUL listener S
             });
         });
     }
+// =============================================
+    // NOUVEAU : GESTION DU HALO DE CURSEUR
+    // =============================================
+    const halo = document.querySelector('.cursor-halo');
+    if (halo) {
+        window.addEventListener('mousemove', (e) => {
+            // Utilise requestAnimationFrame pour la performance
+            window.requestAnimationFrame(() => {
+                halo.style.left = `${e.clientX}px`;
+                halo.style.top = `${e.clientY}px`;
+            });
+        });
+    }
 
-}); // <--- UN SEUL listener END
+}); // <--- Assurez-vous que c'est AVANT ce crochet de fin !
