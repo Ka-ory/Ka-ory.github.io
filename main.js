@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', () => { // <--- UN SEUL listener S
     // =============================================
     // MISE À JOUR DU NAVBAR AU DÉFILEMENT
     // =============================================
-    const sections = document.querySelectorAll('section[id], header[id]');
+    const sections = document.querySelectorAll('#accueil, #apropos, #portfolio, #formation, #experience, #contact');
     const navLinks = document.querySelectorAll('.nav-menu a');
 
     const onScroll = () => {
@@ -156,7 +156,7 @@ document.addEventListener('DOMContentLoaded', () => { // <--- UN SEUL listener S
             const sectionId = current.getAttribute('id');
 
             if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-                const activeLink = document.querySelector(`.nav-menu a[href*='${sectionId}']`);
+                const activeLink = document.querySelector(`.nav-menu a[href='#${sectionId}']`);
                 navLinks.forEach(link => link.classList.remove('active'));
                 if (activeLink) {
                     activeLink.classList.add('active');
