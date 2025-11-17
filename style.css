@@ -700,3 +700,67 @@ footer h2::after {
     left: 50%;
     transform: translateX(-50%);
 }
+
+/* =================================== */
+/* NOUVEAUX STYLES POUR "À PROPOS"     */
+/* =================================== */
+
+.about-grid {
+    display: grid;
+    /* 2 colonnes sur desktop, 1 sur mobile */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-bottom: 50px; /* Espace avant les compétences techniques */
+}
+
+.about-info-card {
+    background-color: #121212;
+    border: 1px solid #2a2a2a;
+    border-radius: 8px;
+    padding: 25px;
+}
+
+.about-info-card h3 {
+    font-size: 1.3rem;
+    color: #9400D3; /* Couleur violette */
+    margin-bottom: 20px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+}
+
+.about-info-card ul {
+    list-style: none;
+}
+
+.about-info-card li {
+    color: #cccccc;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.about-info-card li i {
+    color: #9400D3;
+    width: 20px; /* Pour aligner le texte */
+    text-align: center;
+}
+
+.subsection-title {
+    font-size: 1.8rem;
+    color: #eee;
+    margin-bottom: 25px;
+    border-left: 3px solid #9400D3;
+    padding-left: 10px;
+}
+
+.skill-category-card h4 {
+    font-size: 1.2rem;
+    color: #ffffff;
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
