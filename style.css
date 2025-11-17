@@ -77,8 +77,6 @@ img {
     z-index: 100;
     border-bottom: 1px solid #222;
     width: 100%;
-    margin: 0 auto;
-    max-width: 1100px;
 }
 
 .navbar-container {
@@ -87,6 +85,8 @@ img {
     align-items: center;
     width: 100%;
     padding: 0 20px;
+    margin: 0 auto;     
+    max-width: 1100px;
 }
 
 .navbar-logo {
