@@ -133,20 +133,20 @@ img {
 }
 
 .nav-cv-button {
-    background-color: #39FF14;
-    color: #111;
+    background-color: #9400D3; 
+    color: #ffffff; 
     padding: 8px 16px;
     border-radius: 5px;
     font-weight: 700;
     font-size: 0.9rem;
     text-decoration: none;
-    box-shadow: 0 0 15px rgba(57, 255, 20, 0.5);
+    box-shadow: 0 0 15px rgba(148, 0, 211, 0.5); 
     transition: all 0.3s ease;
 }
 .nav-cv-button:hover {
-    background-color: #fff;
-    color: #111;
-    box-shadow: 0 0 25px rgba(57, 255, 20, 0.8);
+    background-color: #DABFFF; 
+    color: #111; 
+    box-shadow: 0 0 25px rgba(218, 191, 255, 0.8); 
     text-shadow: none;
 }
 
@@ -170,9 +170,9 @@ img {
 }
 
 .lang-switcher button.active {
-    background-color: #00FFFF;
-    color: #111;
-    box-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+    background-color: #DABFFF; 
+    color: #111; 
+    box-shadow: 0 0 10px rgba(218, 191, 255, 0.7); 
 }
 
 .hero-section {
