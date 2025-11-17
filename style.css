@@ -26,9 +26,6 @@ body {
     line-height: 1.6;
     background-color: rgba(10, 10, 10, 0.9); 
     color: #cccccc;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 20px;
     position: relative;
     overflow-x: hidden;
 }
@@ -77,9 +74,6 @@ img {
     z-index: 100;
     border-bottom: 1px solid #222;
     width: 100%;
-    left: 0;
-    right: 0;
-    max-width: 100%;
 }
 
 .navbar-container {
@@ -182,9 +176,19 @@ img {
 }
 
 .hero-section {
-    padding: 100px 0;
+    padding: 100px 20px; 
+    margin: 0 auto;      
+    max-width: 1100px;  
     text-align: left;
     border-bottom: 1px solid #222;
+}
+
+main,
+footer {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .hero-section h1 {
