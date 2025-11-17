@@ -706,47 +706,38 @@ footer h2::after {
 /* =================================== */
 
 .about-grid {
-    display: grid;
-    /* 2 colonnes sur desktop, 1 sur mobile */
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    display: flex; 
+    flex-direction: column; 
     gap: 25px;
-    margin-bottom: 50px; /* Espace avant les compétences techniques */
+    margin-bottom: 50px;
 }
 
 .about-info-card {
     background-color: #121212;
-    border: 1px solid #2a2a2a;
+    border: 2px solid #9400D3; 
     border-radius: 8px;
     padding: 25px;
+    box-shadow: 0 0 15px rgba(148, 0, 211, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px rgba(148, 0, 211, 0.7);
 }
 
 .about-info-card h3 {
     font-size: 1.3rem;
     color: #9400D3; 
     margin-bottom: 20px;
-    border-bottom: 1px solid #9400D3;
-    padding-bottom: 10px;
+    border-bottom: none; 
+    padding-bottom: 0;
     position: relative;
+    text-align: center; 
 }
 
-.about-info-card h3::after {
-    content: '';
-    position: absolute;
-    bottom: -1px; 
-    left: 0;
-    width: 60px; 
-    height: 2px; 
-    background-color: #DABFFF; 
-    box-shadow: 
-        0 0 3px #DABFFF,
-        0 0 8px #9400D3;
-    animation: neon-pulse-small 2s infinite alternate; 
-}
 
-@keyframes neon-pulse-small {
-    from { opacity: 0.7; }
-    to { opacity: 1; box-shadow: 0 0 5px #DABFFF, 0 0 10px #9400D3; }
-}
+
 
 .about-info-card ul {
     list-style: none;
@@ -773,9 +764,6 @@ footer h2::after {
     border-radius: 2px; 
     width: 25px; 
     height: 20px; 
-    background-size: contain; 
-    background-position: 50%; 
-    background-repeat: no-repeat; 
     display: inline-block; 
 }
 
@@ -785,6 +773,16 @@ footer h2::after {
 
 .about-info-card li strong {
     color: #fff; 
+}
+
+.about-info-card ul.bullet-list {
+    list-style: disc;
+    padding-left: 30px; /* Ajoute un retrait pour voir les puces */
+}
+
+.about-info-card ul.bullet-list li {
+    display: list-item; /* Rétablit le style de puce par défaut */
+    gap: 0;
 }
 
 .subsection-title {
