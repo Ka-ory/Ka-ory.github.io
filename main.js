@@ -1,5 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => { 
 
+    const cvPathFR = 'images/cv-kamil-fr.pdf';
+    const cvPathEN = 'images/cv-kamil-en.pdf';
+    
+    const cvButton = document.querySelector('.nav-cv-button');
+
+
     const translations = {
         fr: {
             "nav-about": "À Propos",
@@ -163,9 +169,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (lang === 'en') {
             langFrButton.classList.remove('active');
             langEnButton.classList.add('active');
+            if (cvButton) cvButton.href = cvPathEN;
         } else {
             langEnButton.classList.remove('active');
             langFrButton.classList.add('active');
+            if (cvButton) cvButton.href = cvPathFR;
         }
 
         document.querySelectorAll('[data-key]').forEach(element => {
@@ -179,8 +187,10 @@ document.addEventListener('DOMContentLoaded', () => {
     langFrButton.addEventListener('click', () => setLanguage('fr'));
     langEnButton.addEventListener('click', () => setLanguage('en'));
 
+    // On charge la langue au démarrage (et ça met à jour le CV)
     const savedLang = localStorage.getItem('language') || 'fr';
     setLanguage(savedLang);
+
 
     const canvas = document.getElementById('starfield');
     
@@ -226,7 +236,7 @@ document.addEventListener('DOMContentLoaded', () => {
             shootingStars.push({
                 x: Math.random() * canvas.width + (canvas.width * 0.2), 
                 y: Math.random() * (canvas.height * 0.2) - (canvas.height * 0.1), 
-                size: Math.random() * 10 + 0.5,     
+                size: Math.random() * 2 + 0.5,     
                 speed: Math.random() * 8 + 5,     
                 length: Math.random() * 150 + 80   
             });
@@ -274,7 +284,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         const spawnShootingStar = () => {
             createShootingStar();
-            setTimeout(spawnShootingStar, Math.random() * 4000 ); 
+            setTimeout(spawnShootingStar, Math.random() * 5000 + 2000); 
         };
         
         animate();
@@ -286,6 +296,7 @@ document.addEventListener('DOMContentLoaded', () => {
             shootingStars = []; 
         });
     }
+
 
     const elementsToAnimate = document.querySelectorAll('.animate-on-scroll');
     const observer = new IntersectionObserver((entries) => {
@@ -301,6 +312,7 @@ document.addEventListener('DOMContentLoaded', () => {
     elementsToAnimate.forEach(element => {
         observer.observe(element);
     });
+
 
     const sections = document.querySelectorAll('#accueil, #apropos, #portfolio, #formation, #experience, #references, #contact');
     const navLinks = document.querySelectorAll('.nav-menu a');
@@ -345,6 +357,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
 
     const halo = document.querySelector('.cursor-halo');
     if (halo) {
