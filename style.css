@@ -1,14 +1,7 @@
-/* =================================== */
-/* RESET ET STYLES GLOBAUX (DARK MODE) */
-/* =================================== */
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
 
-/* =================================== */
-/* NOUVEAU : TOILE POUR ÉTOILES (CANVAS) */
-/* =================================== */
 #starfield {
-    position: fixed; 
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -16,13 +9,10 @@
     z-index: -1; 
 }
 
-/* =================================== */
-/* FOND (simplifié)                    */
-/* =================================== */
 html {
     height: 100%;
     background-color: #0a0a0a;
-    scroll-behavior: smooth; 
+    scroll-behavior: smooth;
 }
 
 * {
@@ -39,7 +29,6 @@ body {
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 20px;
-
     position: relative;
     overflow-x: hidden;
 }
@@ -75,9 +64,6 @@ img {
     display: block;
 }
 
-/* =================================== */
-/* STYLES DU NAVBAR                    */
-/* =================================== */
 .navbar {
     background: rgba(10, 10, 10, 0.85);
     backdrop-filter: blur(10px);
@@ -91,7 +77,6 @@ img {
     z-index: 100;
     border-bottom: 1px solid #222;
     width: 100%;
-    
     margin: 0 auto;
     max-width: 1100px;
 }
@@ -108,16 +93,20 @@ img {
     color: #fff;
     font-size: 1.5rem;
     font-weight: 700;
+    flex-shrink: 0;
 }
 .navbar-logo:hover { text-decoration: none; }
 
 .nav-menu {
     display: flex;
     list-style: none;
+    margin: 0 auto;
+    padding: 0;
 }
 
 .nav-item {
-    margin-left: 20px;
+    margin-left: 15px;
+    margin-right: 15px;
 }
 
 .nav-link {
@@ -139,9 +128,56 @@ img {
     text-shadow: 0 0 4px rgba(255, 255, 255, 0.7), 0 0 8px rgba(218, 191, 255, 0.5);
 }
 
-/* =================================== */
-/* STYLE SECTION "HÉROS" (HEADER) */
-/* =================================== */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-shrink: 0;
+}
+
+.nav-cv-button {
+    background-color: #39FF14;
+    color: #111;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-decoration: none;
+    box-shadow: 0 0 15px rgba(57, 255, 20, 0.5);
+    transition: all 0.3s ease;
+}
+.nav-cv-button:hover {
+    background-color: #fff;
+    color: #111;
+    box-shadow: 0 0 25px rgba(57, 255, 20, 0.8);
+    text-shadow: none;
+}
+
+.lang-switcher {
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid #333;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.lang-switcher button {
+    background: transparent;
+    border: none;
+    color: #ccc;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.lang-switcher button.active {
+    background-color: #00FFFF;
+    color: #111;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+}
+
 .hero-section {
     padding: 100px 0;
     text-align: left;
@@ -159,9 +195,6 @@ img {
     max-width: 700px;
 }
 
-/* =================================== */
-/* GRILLE DE PROJETS (THÈME VIOLET)     */
-/* =================================== */
 .project-grid-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr); 
@@ -226,9 +259,6 @@ img {
     gap: 15px;
 }
 
-/* =================================== */
-/* STYLE BOUTON                        */
-/* =================================== */
 .link-button {
     display: inline-block;
     padding: 10px 20px;
@@ -245,9 +275,6 @@ img {
     text-decoration: none;
 }
 
-/* =================================== */
-/* SECTION À PROPOS                    */
-/* =================================== */
 .about-container {
     display: flex;
     align-items: center;
@@ -289,10 +316,6 @@ img {
     margin-right: 8px;
 }
 
-
-/* =================================== */
-/* SECTION COMPÉTENCES                 */
-/* =================================== */
 .section-intro {
     color: #aaa;
     text-align: center;
@@ -349,10 +372,6 @@ img {
     object-fit: contain;
 }
 
-
-/* =================================== */
-/* SECTION PARCOURS (TIMELINE)         */
-/* =================================== */
 .timeline-container {
     display: flex;
     gap: 40px;
@@ -404,9 +423,6 @@ img {
     margin-bottom: 10px;
 }
 
-/* =================================== */
-/* PIED DE PAGE (CONTACT)              */
-/* =================================== */
 footer {
     border-top: 1px solid #222;
     padding: 60px 20px 30px 20px;
@@ -435,9 +451,6 @@ footer p {
     color: #777;
 }
 
-/* =================================== */
-/*   ANIMATION   FADE-IN               */
-/* =================================== */
 .animate-on-scroll {
     opacity: 0;
     transform: translateY(30px);
@@ -447,10 +460,6 @@ footer p {
     opacity: 1;
     transform: translateY(0);
 }
-
-/* =================================== */
-/* STYLES DU MENU BURGER               */
-/* =================================== */
 
 .nav-toggle {
     display: none;
@@ -484,55 +493,6 @@ footer p {
     transform: translateY(-8px) rotate(-45deg);
 }
 
-/* =================================== */
-/*           ÉTOILES FILANTES          */
-/* =================================== */
-
-body:before,
-body:after {
-    content: '';
-    position: fixed;
-    top: -100px;
-    right: 0;
-    width: 200px;
-    height: 1px;
-    background: linear-gradient(to left, rgba(148, 0, 211, 0.8), transparent);
-    transform: rotate(135deg); 
-}
-
-body:after {
-    width: 100px;
-    top: 0;
-    right: 300px;
-    background: linear-gradient(to left, rgba(218, 191, 255, 0.6), transparent);
-}
-
-@keyframes shoot-star {
-    0% {
-        transform: translate(0, 0) rotate(135deg);
-        opacity: 1;
-    }
-    80% {
-        transform: translate(-100vw, 100vh) rotate(135deg);
-        opacity: 1;
-    }
-    100% {
-        transform: translate(-100vw, 100vh) rotate(135deg);
-        opacity: 0;
-    }
-}
-
-body:before {
-    animation: shoot-star 8s linear infinite 3s;
-}
-
-body:after {
-    animation: shoot-star 5s linear infinite 5s;
-}
-
-/* =================================== */
-/*       RESPONSIVE TÉLÉPHONE          */
-/* =================================== */
 @media (max-width: 768px) {
 
     .nav-toggle {
@@ -540,6 +500,10 @@ body:after {
     }
 
     .nav-menu {
+        display: none;
+    }
+    
+    .nav-right {
         display: none;
     }
 
@@ -604,29 +568,21 @@ body:after {
     }
 }
 
-/* =================================== */
-/*          HALO DE CURSEUR            */
-/* =================================== */
 .cursor-halo {
     position: fixed;
     left: -1000px; 
     top: -1000px;
-    
-    width: 120px;
-    height: 120px;
+    width: 300px;
+    height: 300px;
     border-radius: 50%;
-    
-
     background: radial-gradient(
         circle, 
-        rgba(148, 0, 211, 0.08) 0%, 
-        transparent 60%           
+        rgba(148, 0, 211, 0.08) 0%,
+        transparent 50%
     );
-    
     transform: translate(-50%, -50%);
     pointer-events: none;
     z-index: 99;
-    
     transition: left 0.05s linear, top 0.05s linear;
 }
 
@@ -636,25 +592,19 @@ body:after {
     }
 }
 
-/* =================================== */
-/*      BARRE NÉON POUR LES TITRES     */
-/* =================================== */
 h2::after {
     content: '';
     position: absolute;
     bottom: 0; 
     left: 0;
-    
     width: 80px; 
     height: 3px;
     background-color: #DABFFF; 
-    
     box-shadow: 
         0 0 5px #DABFFF,
         0 0 10px #DABFFF,
         0 0 15px #9400D3, 
         0 0 25px #9400D3;
-    
     animation: neon-pulse 2.5s infinite alternate;
 }
 
@@ -671,10 +621,6 @@ h2::after {
             0 0 35px #9400D3;
     }
 }
-
-/* =================================== */
-/*       ANIMATION DE CHARGEMENT       */
-/* =================================== */
 
 @keyframes fadeInDown {
     from { opacity: 0; transform: translateY(-20px); }
@@ -693,9 +639,6 @@ h2::after {
     animation: fadeInUp 0.8s ease-out 0.6s backwards;
 }
 
-/* =================================== */
-/*      Centrer barre néon Footer      */
-/* =================================== */
 footer h2,
 #references h2 {
     text-align: center;
@@ -706,10 +649,6 @@ footer h2::after,
     left: 50%;
     transform: translateX(-50%);
 }
-
-/* =================================== */
-/*              À PROPOS               */
-/* =================================== */
 
 .about-grid {
     display: flex; 
@@ -743,9 +682,6 @@ footer h2::after,
     text-align: center; 
 }
 
-
-
-
 .about-info-card ul {
     list-style: none;
     display: inline-block; 
@@ -771,10 +707,8 @@ footer h2::after,
     font-size: 16px;
     line-height: 16px;
     width: 22px; 
-    
     height: 16px;
     display: inline-block;
-
     margin-right: 8px;
     border-radius: 2px;
     flex-shrink: 0; 
@@ -821,9 +755,6 @@ footer h2::after,
     gap: 10px;
 }
 
-/* =================================== */
-/*         SECTION RÉFÉRENCES          */
-/* =================================== */
 .references-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
