@@ -834,7 +834,7 @@ footer h2::after,
 
 .glitch-text::before,
 .glitch-text::after {
-    content: attr(data-key); 
+    content: 'Kamil CINAR'; 
     position: absolute;
     top: 0;
     left: 0;
