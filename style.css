@@ -826,17 +826,17 @@ footer h2::after,
 
 .reference-card {
     background-color: #121212;
-    border: 2px solid #E0C131; 
+    border: 2px solid #9400D3; 
     border-radius: 8px;
     padding: 30px;
     text-align: center;
-    box-shadow: 0 0 15px rgba(224, 193, 49, 0.4);
+    box-shadow: 0 0 15px rgba(148, 0, 211, 0.4); 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .reference-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 0 25px rgba(224, 193, 49, 0.7);
+    box-shadow: 0 0 25px rgba(148, 0, 211, 0.7);
 }
 
 .reference-card h3 {
@@ -861,7 +861,7 @@ footer h2::after,
 }
 
 .reference-card li i {
-    color: #E0C131; 
+    color: #9400D3; 
     width: 20px;
     text-align: center;
 }
@@ -873,5 +873,5 @@ footer h2::after,
 }
 
 .reference-card li a:hover {
-    color: #E0C131; 
+    color: #9400D3; 
 }
