@@ -705,10 +705,13 @@ footer h2::after,
 
 .about-info-card li .flag-icon {
     font-size: 16px;
-    line-height: 1;
-    flex-shrink: 0;
+    line-height: 16px;
+    width: 22px; 
+    height: 16px;
+    display: inline-block;
     margin-right: 8px;
     border-radius: 2px;
+    flex-shrink: 0; 
 }
 
 .about-info-card li .flag-icon::before {
