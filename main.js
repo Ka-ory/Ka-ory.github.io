@@ -1,11 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => { 
 
-    // Chemins des CV (déjà corrects)
     const cvPathFR = 'images/cv-kamil-fr.pdf';
     const cvPathEN = 'images/cv-kamil-en.pdf';
     const cvButton = document.querySelector('.nav-cv-button');
 
-    // DICTIONNAIRE MIS À JOUR
     const translations = {
         fr: {
             "nav-about": "À Propos",
@@ -49,13 +47,13 @@ document.addEventListener('DOMContentLoaded', () => {
             "about-tech-tools": "Outils & Web",
             "about-tech-seo": "Principes de SEO",
             "portfolio-title": "Portfolio",
-            "portfolio-intro": "Voici les projets sur lesquels j'ai travaillé", // MIS À JOUR
-            "project1-title": "Projet Clonage site FIFA", // MIS À JOUR
-            "project1-desc": "Clonage d'un site e-commerce. Conception de la BDD (MCD, MLD) et développement (SQL, HTML, CSS, JS).", // MIS À JOUR
-            "project1-code": "En cours ...", // NOUVELLE CLÉ
+            "portfolio-intro": "Voici les projets sur lesquels j'ai travaillé", 
+            "project1-title": "Projet Clonage site FIFA", 
+            "project1-desc": "Clonage d'un site e-commerce. Conception de la BDD (MCD, MLD) et développement (SQL, HTML, CSS, JS).", 
+            "project1-code": "En cours ...", 
             "project2-title": "Mon Portfolio",
-            "project2-desc": "Site personnel développé de zéro pour présenter mon profil, avec un design \"spatial/néon\" et des animations en JavaScript.", // MIS À JOUR
-            "project2-code": "Voir le Code", // NOUVELLE CLÉ
+            "project2-desc": "Site personnel développé de zéro pour présenter mon profil, avec un design \"spatial/néon\" et des animations en JavaScript.", 
+            "project2-code": "Voir le Code", 
             "education-title": "Formation",
             "edu1-date": "2024 - 2027 (prévu)",
             "edu1-title": "BUT Informatique - Parcours IAMSI",
@@ -125,13 +123,13 @@ document.addEventListener('DOMContentLoaded', () => {
             "about-tech-tools": "Tools & Web",
             "about-tech-seo": "SEO Principles",
             "portfolio-title": "Portfolio",
-            "portfolio-intro": "Here are the projects I have worked on.", // MIS À JOUR
-            "project1-title": "FIFA Website Clone Project", // MIS À JOUR
-            "project1-desc": "E-commerce site clone. Database design (MCD, MLD) and development (SQL, HTML, CSS, JS).", // MIS À JOUR
-            "project1-code": "In progress ...", // NOUVELLE CLÉ
+            "portfolio-intro": "Here are the projects I have worked on.", 
+            "project1-title": "FIFA Website Clone Project", 
+            "project1-desc": "E-commerce site clone. Database design (MCD, MLD) and development (SQL, HTML, CSS, JS).", 
+            "project1-code": "In progress ...", 
             "project2-title": "My Portfolio",
-            "project2-desc": "Personal website built from scratch to showcase my profile, with a \"space/neon\" design and JavaScript animations.", // MIS À JOUR
-            "project2-code": "View Code", // NOUVELLE CLÉ
+            "project2-desc": "Personal website built from scratch to showcase my profile, with a \"space/neon\" design and JavaScript animations.", 
+            "project2-code": "View Code", 
             "education-title": "Education",
             "edu1-date": "2024 - 2027 (expected)",
             "edu1-title": "University Diploma in Computer Science - IAMSI Path",
