@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => { 
 
+    // Chemins des CV (déjà corrects)
     const cvPathFR = 'images/cv-kamil-fr.pdf';
     const cvPathEN = 'images/cv-kamil-en.pdf';
-    
     const cvButton = document.querySelector('.nav-cv-button');
 
-
+    // DICTIONNAIRE MIS À JOUR
     const translations = {
         fr: {
             "nav-about": "À Propos",
@@ -49,12 +49,13 @@ document.addEventListener('DOMContentLoaded', () => {
             "about-tech-tools": "Outils & Web",
             "about-tech-seo": "Principes de SEO",
             "portfolio-title": "Portfolio",
-            "portfolio-intro": "Voici les projets sur lesquels j'ai travaillé.",
-            "project1-title": "[Nom Projet BUT2]",
-            "project1-desc": "[Description : Projet universitaire... Objectif ? Mon rôle ? Résultat ?]",
-            "project-code": "Voir le Code",
+            "portfolio-intro": "Voici les projets sur lesquels j'ai travaillé", // MIS À JOUR
+            "project1-title": "Projet Clonage site FIFA", // MIS À JOUR
+            "project1-desc": "Clonage d'un site e-commerce. Conception de la BDD (MCD, MLD) et développement (SQL, HTML, CSS, JS).", // MIS À JOUR
+            "project1-code": "En cours ...", // NOUVELLE CLÉ
             "project2-title": "Mon Portfolio",
-            "project2-desc": "Site personnel développé de zéro pour présenter mon profil, avec un design \"cyberpunk\" et des animations en JavaScript.",
+            "project2-desc": "Site personnel développé de zéro pour présenter mon profil, avec un design \"spatial/néon\" et des animations en JavaScript.", // MIS À JOUR
+            "project2-code": "Voir le Code", // NOUVELLE CLÉ
             "education-title": "Formation",
             "edu1-date": "2024 - 2027 (prévu)",
             "edu1-title": "BUT Informatique - Parcours IAMSI",
@@ -124,12 +125,13 @@ document.addEventListener('DOMContentLoaded', () => {
             "about-tech-tools": "Tools & Web",
             "about-tech-seo": "SEO Principles",
             "portfolio-title": "Portfolio",
-            "portfolio-intro": "Here are the projects I have worked on.",
-            "project1-title": "[BUT2 Project Name]",
-            "project1-desc": "[Description: University project... Objective? My role? Outcome?]",
-            "project-code": "View Code",
+            "portfolio-intro": "Here are the projects I have worked on.", // MIS À JOUR
+            "project1-title": "FIFA Website Clone Project", // MIS À JOUR
+            "project1-desc": "E-commerce site clone. Database design (MCD, MLD) and development (SQL, HTML, CSS, JS).", // MIS À JOUR
+            "project1-code": "In progress ...", // NOUVELLE CLÉ
             "project2-title": "My Portfolio",
-            "project2-desc": "Personal website built from scratch to showcase my profile and projects, featuring a \"cyberpunk\" design and JavaScript animations.",
+            "project2-desc": "Personal website built from scratch to showcase my profile, with a \"space/neon\" design and JavaScript animations.", // MIS À JOUR
+            "project2-code": "View Code", // NOUVELLE CLÉ
             "education-title": "Education",
             "edu1-date": "2024 - 2027 (expected)",
             "edu1-title": "University Diploma in Computer Science - IAMSI Path",
@@ -187,10 +189,8 @@ document.addEventListener('DOMContentLoaded', () => {
     langFrButton.addEventListener('click', () => setLanguage('fr'));
     langEnButton.addEventListener('click', () => setLanguage('en'));
 
-    // On charge la langue au démarrage (et ça met à jour le CV)
     const savedLang = localStorage.getItem('language') || 'fr';
     setLanguage(savedLang);
-
 
     const canvas = document.getElementById('starfield');
     
@@ -224,7 +224,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const drawStaticStars = () => {
             stars.forEach(star => {
                 star.opacity = star.baseOpacity + Math.sin(time * star.twinkleSpeed) * (star.baseOpacity * 0.5);
-
                 ctx.fillStyle = `rgba(218, 191, 255, ${star.opacity})`;
                 ctx.beginPath();
                 ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
@@ -245,21 +244,16 @@ document.addEventListener('DOMContentLoaded', () => {
         const drawShootingStars = () => {
             for (let i = shootingStars.length - 1; i >= 0; i--) {
                 const s = shootingStars[i];
-
                 s.x -= s.speed;
                 s.y += s.speed * 0.7;
-
                 if (s.x < -s.length || s.y > canvas.height + s.length) {
                     shootingStars.splice(i, 1);
                     continue;
                 }
-
-                
                 const gradient = ctx.createLinearGradient(s.x, s.y, s.x + s.length, s.y - s.length * 0.7);
                 const opacity = 1 - (s.x / (canvas.width * 1.5)); 
                 gradient.addColorStop(0, `rgba(218, 191, 255, ${opacity * 0.8})`);
                 gradient.addColorStop(1, `transparent`);
-
                 ctx.strokeStyle = gradient;
                 ctx.lineWidth = s.size;
                 ctx.beginPath();
@@ -272,10 +266,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const animate = () => {
             time++; 
             ctx.clearRect(0, 0, canvas.width, canvas.height); 
-            
             drawStaticStars();    
             drawShootingStars();  
-            
             requestAnimationFrame(animate); 
         };
         
@@ -297,7 +289,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-
     const elementsToAnimate = document.querySelectorAll('.animate-on-scroll');
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -313,18 +304,15 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(element);
     });
 
-
     const sections = document.querySelectorAll('#accueil, #apropos, #portfolio, #formation, #experience, #references, #contact');
     const navLinks = document.querySelectorAll('.nav-menu a');
 
     const onScroll = () => {
         const scrollY = window.pageYOffset;
-
         sections.forEach(current => {
             const sectionHeight = current.offsetHeight;
             const sectionTop = current.offsetTop - 70; 
             const sectionId = current.getAttribute('id');
-
             if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
                 const activeLink = document.querySelector(`.nav-menu a[href='#${sectionId}']`);
                 navLinks.forEach(link => link.classList.remove('active'));
@@ -335,7 +323,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
     window.addEventListener('scroll', onScroll);
-
     
     const navToggle = document.querySelector('.nav-toggle');
     const navMenu = document.querySelector('.mobile-nav');
@@ -346,9 +333,7 @@ document.addEventListener('DOMContentLoaded', () => {
             navToggle.classList.toggle('is-active');
             navMenu.classList.toggle('is-active');
         };
-
         navToggle.addEventListener('click', toggleMenu);
-
         navLinksMobile.forEach(link => {
             link.addEventListener('click', () => {
                 if (navMenu.classList.contains('is-active')) {
@@ -357,7 +342,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
-
 
     const halo = document.querySelector('.cursor-halo');
     if (halo) {
@@ -368,5 +352,4 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
-
 });
