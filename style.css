@@ -822,7 +822,7 @@ footer h2::after,
 
 .glitch-text {
     position: relative;
-    color: #ffffff;
+    color: transparent;
     text-shadow: 
         0 0 5px #DABFFF,
         0 0 10px #DABFFF,
