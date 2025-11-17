@@ -97,13 +97,13 @@ img {
 .nav-menu {
     display: flex;
     list-style: none;
-    margin: 0 auto;
+    flex-grow: 1; 
+    justify-content: space-evenly; 
     padding: 0;
 }
 
 .nav-item {
-    margin-left: 15px;
-    margin-right: 15px;
+   
 }
 
 .nav-link {
