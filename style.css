@@ -768,9 +768,15 @@ footer h2::after,
 }
 
 .about-info-card li .flag-icon {
-    font-size: 1.1em;    
+    width: 22px;  
+    height: 16px; 
     margin-right: 8px;   
     border-radius: 2px;
+    
+    background-size: cover; 
+    background-position: center;
+    
+    flex-shrink: 0;
 }
 
 .about-info-card li .flag-icon::before {
