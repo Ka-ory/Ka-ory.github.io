@@ -24,7 +24,7 @@ html {
 body {
     font-family: 'Inter', -apple-system, sans-serif;
     line-height: 1.6;
-    background-color: rgba(10, 10, 10, 0.9); 
+    background-color: transparent;
     color: #cccccc;
     position: relative;
     overflow-x: hidden;
