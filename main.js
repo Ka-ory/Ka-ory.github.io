@@ -2,7 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const cvPathFR = 'images/cv-kamil-fr.pdf';
     const cvPathEN = 'images/cv-kamil-en.pdf';
-    const cvButton = document.querySelector('.nav-cv-button');
+    
+    const cvButtons = document.querySelectorAll('.nav-cv-button');
 
     // --- TRADUCTIONS ---
     const translations = {
@@ -35,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "about-lang-3a": "Espagnol :",
             "about-lang-3b": "Pré-Intermédiaire (A2)",
             "about-lang-4a": "Japonais :",
-            "about-lang-4b": "Débutant (A0)",
+            "about-lang-4b": "Débutant (A0)", 
             "about-lang-5a": "Turc :",
             "about-lang-5b": "Bilingue (C2)",
             "about-soft-title": "Compétences Générales",
@@ -48,16 +49,25 @@ document.addEventListener('DOMContentLoaded', () => {
             "about-tech-back": "Backend",
             "about-tech-tools": "Outils & Web",
             "about-tech-seo": "Principes de SEO",
+
+            "lbl-date": "Date",
+            "lbl-context": "Contexte",
+            "lbl-role": "Rôle",
+            "lbl-status": "Statut",
+            "status-wip": "En cours",
+            "status-done": "Terminé",
+
             "portfolio-title": "Portfolio",
-            "portfolio-intro": "Voici les projets sur lesquels j'ai travaillé", 
+            "portfolio-intro": "Voici les projets sur lesquels j'ai travaillé, présentés sous forme de cas d'études.", 
             "project1-title": "Projet Clonage site FIFA", 
-            "project1-desc": "Développement d'un clone du site de la FIFA pour apprendre l'architecture web. J'ai utilisé <strong>HTML5/CSS3</strong> pour la structure et <strong>JavaScript</strong> pour le dynamisme. La base de données a été conçue en <strong>SQL</strong>.", 
+            "project1-desc": "Développement d'un clone du site officiel pour étudier l'architecture web moderne et le responsive design.", 
             "project1-code": "En cours ...", 
             "project2-title": "Mon Portfolio",
-            "project2-desc": "Conception de ce site vitrine (le site actuel) pour présenter mes compétences. J'ai intégré des animations avec <strong>Canvas JS</strong> et un système multilingue en <strong>JavaScript vanilla</strong>.", 
+            "project2-desc": "Conception de ce site vitrine interactif, multilingue et animé pour présenter mes compétences.", 
             "project2-code": "Voir le Code",
-            "project3-title": "Application de gestion (Loxam)",
-            "project3-desc": "Création d'un ERP lourd pour la gestion de location de matériel. Développé en <strong>C#</strong> avec le framework <strong>.NET (WPF)</strong> et connecté à une base de données MySQL.",
+            "project3-title": "App Gestion (Loxam)",
+            "project3-desc": "Création d'un ERP lourd pour la gestion de location de matériel et de stocks.",
+            
             "education-title": "Formation",
             "edu1-date": "2024 - 2027 (prévu)",
             "edu1-title": "BUT Informatique - Parcours IAMSI",
@@ -127,16 +137,25 @@ document.addEventListener('DOMContentLoaded', () => {
             "about-tech-back": "Backend",
             "about-tech-tools": "Tools & Web",
             "about-tech-seo": "SEO Principles",
+
+            "lbl-date": "Date",
+            "lbl-context": "Context",
+            "lbl-role": "Role",
+            "lbl-status": "Status",
+            "status-wip": "In Progress",
+            "status-done": "Finished",
+
             "portfolio-title": "Portfolio",
-            "portfolio-intro": "Here are the projects I have worked on.", 
+            "portfolio-intro": "Here are the projects I have worked on, presented as case studies.", 
             "project1-title": "FIFA Website Clone Project", 
-            "project1-desc": "Development of a FIFA website clone to learn web architecture. Used <strong>HTML5/CSS3</strong> for structure and <strong>JavaScript</strong> for dynamism. Database designed in <strong>SQL</strong>.", 
+            "project1-desc": "Development of a FIFA website clone to learn web architecture. Used <strong>HTML5/CSS3</strong> for structure and <strong>JavaScript</strong> for dynamism.", 
             "project1-code": "In progress ...", 
             "project2-title": "My Portfolio",
             "project2-desc": "Designed this portfolio (current site) to showcase my skills. Integrated <strong>Canvas JS</strong> animations and a vanilla <strong>JavaScript</strong> multilingual system.", 
             "project2-code": "View Code",
-            "project3-title": "Management Application (Loxam)",
-            "project3-desc": "Creation of a heavy ERP for equipment rental management. Developed in <strong>C#</strong> with <strong>.NET (WPF)</strong> framework and connected to a MySQL database.",
+            "project3-title": "Management App (Loxam)",
+            "project3-desc": "Creation of a heavy ERP for equipment rental management and stock control.",
+            
             "education-title": "Education",
             "edu1-date": "2024 - 2027 (expected)",
             "edu1-title": "University Diploma in Computer Science - IAMSI Path",
@@ -166,8 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    const langFrButton = document.getElementById('lang-fr');
-    const langEnButton = document.getElementById('lang-en');
+    const langButtons = document.querySelectorAll('button[id^="lang-"], .lang-btn-mobile');
     const skillsFr = document.getElementById('skills-content-fr');
     const skillsEn = document.getElementById('skills-content-en');
 
@@ -175,25 +193,27 @@ document.addEventListener('DOMContentLoaded', () => {
         document.documentElement.lang = lang;
         localStorage.setItem('language', lang);
         
+        cvButtons.forEach(btn => btn.href = (lang === 'en') ? cvPathEN : cvPathFR);
+
+        langButtons.forEach(btn => {
+            const langCode = btn.id ? btn.id.split('-')[1] : btn.getAttribute('data-lang');
+            if (langCode === lang) {
+                btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
+            }
+        });
+
+       
         if (lang === 'en') {
-            langFrButton.classList.remove('active');
-            langEnButton.classList.add('active');
-            if (cvButton) cvButton.href = cvPathEN;
-            
-            // Afficher Skills EN
             if(skillsFr) skillsFr.style.display = 'none';
             if(skillsEn) skillsEn.style.display = 'grid';
-
         } else {
-            langEnButton.classList.remove('active');
-            langFrButton.classList.add('active');
-            if (cvButton) cvButton.href = cvPathFR;
-
-            // Afficher Skills FR
             if(skillsFr) skillsFr.style.display = 'grid';
             if(skillsEn) skillsEn.style.display = 'none';
         }
 
+     
         document.querySelectorAll('[data-key]').forEach(element => {
             const key = element.getAttribute('data-key');
             if (translations[lang] && translations[lang][key]) {
@@ -202,19 +222,22 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    langFrButton.addEventListener('click', () => setLanguage('fr'));
-    langEnButton.addEventListener('click', () => setLanguage('en'));
+    langButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const lang = e.target.id ? e.target.id.split('-')[1] : e.target.getAttribute('data-lang');
+            setLanguage(lang);
+        });
+    });
 
     const savedLang = localStorage.getItem('language') || 'fr';
     setLanguage(savedLang);
 
-    // --- FILTRAGE PORTFOLIO ---
+  
     const filterButtons = document.querySelectorAll('.filter-btn');
     const projectCards = document.querySelectorAll('.project-card');
 
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
-            // Gestion de la classe active
             filterButtons.forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
 
@@ -222,10 +245,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             projectCards.forEach(card => {
                 const category = card.getAttribute('data-category');
-                
                 if (filterValue === 'all' || category === filterValue) {
                     card.style.display = 'block';
-                    // Petite animation d'apparition
                     card.style.animation = 'fadeInUp 0.5s ease forwards';
                 } else {
                     card.style.display = 'none';
@@ -234,7 +255,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- STARFIELD & ANIMATIONS (Le reste de ton code original) ---
+    // --- STARFIELD ---
     const canvas = document.getElementById('starfield');
     
     if (canvas) {
@@ -251,7 +272,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const createStaticStars = () => {
             stars = []; 
             const starCount = 250; 
-
             for (let i = 0; i < starCount; i++) {
                 stars.push({
                     x: Math.random() * canvas.width,
@@ -316,12 +336,10 @@ document.addEventListener('DOMContentLoaded', () => {
         
         setCanvasSize();
         createStaticStars();
-        
         const spawnShootingStar = () => {
             createShootingStar();
             setTimeout(spawnShootingStar, Math.random() * 5000 + 2000); 
         };
-        
         animate();
         spawnShootingStar(); 
    
@@ -332,6 +350,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Scroll Observer
     const elementsToAnimate = document.querySelectorAll('.animate-on-scroll');
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -340,33 +359,29 @@ document.addEventListener('DOMContentLoaded', () => {
                 observer.unobserve(entry.target);
             }
         });
-    }, {
-        threshold: 0.1
-    });
-    elementsToAnimate.forEach(element => {
-        observer.observe(element);
-    });
+    }, { threshold: 0.1 });
+    elementsToAnimate.forEach(element => observer.observe(element));
 
-    const sections = document.querySelectorAll('#accueil, #apropos, #portfolio, #formation, #experience, #references, #contact');
+   
+    const sections = document.querySelectorAll('section'); 
     const navLinks = document.querySelectorAll('.nav-menu a');
 
     const onScroll = () => {
         const scrollY = window.pageYOffset;
         sections.forEach(current => {
             const sectionHeight = current.offsetHeight;
-            const sectionTop = current.offsetTop - 70; 
+            const sectionTop = current.offsetTop - 100; 
             const sectionId = current.getAttribute('id');
             if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
                 const activeLink = document.querySelector(`.nav-menu a[href='#${sectionId}']`);
                 navLinks.forEach(link => link.classList.remove('active'));
-                if (activeLink) {
-                    activeLink.classList.add('active');
-                }
+                if (activeLink) activeLink.classList.add('active');
             }
         });
     };
     window.addEventListener('scroll', onScroll);
     
+
     const navToggle = document.querySelector('.nav-toggle');
     const navMenu = document.querySelector('.mobile-nav');
     const navLinksMobile = document.querySelectorAll('.mobile-nav .nav-link');
@@ -375,8 +390,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const toggleMenu = () => {
             navToggle.classList.toggle('is-active');
             navMenu.classList.toggle('is-active');
+            document.body.style.overflow = navMenu.classList.contains('is-active') ? 'hidden' : ''; 
         };
         navToggle.addEventListener('click', toggleMenu);
+        
         navLinksMobile.forEach(link => {
             link.addEventListener('click', () => {
                 if (navMenu.classList.contains('is-active')) {
