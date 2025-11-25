@@ -33,7 +33,7 @@
             </ul>
 
             <div class="nav-right">
-                <a href="[LIEN-CV.PDF]" class="nav-cv-button" target="_blank" rel="noopener noreferrer" data-key="nav-cv">Télécharger mon CV</a>
+                <a href="images/cv-kamil-fr.pdf" class="nav-cv-button" target="_blank" rel="noopener noreferrer" data-key="nav-cv">Télécharger mon CV</a>
                 <div class="lang-switcher">
                     <button id="lang-fr" class="active">FR</button>
                     <button id="lang-en">EN</button>
@@ -60,7 +60,6 @@
                     <ul>
                         <li><i class="fas fa-calendar-alt"></i> <span data-key="about-info-age">1 Mai 2006 (19ans)</span></li>
                         <li><i class="fas fa-envelope"></i> kamil.cinarpro@gmail.com</li>
-                        <li><i class="fas fa-envelope"></i> kamil.cinar@etu.univ-smb.fr</li>
                         <li><i class="fas fa-phone"></i> 06 23 35 91 09</li>
                         <li><i class="fas fa-map-marker-alt"></i> <span data-key="about-info-location">Annecy (74), France</span></li>
                         <li><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/kamilcinar/" target="_blank" rel="noopener noreferrer" data-key="about-info-linkedin">Kamil CINAR</a></li>
@@ -101,7 +100,8 @@
             </div>
             
             <h3 class="subsection-title" data-key="about-tech-title">Compétences Techniques</h3>
-            <div class="skills-grid">
+            
+            <div id="skills-content-fr" class="skills-grid">
                 <div class="skill-category-card">
                     <h4 data-key="about-tech-front">Frontend</h4>
                     <ul>
@@ -129,42 +129,90 @@
                     </ul>
                 </div>
             </div>
+
+            <div id="skills-content-en" class="skills-en-container" style="display: none;">
+                <div class="skill-en-card">
+                    <h4>LANGUAGES & DB</h4>
+                    <div class="progress-item">
+                        <div class="progress-info"><span>C#</span><span>80%</span></div>
+                        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 80%;"></div></div>
+                    </div>
+                    <div class="progress-item">
+                        <div class="progress-info"><span>HTML/CSS, JS, PHP</span><span>70%</span></div>
+                        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 70%;"></div></div>
+                    </div>
+                    <div class="progress-item">
+                        <div class="progress-info"><span>SQL</span><span>75%</span></div>
+                        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 75%;"></div></div>
+                    </div>
+                    <div class="progress-item">
+                        <div class="progress-info"><span>Python</span><span>50%</span></div>
+                        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 50%;"></div></div>
+                    </div>
+                </div>
+                <div class="skill-en-card">
+                    <h4>TOOLS & SYSTEMS</h4>
+                    <div class="tools-grid">
+                        <span class="tool-tag">Linux Debian</span>
+                        <span class="tool-tag">Git / GitHub</span>
+                        <span class="tool-tag">VS Code / Visual Studio</span>
+                        <span class="tool-tag">Visual Paradigm</span>
+                        <span class="tool-tag">PowerAMC</span>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section id="portfolio" class="animate-on-scroll">
             <h2 data-key="portfolio-title">Portfolio</h2>
             <p class="section-intro" data-key="portfolio-intro">Voici les projets sur lesquels j'ai travaillé</p>
+            
+            <div class="portfolio-filters">
+                <button class="filter-btn active" data-filter="all">Tous</button>
+                <button class="filter-btn" data-filter="web">Web</button>
+                <button class="filter-btn" data-filter="app">Logiciel</button>
+            </div>
+
             <div class="project-grid-container">
-                <article class="project-card">
+                <article class="project-card" data-category="web">
                     <div class="project-image-placeholder">
                         <img src="images/fifa.png" alt="Aperçu Projet BUT2">
                     </div>
                     <div class="project-card-content">
+                        <div class="project-meta">
+                            <span class="meta-date">2024</span> • <span class="meta-context">Projet Universitaire (BUT2)</span>
+                        </div>
                         <h3 data-key="project1-title">Projet Clonage site FIFA</h3>
-                        <p data-key="project1-desc">Clonage d'un site e-commerce. Conception de la BDD (MCD, MLD) et développement (SQL, HTML, CSS, JS).</p>
+                        <p data-key="project1-desc">
+                            Développement d'un clone du site de la FIFA pour apprendre l'architecture web. J'ai utilisé <strong>HTML5/CSS3</strong> pour la structure et <strong>JavaScript</strong> pour le dynamisme. La base de données a été conçue en <strong>SQL</strong>.
+                        </p>
                         <div class="tags">
-                            <span>HTML</span>
-                            <span>CSS</span>
+                            <span>HTML/CSS</span>
                             <span>JS</span>
                             <span>SQL</span>
                         </div>
                         <div class="project-links">
-                            <a href="[LIEN GITHUB]" target="_blank" rel="noopener noreferrer" class="link-button" data-key="project1-code">En cours ...</a>
+                            <a href="#" class="link-button" data-key="project1-code">En cours ...</a>
                         </div>
                     </div>
                 </article>
 
-                <article class="project-card">
+                <article class="project-card" data-category="web">
                     <div class="project-image-placeholder">
                         <img src="images/portfolio.png" alt="Aperçu de ce portfolio">
                     </div>
                     <div class="project-card-content">
+                        <div class="project-meta">
+                            <span class="meta-date">2025</span> • <span class="meta-context">Projet Personnel</span>
+                        </div>
                         <h3 data-key="project2-title">Mon Portfolio</h3>
-                        <p data-key="project2-desc">Site personnel développé de zéro pour présenter mon profil, avec un design "spatial/néon" et des animations en JavaScript.</p>
+                        <p data-key="project2-desc">
+                            Conception de ce site vitrine (le site actuel) pour présenter mes compétences. J'ai intégré des animations avec <strong>Canvas JS</strong> et un système multilingue en <strong>JavaScript vanilla</strong>.
+                        </p>
                         <div class="tags">
                             <span>HTML5</span>
                             <span>CSS3</span>
-                            <span>JavaScript (Canvas)</span>
+                            <span>JS (Canvas)</span>
                         </div>
                         <div class="project-links">
                             <a href="https://github.com/Ka-ory/Ka-ory.github.io" target="_blank" rel="noopener noreferrer" class="link-button" data-key="project2-code">Voir le Code</a>
@@ -172,20 +220,25 @@
                     </div>
                 </article>
 
-                <article class="project-card">
+                <article class="project-card" data-category="app">
                     <div class="project-image-placeholder">
-                        <img src="loxam.png" alt="Aperçu Application Loxam">
+                        <img src="images/loxam.png" alt="Aperçu Application Loxam">
                     </div>
                     <div class="project-card-content">
+                        <div class="project-meta">
+                            <span class="meta-date">2024</span> • <span class="meta-context">Projet de groupe</span>
+                        </div>
                         <h3 data-key="project3-title">Application de gestion (Loxam)</h3>
-                        <p data-key="project3-desc">Application C# (WinForms/WPF) de gestion pour Loxam, connectée à une base de données. Réalisé en binôme.</p>
+                        <p data-key="project3-desc">
+                            Création d'un ERP lourd pour la gestion de location de matériel. Développé en <strong>C#</strong> avec le framework <strong>.NET (WPF)</strong> et connecté à une base de données MySQL.
+                        </p>
                         <div class="tags">
                             <span>C#</span>
+                            <span>.NET / WPF</span>
                             <span>SQL</span>
-                            <span>WinForms / WPF</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/KaoryPrime/Sae-de-fou-" target="_blank" rel="noopener noreferrer" class="link-button" data-key="project-code">Voir le Code</a>
+                            <a href="https://github.com/KaoryPrime/Sae-de-fou-" target="_blank" rel="noopener noreferrer" class="link-button" data-key="project3-code">Voir le Code</a>
                         </div>
                     </div>
                 </article>
@@ -236,7 +289,6 @@
         <section id="references" class="animate-on-scroll">
             <h2 data-key="ref-title">Références</h2>
             <div class="references-grid">
-                
                 <div class="reference-card">
                     <h3 data-key="ref1-name">Pascal COLIN</h3>
                     <ul>
@@ -271,6 +323,5 @@
     </main>
 
     <script src="main.js" defer></script>
-
 </body>
 </html>
