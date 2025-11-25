@@ -18,22 +18,34 @@
     <nav class="navbar">
         <div class="navbar-container">
             <a href="#accueil" class="navbar-logo">Kamil CINAR</a>
+            
             <button class="nav-toggle" aria-label="Ouvrir le menu">
                 <span class="burger-bar"></span>
                 <span class="burger-bar"></span>
                 <span class="burger-bar"></span>
             </button>
-            <ul class="nav-menu mobile-nav">
-                <li class="nav-item"><a href="#apropos" class="nav-link" data-key="nav-about">À Propos</a></li>
-                <li class="nav-item"><a href="#portfolio" class="nav-link" data-key="nav-portfolio">Portfolio</a></li>
-                <li class="nav-item"><a href="#formation" class="nav-link" data-key="nav-education">Formation</a></li>
-                <li class="nav-item"><a href="#experience" class="nav-link" data-key="nav-experience">Expérience</a></li>
-                <li class="nav-item"><a href="#references" class="nav-link" data-key="nav-references">Références</a></li>
-                <li class="nav-item"><a href="#contact" class="nav-link" data-key="nav-contact">Contact</a></li>
-            </ul>
 
-            <div class="nav-right">
-                <a href="images/cv-kamil-fr.pdf" class="nav-cv-button" target="_blank" rel="noopener noreferrer" data-key="nav-cv">Télécharger mon CV</a>
+            <div class="nav-menu mobile-nav">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="#apropos" class="nav-link" data-key="nav-about">À Propos</a></li>
+                    <li class="nav-item"><a href="#portfolio" class="nav-link" data-key="nav-portfolio">Portfolio</a></li>
+                    <li class="nav-item"><a href="#formation" class="nav-link" data-key="nav-education">Formation</a></li>
+                    <li class="nav-item"><a href="#experience" class="nav-link" data-key="nav-experience">Expérience</a></li>
+                    <li class="nav-item"><a href="#references" class="nav-link" data-key="nav-references">Références</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link" data-key="nav-contact">Contact</a></li>
+                </ul>
+
+                <div class="mobile-extras">
+                    <a href="images/cv-kamil-fr.pdf" class="nav-cv-button mobile-cv-btn" target="_blank" data-key="nav-cv">Télécharger CV</a>
+                    <div class="lang-switcher">
+                        <button class="lang-btn-mobile" data-lang="fr">FR</button>
+                        <button class="lang-btn-mobile" data-lang="en">EN</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="nav-right nav-right-pc">
+                <a href="images/cv-kamil-fr.pdf" class="nav-cv-button desktop-cv-btn" target="_blank" rel="noopener noreferrer" data-key="nav-cv">Télécharger mon CV</a>
                 <div class="lang-switcher">
                     <button id="lang-fr" class="active">FR</button>
                     <button id="lang-en">EN</button>
@@ -116,7 +128,7 @@
                     <ul>
                         <li><img src="images/python.png" alt="Python Logo"> Python</li>
                         <li><img src="images/php.png" alt="PHP Logo"> PHP</li>
-                        <li><img src="images/sql.png" alt="SQL Logo"> SQL (MySQL)</li>
+                        <li><img src="images/sql.png" alt="SQL Logo"> PostgreSQL</li>
                         <li><img src="images/wordpress.png" alt="WordPress Logo"> WordPress</li>
                     </ul>
                 </div>
@@ -142,7 +154,7 @@
                         <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 70%;"></div></div>
                     </div>
                     <div class="progress-item">
-                        <div class="progress-info"><span>SQL</span><span>75%</span></div>
+                        <div class="progress-info"><span>PostgreSQL</span><span>75%</span></div>
                         <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 75%;"></div></div>
                     </div>
                     <div class="progress-item">
@@ -165,7 +177,7 @@
 
         <section id="portfolio" class="animate-on-scroll">
             <h2 data-key="portfolio-title">Portfolio</h2>
-            <p class="section-intro" data-key="portfolio-intro">Voici les projets sur lesquels j'ai travaillé</p>
+            <p class="section-intro" data-key="portfolio-intro">Voici les projets sur lesquels j'ai travaillé, présentés sous forme de cas d'études.</p>
             
             <div class="portfolio-filters">
                 <button class="filter-btn active" data-filter="all">Tous</button>
@@ -174,75 +186,124 @@
             </div>
 
             <div class="project-grid-container">
+                
                 <article class="project-card" data-category="web">
                     <div class="project-image-placeholder">
-                        <img src="images/fifa.png" alt="Aperçu Projet BUT2">
+                        <img src="images/fifa.png" alt="Projet FIFA">
                     </div>
                     <div class="project-card-content">
-                        <div class="project-meta">
-                            <span class="meta-date">2024</span> • <span class="meta-context">Projet Universitaire (BUT2)</span>
-                        </div>
                         <h3 data-key="project1-title">Projet Clonage site FIFA</h3>
-                        <p data-key="project1-desc">
-                            Développement d'un clone du site de la FIFA pour apprendre l'architecture web. J'ai utilisé <strong>HTML5/CSS3</strong> pour la structure et <strong>JavaScript</strong> pour le dynamisme. La base de données a été conçue en <strong>SQL</strong>.
-                        </p>
-                        <div class="tags">
-                            <span>HTML/CSS</span>
-                            <span>JS</span>
-                            <span>SQL</span>
+                        
+                        <div class="project-specs">
+                            <div class="spec-col">
+                                <span class="spec-lbl" data-key="lbl-date">Date</span>
+                                <span class="spec-val">2024</span>
+                            </div>
+                            <div class="spec-col">
+                                <span class="spec-lbl" data-key="lbl-context">Contexte</span>
+                                <span class="spec-val">Universitaire (BUT2)</span>
+                            </div>
+                            <div class="spec-col">
+                                <span class="spec-lbl" data-key="lbl-role">Rôle</span>
+                                <span class="spec-val">Fullstack Dev</span>
+                            </div>
+                            <div class="spec-col">
+                                <span class="spec-lbl" data-key="lbl-status">Statut</span>
+                                <span class="spec-val st-active"><span class="dot"></span><span data-key="status-wip">En cours</span></span>
+                            </div>
+                            <div class="spec-col spec-full">
+                                <span class="spec-lbl">Technos</span>
+                                <span class="spec-val">HTML5, CSS3, JS, PHP, SQL</span>
+                            </div>
                         </div>
+
+                        <p data-key="project1-desc">
+                            Développement d'un clone du site officiel pour étudier l'architecture web moderne et le responsive design.
+                        </p>
                         <div class="project-links">
-                            <a href="#" class="link-button" data-key="project1-code">En cours ...</a>
+                            <a href="#" class="link-button disabled" data-key="project1-code">Code bientôt dispo</a>
                         </div>
                     </div>
                 </article>
 
                 <article class="project-card" data-category="web">
                     <div class="project-image-placeholder">
-                        <img src="images/portfolio.png" alt="Aperçu de ce portfolio">
+                        <img src="images/portfolio.png" alt="Projet Portfolio">
                     </div>
                     <div class="project-card-content">
-                        <div class="project-meta">
-                            <span class="meta-date">2025</span> • <span class="meta-context">Projet Personnel</span>
-                        </div>
                         <h3 data-key="project2-title">Mon Portfolio</h3>
-                        <p data-key="project2-desc">
-                            Conception de ce site vitrine (le site actuel) pour présenter mes compétences. J'ai intégré des animations avec <strong>Canvas JS</strong> et un système multilingue en <strong>JavaScript vanilla</strong>.
-                        </p>
-                        <div class="tags">
-                            <span>HTML5</span>
-                            <span>CSS3</span>
-                            <span>JS (Canvas)</span>
+
+                        <div class="project-specs">
+                            <div class="spec-col">
+                                <span class="spec-lbl" data-key="lbl-date">Date</span>
+                                <span class="spec-val">2025</span>
+                            </div>
+                            <div class="spec-col">
+                                <span class="spec-lbl" data-key="lbl-context">Contexte</span>
+                                <span class="spec-val">Projet Personnel</span>
+                            </div>
+                            <div class="spec-col">
+                                <span class="spec-lbl" data-key="lbl-role">Rôle</span>
+                                <span class="spec-val">Frontend / UI</span>
+                            </div>
+                            <div class="spec-col">
+                                <span class="spec-lbl" data-key="lbl-status">Statut</span>
+                                <span class="spec-val st-done"><span class="dot"></span><span data-key="status-done">Terminé</span></span>
+                            </div>
+                            <div class="spec-col spec-full">
+                                <span class="spec-lbl">Technos</span>
+                                <span class="spec-val">HTML5, CSS3, Canvas JS</span>
+                            </div>
                         </div>
+
+                        <p data-key="project2-desc">
+                            Conception de ce site vitrine interactif, multilingue et animé pour présenter mes compétences.
+                        </p>
                         <div class="project-links">
-                            <a href="https://github.com/Ka-ory/Ka-ory.github.io" target="_blank" rel="noopener noreferrer" class="link-button" data-key="project2-code">Voir le Code</a>
+                            <a href="https://github.com/Ka-ory/Ka-ory.github.io" target="_blank" class="link-button" data-key="project2-code">Voir le Code</a>
                         </div>
                     </div>
                 </article>
 
                 <article class="project-card" data-category="app">
                     <div class="project-image-placeholder">
-                        <img src="images/loxam.png" alt="Aperçu Application Loxam">
+                        <img src="images/loxam.png" alt="Application Loxam">
                     </div>
                     <div class="project-card-content">
-                        <div class="project-meta">
-                            <span class="meta-date">2024</span> • <span class="meta-context">Projet de groupe</span>
+                        <h3 data-key="project3-title">App Gestion (Loxam)</h3>
+
+                        <div class="project-specs">
+                            <div class="spec-col">
+                                <span class="spec-lbl" data-key="lbl-date">Date</span>
+                                <span class="spec-val">2024</span>
+                            </div>
+                            <div class="spec-col">
+                                <span class="spec-lbl" data-key="lbl-context">Contexte</span>
+                                <span class="spec-val">Projet de Groupe</span>
+                            </div>
+                            <div class="spec-col">
+                                <span class="spec-lbl" data-key="lbl-role">Rôle</span>
+                                <span class="spec-val">Backend C#</span>
+                            </div>
+                            <div class="spec-col">
+                                <span class="spec-lbl" data-key="lbl-status">Statut</span>
+                                <span class="spec-val st-done"><span class="dot"></span><span data-key="status-done">Terminé</span></span>
+                            </div>
+                            <div class="spec-col spec-full">
+                                <span class="spec-lbl">Technos</span>
+                                <span class="spec-val">C#, .NET (WPF), MySQL</span>
+                            </div>
                         </div>
-                        <h3 data-key="project3-title">Application de gestion (Loxam)</h3>
+
                         <p data-key="project3-desc">
-                            Création d'un ERP lourd pour la gestion de location de matériel. Développé en <strong>C#</strong> avec le framework <strong>.NET (WPF)</strong> et connecté à une base de données MySQL.
+                            Création d'un ERP lourd pour la gestion de location de matériel et de stocks.
                         </p>
-                        <div class="tags">
-                            <span>C#</span>
-                            <span>.NET / WPF</span>
-                            <span>SQL</span>
-                        </div>
                         <div class="project-links">
-                            <a href="https://github.com/KaoryPrime/Sae-de-fou-" target="_blank" rel="noopener noreferrer" class="link-button" data-key="project3-code">Voir le Code</a>
+                            <a href="https://github.com/KaoryPrime/Sae-de-fou-" target="_blank" class="link-button" data-key="project3-code">Voir le Code</a>
                         </div>
                     </div>
                 </article>
-                
+
             </div>
         </section>
 
