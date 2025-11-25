@@ -1006,3 +1006,72 @@ footer h2::after,
         grid-template-columns: 1fr;
     }
 }
+
+/* =========================================
+   AJOUTS POUR LE 40/40 ET LE MOBILE
+   ========================================= */
+
+/* 1. NOUVEAU MENU MOBILE (AVEC BOUTONS) */
+.nav-list { display: flex; list-style: none; gap: 20px; padding: 0; }
+.nav-extras { display: flex; align-items: center; gap: 15px; margin-left: 20px; }
+.nav-right-pc { display: flex; align-items: center; gap: 15px; }
+
+/* 2. STYLE DES COMPÉTENCES (TAGS) */
+.skills-tags-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+.tags-category h3 { font-size: 1.1rem; color: #00d2ff; margin-bottom: 15px; border-left: 3px solid #00d2ff; padding-left: 10px; }
+.tags-wrapper { display: flex; flex-wrap: wrap; gap: 10px; }
+.tech-tag {
+    background: rgba(255,255,255,0.05); border: 1px solid #333;
+    padding: 6px 14px; border-radius: 15px; font-size: 0.85rem;
+    transition: 0.3s;
+}
+.tech-tag:hover { border-color: #9400D3; background: rgba(148,0,211,0.1); color: #fff; }
+.tech-tag.highlight { border-color: #9400D3; background: rgba(148,0,211,0.05); font-weight: 600; }
+
+/* 3. STYLE PROJET "FICHE TECHNIQUE" (OBLIGATOIRE POUR NOTE) */
+.project-card-content { padding: 20px; display: flex; flex-direction: column; height: 100%; }
+.project-card h3 { color: #00d2ff; margin-bottom: 5px; }
+.project-desc { font-size: 0.9rem; margin-bottom: 15px; color: #bbb; }
+
+.project-specs {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+    background: rgba(255,255,255,0.04); padding: 12px; border-radius: 6px; margin-bottom: 15px;
+}
+.spec-col { display: flex; flex-direction: column; }
+.spec-full { grid-column: 1 / -1; border-top: 1px solid #333; padding-top: 5px; margin-top: 5px; }
+.spec-lbl { font-size: 0.7rem; color: #00d2ff; text-transform: uppercase; font-weight: 700; }
+.spec-val { font-size: 0.85rem; font-weight: 500; color: #eee; }
+
+/* Indicateurs statut */
+.st-active .dot { display: inline-block; width: 6px; height: 6px; background: #ffd700; border-radius: 50%; margin-right: 4px; box-shadow: 0 0 5px #ffd700; }
+.st-done .dot { display: inline-block; width: 6px; height: 6px; background: #00ff88; border-radius: 50%; margin-right: 4px; box-shadow: 0 0 5px #00ff88; }
+.st-arch .dot { display: inline-block; width: 6px; height: 6px; background: #777; border-radius: 50%; margin-right: 4px; }
+
+/* 4. GESTION DU MOBILE (RESPONSIVE) */
+@media (max-width: 768px) {
+    /* Cache les éléments PC */
+    .nav-right-pc { display: none !important; }
+    .nav-menu { display: none; } /* Cache le menu par défaut */
+
+    /* Affiche le menu mobile correctement */
+    .mobile-nav {
+        display: flex;
+        position: fixed; top: 0; right: 0; width: 80%; height: 100vh;
+        background: rgba(10,10,10,0.98); backdrop-filter: blur(10px);
+        flex-direction: column; justify-content: center; align-items: center;
+        transform: translateX(100%); transition: 0.3s ease; z-index: 999;
+    }
+    .mobile-nav.is-active { transform: translateX(0); }
+
+    /* Réorganise les éléments dans le menu mobile */
+    .nav-list { flex-direction: column; text-align: center; gap: 25px; margin-bottom: 30px; }
+    .nav-extras { flex-direction: column; margin-left: 0; gap: 20px; }
+    .nav-link { font-size: 1.2rem; }
+
+    /* Ajuste les grilles pour le téléphone */
+    .project-grid-container { grid-template-columns: 1fr; }
+    .skills-tags-grid { grid-template-columns: 1fr; }
+    
+    /* Cache le halo sur mobile pour éviter les bugs tactiles */
+    .cursor-halo { display: none; }
+}
