@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const cvPathEN = 'images/cv-kamil-en.pdf';
     const cvButton = document.querySelector('.nav-cv-button');
 
+    // --- TRADUCTIONS ---
     const translations = {
         fr: {
             "nav-about": "À Propos",
@@ -50,13 +51,13 @@ document.addEventListener('DOMContentLoaded', () => {
             "portfolio-title": "Portfolio",
             "portfolio-intro": "Voici les projets sur lesquels j'ai travaillé", 
             "project1-title": "Projet Clonage site FIFA", 
-            "project1-desc": "Clonage d'un site e-commerce. Conception de la BDD (MCD, MLD) et développement (SQL, HTML, CSS, JS).", 
+            "project1-desc": "Développement d'un clone du site de la FIFA pour apprendre l'architecture web. J'ai utilisé <strong>HTML5/CSS3</strong> pour la structure et <strong>JavaScript</strong> pour le dynamisme. La base de données a été conçue en <strong>SQL</strong>.", 
             "project1-code": "En cours ...", 
             "project2-title": "Mon Portfolio",
-            "project2-desc": "Site personnel développé de zéro pour présenter mon profil, avec un design \"spatial/néon\" et des animations en JavaScript.", 
+            "project2-desc": "Conception de ce site vitrine (le site actuel) pour présenter mes compétences. J'ai intégré des animations avec <strong>Canvas JS</strong> et un système multilingue en <strong>JavaScript vanilla</strong>.", 
             "project2-code": "Voir le Code",
             "project3-title": "Application de gestion (Loxam)",
-            "project3-desc": "Application C# (WinForms/WPF) de gestion pour Loxam, connectée à une base de données. Réalisé en binôme.",
+            "project3-desc": "Création d'un ERP lourd pour la gestion de location de matériel. Développé en <strong>C#</strong> avec le framework <strong>.NET (WPF)</strong> et connecté à une base de données MySQL.",
             "education-title": "Formation",
             "edu1-date": "2024 - 2027 (prévu)",
             "edu1-title": "BUT Informatique - Parcours IAMSI",
@@ -129,13 +130,13 @@ document.addEventListener('DOMContentLoaded', () => {
             "portfolio-title": "Portfolio",
             "portfolio-intro": "Here are the projects I have worked on.", 
             "project1-title": "FIFA Website Clone Project", 
-            "project1-desc": "E-commerce site clone. Database design (MCD, MLD) and development (SQL, HTML, CSS, JS).", 
+            "project1-desc": "Development of a FIFA website clone to learn web architecture. Used <strong>HTML5/CSS3</strong> for structure and <strong>JavaScript</strong> for dynamism. Database designed in <strong>SQL</strong>.", 
             "project1-code": "In progress ...", 
             "project2-title": "My Portfolio",
-            "project2-desc": "Personal website built from scratch to showcase my profile, with a \"space/neon\" design and JavaScript animations.", 
+            "project2-desc": "Designed this portfolio (current site) to showcase my skills. Integrated <strong>Canvas JS</strong> animations and a vanilla <strong>JavaScript</strong> multilingual system.", 
             "project2-code": "View Code",
             "project3-title": "Management Application (Loxam)",
-            "project3-desc": "C# (WinForms/WPF) management application for Loxam, connected to a database. Made in a team of two.",
+            "project3-desc": "Creation of a heavy ERP for equipment rental management. Developed in <strong>C#</strong> with <strong>.NET (WPF)</strong> framework and connected to a MySQL database.",
             "education-title": "Education",
             "edu1-date": "2024 - 2027 (expected)",
             "edu1-title": "University Diploma in Computer Science - IAMSI Path",
@@ -167,6 +168,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const langFrButton = document.getElementById('lang-fr');
     const langEnButton = document.getElementById('lang-en');
+    const skillsFr = document.getElementById('skills-content-fr');
+    const skillsEn = document.getElementById('skills-content-en');
 
     const setLanguage = (lang) => {
         document.documentElement.lang = lang;
@@ -176,10 +179,19 @@ document.addEventListener('DOMContentLoaded', () => {
             langFrButton.classList.remove('active');
             langEnButton.classList.add('active');
             if (cvButton) cvButton.href = cvPathEN;
+            
+            // Afficher Skills EN
+            if(skillsFr) skillsFr.style.display = 'none';
+            if(skillsEn) skillsEn.style.display = 'grid';
+
         } else {
             langEnButton.classList.remove('active');
             langFrButton.classList.add('active');
             if (cvButton) cvButton.href = cvPathFR;
+
+            // Afficher Skills FR
+            if(skillsFr) skillsFr.style.display = 'grid';
+            if(skillsEn) skillsEn.style.display = 'none';
         }
 
         document.querySelectorAll('[data-key]').forEach(element => {
@@ -196,6 +208,33 @@ document.addEventListener('DOMContentLoaded', () => {
     const savedLang = localStorage.getItem('language') || 'fr';
     setLanguage(savedLang);
 
+    // --- FILTRAGE PORTFOLIO ---
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Gestion de la classe active
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            const filterValue = button.getAttribute('data-filter');
+
+            projectCards.forEach(card => {
+                const category = card.getAttribute('data-category');
+                
+                if (filterValue === 'all' || category === filterValue) {
+                    card.style.display = 'block';
+                    // Petite animation d'apparition
+                    card.style.animation = 'fadeInUp 0.5s ease forwards';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
+
+    // --- STARFIELD & ANIMATIONS (Le reste de ton code original) ---
     const canvas = document.getElementById('starfield');
     
     if (canvas) {
