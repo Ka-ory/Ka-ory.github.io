@@ -5,183 +5,199 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const cvButtons = document.querySelectorAll('.nav-cv-button');
 
-    // --- TRADUCTIONS ---
+    // --- TRADUCTIONS PROFESSIONNELLES ---
     const translations = {
         fr: {
             "nav-about": "À Propos",
-            "nav-portfolio": "Portfolio",
+            "nav-portfolio": "Réalisations", // Plus pro que "Portfolio"
             "nav-education": "Formation",
             "nav-experience": "Expérience",
             "nav-references": "Références",
             "nav-contact": "Contact",
-            "nav-cv": "Télécharger mon CV",
+            "nav-cv": "Mon CV",
+            
             "hero-title": "Kamil CINAR",
-            "hero-subtitle": "Étudiant en BUT Informatique, développeur passionné par la création de solutions logicielles modernes et performantes.",
+            "hero-subtitle": "Étudiant en Informatique & Développeur Web. J'accompagne les professionnels dans la création de solutions digitales performantes et sur-mesure.",
+            
             "about-title": "À Propos de Moi",
             "about-info-title": "Infos & Contact",
             "about-info-age": "1 Mai 2006 (19ans)",
             "about-info-location": "Annecy (74), France",
             "about-info-linkedin": "Kamil CINAR",
+            
             "about-hobbies-title": "Passions et Loisirs",
             "about-hobbies-1": "Apprentissage du piano",
             "about-hobbies-2": "Réalisation et montage vidéo",
-            "about-hobbies-3": "Programmation & Veille tech",
+            "about-hobbies-3": "Veille technologique & Dev",
             "about-hobbies-4": "L'univers de l'automobile",
-            "about-hobbies-5": "Je suis des cours de volley ball",
+            "about-hobbies-5": "Pratique du volley-ball",
+            
             "about-lang-title": "Langues",
-            "about-lang-1a": "Français :",
-            "about-lang-1b": "Natif (C2)",
-            "about-lang-2a": "Anglais :",
-            "about-lang-2b": "Intermédiaire Sup. (B2)",
-            "about-lang-3a": "Espagnol :",
-            "about-lang-3b": "Pré-Intermédiaire (A2)",
-            "about-lang-4a": "Japonais :",
-            "about-lang-4b": "Débutant (A0)", 
-            "about-lang-5a": "Turc :",
-            "about-lang-5b": "Bilingue (C2)",
-            "about-soft-title": "Compétences Générales",
-            "about-soft-1": "Innovant, dynamique et confiant",
-            "about-soft-2": "Digne de confiance & Responsable",
-            "about-soft-3": "Adaptable & Aime apprendre",
-            "about-soft-4": "Rigueur & Contrôle Qualité",
+            "about-lang-1a": "Français :", "about-lang-1b": "Natif (C2)",
+            "about-lang-2a": "Anglais :", "about-lang-2b": "Technique (B2)",
+            "about-lang-3a": "Espagnol :", "about-lang-3b": "Scolaire (A2)",
+            "about-lang-4a": "Japonais :", "about-lang-4b": "Notions (A0)", 
+            "about-lang-5a": "Turc :", "about-lang-5b": "Bilingue (C2)",
+            
+            "about-soft-title": "Savoir-être",
+            "about-soft-1": "Proactif et orienté solutions",
+            "about-soft-2": "Fiable & Responsable",
+            "about-soft-3": "Grande capacité d'adaptation",
+            "about-soft-4": "Rigueur & Souci du détail",
+            
             "about-tech-title": "Compétences Techniques",
             "about-tech-front": "Frontend",
             "about-tech-back": "Backend",
-            "about-tech-tools": "Outils & Web",
-            "about-tech-seo": "Principes de SEO",
+            "about-tech-tools": "Outils & Déploiement",
+            "about-tech-seo": "Optimisation SEO",
 
             "lbl-date": "Date",
-            "lbl-context": "Contexte",
+            "lbl-context": "Type",
             "lbl-role": "Rôle",
             "lbl-status": "Statut",
-            "status-wip": "En cours",
+            "status-wip": "En ligne",
             "status-done": "Terminé",
 
-            "portfolio-title": "Portfolio",
-            "portfolio-intro": "Voici les projets sur lesquels j'ai travaillé, présentés sous forme de cas d'études.", 
-            "project1-title": "Projet Clonage site FIFA", 
-            "project1-desc": "Développement d'un clone du site officiel pour étudier l'architecture web moderne et le responsive design.", 
-            "project1-code": "En cours ...", 
-            "project2-title": "Mon Portfolio",
-            "project2-desc": "Conception de ce site vitrine interactif, multilingue et animé pour présenter mes compétences.", 
-            "project2-code": "Voir le Code",
-            "project3-title": "App Gestion (Loxam)",
-            "project3-desc": "Création d'un ERP lourd pour la gestion de location de matériel et de stocks.",
+            "portfolio-title": "Réalisations",
+            "portfolio-intro": "Une sélection de projets démontrant mes capacités techniques et mon expertise en développement.", 
+            
+            "project1-title": "E-Shop FIFA (Clone)", 
+            "project1-desc": "Développement complet d'une boutique en ligne. Architecture robuste et responsive design adapté à tous les écrans.", 
+            "project1-code": "Voir le site en direct", 
+            
+            "project2-title": "Portfolio Professionnel",
+            "project2-desc": "Conception de ce site vitrine interactif et multilingue. Optimisé pour la présentation de services et l'expérience utilisateur.", 
+            "project2-code": "Voir le Code Source",
+            
+            "project3-title": "App Gestion ERP (Loxam)",
+            "project3-desc": "Création d'un ERP lourd pour la gestion de stocks et location de matériel. Solution logicielle pour l'optimisation des processus.",
+            "project3-code": "Voir le Code Source",
             
             "education-title": "Formation",
-            "edu1-date": "2024 - 2027 (prévu)",
+            "edu1-date": "2024 - 2027 (en cours)",
             "edu1-title": "BUT Informatique - Parcours IAMSI",
             "edu1-location": "Université Savoie Mont-Blanc, Annecy (74)",
-            "edu1-desc": "Développement web (Front/Back), gestion de BDD, management de SI.",
+            "edu1-desc": "Architecture logicielle, développement Fullstack, gestion de bases de données avancées.",
             "edu2-date": "2024",
             "edu2-title": "Baccalauréat Technologique (STMG)",
             "edu2-location": "Lycée du Granier, La Ravoire (73)",
-            "edu2-desc": "Spécialité Systèmes d'Information et de Gestion (SIG), Mention Assez Bien.",
-            "exp-title": "Expérience",
-            "exp1-date": "Depuis le 01/11/2025 (CDI)",
-            "exp1-title": "Agent d'accueil en déchetterie",
+            "edu2-desc": "Spécialité Systèmes d'Information de Gestion (SIG), Mention Assez Bien.",
+            
+            "exp-title": "Expérience Professionnelle",
+            "exp1-date": "Depuis 11/2025",
+            "exp1-title": "Agent d'accueil & Gestion",
             "exp1-location": "Trialp, Secteur SIBRESCA",
-            "exp1-desc": "Gestion des usagers, conseil sur le tri, maintenance du site",
-            "exp2-date": "Avril 2025 (2 semaines)",
+            "exp1-desc": "Relation client, gestion des flux, responsabilité de site.",
+            "exp2-date": "Avril 2025",
             "exp2-title": "Préparateur de Véhicule",
             "exp2-location": "Jean Lain Occasions, Chambéry (73)",
-            "exp2-desc": "Contrôle qualité, préparation esthétique et gestion du parc. Développement de compétences en rigueur et orientation client.",
+            "exp2-desc": "Contrôle qualité rigoureux, préparation avant livraison, respect des délais.",
+            
             "ref-title": "Références",
             "ref1-name": "Pascal COLIN",
-            "ref1-role": "Enseignant d'UML et SQL",
+            "ref1-role": "Enseignant UML & SQL",
             "ref2-name": "Luc DAMAS",
-            "ref2-role": "Enseignant d'HTML et JS",
-            "contact-title": "Restons en contact",
-            "contact-subtitle": "N'hésitez pas à me contacter, que ce soit pour une opportunité ou simplement pour échanger.",
-            "contact-email": "Envoyer un E-mail"
+            "ref2-role": "Enseignant Web (HTML/JS)",
+            
+            "contact-title": "Démarrons un projet ensemble",
+            "contact-subtitle": "Besoin d'un site web ou d'une solution logicielle ? Discutons de vos besoins.",
+            "contact-email": "Me contacter par E-mail"
         },
         en: {
             "nav-about": "About",
-            "nav-portfolio": "Portfolio",
+            "nav-portfolio": "Projects",
             "nav-education": "Education",
             "nav-experience": "Experience",
             "nav-references": "References",
             "nav-contact": "Contact",
-            "nav-cv": "Download CV",
+            "nav-cv": "My Resume",
+            
             "hero-title": "Kamil CINAR",
-            "hero-subtitle": "Computer Science student, passionate developer focused on creating modern and efficient software solutions.",
+            "hero-subtitle": "Computer Science Student & Web Developer. I assist professionals in creating high-performance, tailored digital solutions.",
+            
             "about-title": "About Me",
             "about-info-title": "Info & Contact",
             "about-info-age": "May 1, 2006 (19 years old)",
             "about-info-location": "Annecy (74), France",
             "about-info-linkedin": "Kamil CINAR",
+            
             "about-hobbies-title": "Passions & Hobbies",
             "about-hobbies-1": "Learning piano",
-            "about-hobbies-2": "Video production and editing",
-            "about-hobbies-3": "Programming & Tech watch",
-            "about-hobbies-4": "The automotive world",
-            "about-hobbies-5": "I take volleyball classes",
+            "about-hobbies-2": "Video production & editing",
+            "about-hobbies-3": "Tech watch & Development",
+            "about-hobbies-4": "Automotive enthusiast",
+            "about-hobbies-5": "Volleyball player",
+            
             "about-lang-title": "Languages",
-            "about-lang-1a": "French:",
-            "about-lang-1b": "Native (C2)",
-            "about-lang-2a": "English:",
-            "about-lang-2b": "Upper-Intermediate (B2)",
-            "about-lang-3a": "Spanish:",
-            "about-lang-3b": "Pre-Intermediate (A2)",
-            "about-lang-4a": "Japanese:",
-            "about-lang-4b": "Beginner (A0)",
-            "about-lang-5a": "Turkish:",
-            "about-lang-5b": "Bilingual (C2)",
-            "about-soft-title": "General Skills",
-            "about-soft-1": "Innovative, dynamic, and confident",
-            "about-soft-2": "Trustworthy & Responsible",
-            "about-soft-3": "Adaptable & Eager to learn",
-            "about-soft-4": "Rigor & Quality control",
+            "about-lang-1a": "French:", "about-lang-1b": "Native (C2)",
+            "about-lang-2a": "English:", "about-lang-2b": "Technical (B2)",
+            "about-lang-3a": "Spanish:", "about-lang-3b": "Basic (A2)",
+            "about-lang-4a": "Japanese:", "about-lang-4b": "Beginner (A0)",
+            "about-lang-5a": "Turkish:", "about-lang-5b": "Bilingual (C2)",
+            
+            "about-soft-title": "Soft Skills",
+            "about-soft-1": "Proactive & Solution-oriented",
+            "about-soft-2": "Reliable & Responsible",
+            "about-soft-3": "Highly Adaptable",
+            "about-soft-4": "Rigor & Attention to detail",
+            
             "about-tech-title": "Technical Skills",
             "about-tech-front": "Frontend",
             "about-tech-back": "Backend",
-            "about-tech-tools": "Tools & Web",
+            "about-tech-tools": "Tools & Deployment",
             "about-tech-seo": "SEO Principles",
 
             "lbl-date": "Date",
-            "lbl-context": "Context",
+            "lbl-context": "Type",
             "lbl-role": "Role",
             "lbl-status": "Status",
-            "status-wip": "In Progress",
-            "status-done": "Finished",
+            "status-wip": "Live",
+            "status-done": "Completed",
 
-            "portfolio-title": "Portfolio",
-            "portfolio-intro": "Here are the projects I have worked on, presented as case studies.", 
-            "project1-title": "FIFA Website Clone Project", 
-            "project1-desc": "Development of a FIFA website clone to learn web architecture. Used <strong>HTML5/CSS3</strong> for structure and <strong>JavaScript</strong> for dynamism.", 
-            "project1-code": "In progress ...", 
-            "project2-title": "My Portfolio",
-            "project2-desc": "Designed this portfolio (current site) to showcase my skills. Integrated <strong>Canvas JS</strong> animations and a vanilla <strong>JavaScript</strong> multilingual system.", 
-            "project2-code": "View Code",
-            "project3-title": "Management App (Loxam)",
-            "project3-desc": "Creation of a heavy ERP for equipment rental management and stock control.",
+            "portfolio-title": "Projects",
+            "portfolio-intro": "A selection of projects demonstrating my technical expertise and development capabilities.", 
+            
+            "project1-title": "FIFA E-Shop (Clone)", 
+            "project1-desc": "Full development of an online store. Robust architecture and responsive design adapted to all devices.", 
+            "project1-code": "View Live Site", 
+            
+            "project2-title": "Professional Portfolio",
+            "project2-desc": "Design of this interactive and multilingual showcase site. Optimized for service presentation and user experience.", 
+            "project2-code": "View Source Code",
+            
+            "project3-title": "ERP Management App (Loxam)",
+            "project3-desc": "Creation of a heavy ERP for stock management and equipment rental. Software solution for process optimization.",
+            "project3-code": "View Source Code",
             
             "education-title": "Education",
-            "edu1-date": "2024 - 2027 (expected)",
-            "edu1-title": "University Diploma in Computer Science - IAMSI Path",
+            "edu1-date": "2024 - 2027 (in progress)",
+            "edu1-title": "University Diploma in CS - IAMSI Track",
             "edu1-location": "Université Savoie Mont-Blanc, Annecy (74)",
-            "edu1-desc": "Web development (Front/Back), database management, IS management.",
+            "edu1-desc": "Software architecture, Fullstack development, Advanced database management.",
             "edu2-date": "2024",
             "edu2-title": "Technology Baccalaureate (STMG)",
             "edu2-location": "Lycée du Granier, La Ravoire (73)",
-            "edu2-desc": "Specialty in Information and Management Systems (SIG), with Honors.",
+            "edu2-desc": "Specialty in Information Systems (SIG), with Honors.",
+            
             "exp-title": "Experience",
-            "exp1-date": "Since 11/01/2025 (Full-time)",
-            "exp1-title": "Recycling Center Reception Agent",
+            "exp1-date": "Since 11/2025",
+            "exp1-title": "Site Reception & Management",
             "exp1-location": "Trialp, SIBRESCA Sector",
-            "exp1-desc": "User management, sorting advice, site maintenance",
-            "exp2-date": "April 2025 (2 weeks)",
-            "exp2-title": "Vehicle Preparation",
+            "exp1-desc": "Customer relations, flow management, site responsibility.",
+            "exp2-date": "April 2025",
+            "exp2-title": "Vehicle Preparation Specialist",
             "exp2-location": "Jean Lain Occasions, Chambéry (73)",
-            "exp2-desc": "Quality control, cosmetic preparation, and fleet management. Developed skills in rigor and customer focus.",
+            "exp2-desc": "Rigorous quality control, pre-delivery preparation, deadline adherence.",
+            
             "ref-title": "References",
             "ref1-name": "Pascal COLIN",
-            "ref1-role": "UML and SQL Teacher",
+            "ref1-role": "UML & SQL Professor",
             "ref2-name": "Luc DAMAS",
-            "ref2-role": "HTML and JS Teacher",
-            "contact-title": "Let's get in touch",
-            "contact-subtitle": "Feel free to contact me, whether for an opportunity or just to chat.",
-            "contact-email": "Send an E-mail"
+            "ref2-role": "Web Professor (HTML/JS)",
+            
+            "contact-title": "Let's start a project",
+            "contact-subtitle": "Need a website or a software solution? Let's discuss your needs.",
+            "contact-email": "Contact me by Email"
         }
     };
 
@@ -204,7 +220,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-       
+        // Gestion de l'affichage des compétences
         if (lang === 'en') {
             if(skillsFr) skillsFr.style.display = 'none';
             if(skillsEn) skillsEn.style.display = 'grid';
@@ -213,10 +229,11 @@ document.addEventListener('DOMContentLoaded', () => {
             if(skillsEn) skillsEn.style.display = 'none';
         }
 
-     
+        // Application des traductions
         document.querySelectorAll('[data-key]').forEach(element => {
             const key = element.getAttribute('data-key');
             if (translations[lang] && translations[lang][key]) {
+                // Utilisation de innerHTML pour permettre les balises comme <strong> si besoin
                 element.innerHTML = translations[lang][key];
             }
         });
@@ -232,7 +249,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const savedLang = localStorage.getItem('language') || 'fr';
     setLanguage(savedLang);
 
-  
+    // --- FILTRES PORTFOLIO ---
     const filterButtons = document.querySelectorAll('.filter-btn');
     const projectCards = document.querySelectorAll('.project-card');
 
@@ -247,7 +264,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 const category = card.getAttribute('data-category');
                 if (filterValue === 'all' || category === filterValue) {
                     card.style.display = 'block';
-                    card.style.animation = 'fadeInUp 0.5s ease forwards';
+                    // Animation douce lors du filtrage
+                    card.style.animation = 'fadeInUp 0.4s ease forwards';
                 } else {
                     card.style.display = 'none';
                 }
@@ -255,13 +273,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- STARFIELD ---
+    // --- FOND ÉTOILÉ (Version Sobre) ---
+    // Nettoyage : Suppression des étoiles filantes pour un aspect plus "Business"
     const canvas = document.getElementById('starfield');
     
     if (canvas) {
         const ctx = canvas.getContext('2d');
         let stars = [];
-        let shootingStars = [];
         let time = 0; 
 
         const setCanvasSize = () => {
@@ -271,86 +289,48 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const createStaticStars = () => {
             stars = []; 
-            const starCount = 250; 
+            // Réduction du nombre d'étoiles pour alléger le visuel
+            const starCount = 150; 
             for (let i = 0; i < starCount; i++) {
                 stars.push({
                     x: Math.random() * canvas.width,
                     y: Math.random() * canvas.height,
-                    radius: Math.random() * 1.5 + 0.5,
-                    baseOpacity: Math.random() * 0.5 + 0.1, 
-                    opacity: Math.random() * 0.5 + 0.1,
-                    twinkleSpeed: Math.random() * 0.02 + 0.005
+                    radius: Math.random() * 1.2 + 0.3, // Etoiles plus fines
+                    baseOpacity: Math.random() * 0.4 + 0.1, 
+                    twinkleSpeed: Math.random() * 0.01 + 0.002 // Scintillement très lent
                 });
             }
         };
 
         const drawStaticStars = () => {
             stars.forEach(star => {
-                star.opacity = star.baseOpacity + Math.sin(time * star.twinkleSpeed) * (star.baseOpacity * 0.5);
-                ctx.fillStyle = `rgba(218, 191, 255, ${star.opacity})`;
+                // Scintillement subtil
+                const opacity = star.baseOpacity + Math.sin(time * star.twinkleSpeed) * 0.1;
+                ctx.fillStyle = `rgba(255, 255, 255, ${opacity})`;
                 ctx.beginPath();
                 ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
                 ctx.fill();
             });
         };
 
-        const createShootingStar = () => {
-            shootingStars.push({
-                x: Math.random() * canvas.width + (canvas.width * 0.2), 
-                y: Math.random() * (canvas.height * 0.2) - (canvas.height * 0.1), 
-                size: Math.random() * 2 + 0.5,     
-                speed: Math.random() * 8 + 5,     
-                length: Math.random() * 150 + 80   
-            });
-        };
-
-        const drawShootingStars = () => {
-            for (let i = shootingStars.length - 1; i >= 0; i--) {
-                const s = shootingStars[i];
-                s.x -= s.speed;
-                s.y += s.speed * 0.7;
-                if (s.x < -s.length || s.y > canvas.height + s.length) {
-                    shootingStars.splice(i, 1);
-                    continue;
-                }
-                const gradient = ctx.createLinearGradient(s.x, s.y, s.x + s.length, s.y - s.length * 0.7);
-                const opacity = 1 - (s.x / (canvas.width * 1.5)); 
-                gradient.addColorStop(0, `rgba(218, 191, 255, ${opacity * 0.8})`);
-                gradient.addColorStop(1, `transparent`);
-                ctx.strokeStyle = gradient;
-                ctx.lineWidth = s.size;
-                ctx.beginPath();
-                ctx.moveTo(s.x, s.y);
-                ctx.lineTo(s.x + s.length, s.y - s.length * 0.7); 
-                ctx.stroke();
-            }
-        };
-
         const animate = () => {
             time++; 
             ctx.clearRect(0, 0, canvas.width, canvas.height); 
             drawStaticStars();    
-            drawShootingStars();  
             requestAnimationFrame(animate); 
         };
         
         setCanvasSize();
         createStaticStars();
-        const spawnShootingStar = () => {
-            createShootingStar();
-            setTimeout(spawnShootingStar, Math.random() * 5000 + 2000); 
-        };
         animate();
-        spawnShootingStar(); 
    
         window.addEventListener('resize', () => {
             setCanvasSize();
             createStaticStars(); 
-            shootingStars = []; 
         });
     }
 
-    // Scroll Observer
+    // --- ANIMATION AU SCROLL (Observer) ---
     const elementsToAnimate = document.querySelectorAll('.animate-on-scroll');
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -362,7 +342,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.1 });
     elementsToAnimate.forEach(element => observer.observe(element));
 
-   
+    // --- MENU ACTIF AU SCROLL ---
     const sections = document.querySelectorAll('section'); 
     const navLinks = document.querySelectorAll('.nav-menu a');
 
@@ -370,7 +350,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const scrollY = window.pageYOffset;
         sections.forEach(current => {
             const sectionHeight = current.offsetHeight;
-            const sectionTop = current.offsetTop - 100; 
+            const sectionTop = current.offsetTop - 150; 
             const sectionId = current.getAttribute('id');
             if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
                 const activeLink = document.querySelector(`.nav-menu a[href='#${sectionId}']`);
@@ -381,7 +361,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     window.addEventListener('scroll', onScroll);
     
-
+    // --- MENU MOBILE ---
     const navToggle = document.querySelector('.nav-toggle');
     const navMenu = document.querySelector('.mobile-nav');
     const navLinksMobile = document.querySelectorAll('.mobile-nav .nav-link');
@@ -403,13 +383,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    const halo = document.querySelector('.cursor-halo');
-    if (halo) {
-        window.addEventListener('mousemove', (e) => {
-            window.requestAnimationFrame(() => {
-                halo.style.left = `${e.clientX}px`;
-                halo.style.top = `${e.clientY}px`;
-            });
-        });
-    }
+    // Nettoyage: Suppression de l'effet "Cursor Halo" (Cercle autour de la souris)
+    // Code supprimé pour un rendu plus professionnel/sobre.
 });
