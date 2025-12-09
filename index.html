@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kamil CINAR | Solutions Digitales Premium</title>
+    <title>Kamil CINAR | Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icon-css@1.0.12/css/flag-icon.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,18 +27,20 @@
             <button class="nav-toggle" aria-label="Menu">
                 <span class="bar"></span>
                 <span class="bar"></span>
+                <span class="bar"></span>
             </button>
 
             <div class="nav-menu">
                 <ul class="nav-list">
-                    <li><a href="#apropos" class="nav-link" data-key="nav-about">Expertise</a></li>
-                    <li><a href="#portfolio" class="nav-link" data-key="nav-portfolio">Projets</a></li>
-                    <li><a href="#formation" class="nav-link" data-key="nav-education">Parcours</a></li>
+                    <li><a href="#apropos" class="nav-link" data-key="nav-about">À Propos</a></li>
+                    <li><a href="#portfolio" class="nav-link" data-key="nav-portfolio">Portfolio</a></li>
+                    <li><a href="#formation" class="nav-link" data-key="nav-education">Formation</a></li>
+                    <li><a href="#experience" class="nav-link" data-key="nav-experience">Expérience</a></li>
+                    <li><a href="#contact" class="nav-link" data-key="nav-contact">Contact</a></li>
                 </ul>
 
                 <div class="nav-actions">
                     <a href="images/cv-kamil-fr.pdf" target="_blank" class="btn-glass-sm" data-key="nav-cv">CV</a>
-                    <a href="#contact" class="btn-primary-sm" data-key="nav-contact">Me Contacter</a>
                     <div class="lang-switcher">
                         <button class="lang-btn active" data-lang="fr">FR</button>
                         <span class="sep">/</span>
@@ -51,14 +53,13 @@
 
     <header id="accueil" class="hero-section">
         <div class="hero-content fade-in">
-            <div class="badge-glass">Disponible pour mission freelance</div>
-            <h1 data-key="hero-title">Architecte de <br><span class="text-gradient">Solutions Digitales</span></h1>
+            <h1 data-key="hero-title">Kamil CINAR</h1>
             <p data-key="hero-subtitle">
-                Je transforme vos besoins complexes en interfaces web modernes, rapides et orientées résultats.
+                Étudiant en BUT Informatique, développeur passionné par la création de solutions logicielles modernes et performantes.
             </p>
             <div class="hero-buttons">
-                <a href="#portfolio" class="btn-primary">Voir mes réalisations</a>
-                <a href="#contact" class="btn-glass">Discuter d'un projet</a>
+                <a href="#portfolio" class="btn-primary" data-key="nav-portfolio">Voir mes projets</a>
+                <a href="#contact" class="btn-glass" data-key="nav-contact">Me contacter</a>
             </div>
         </div>
     </header>
@@ -66,52 +67,78 @@
     <main>
         <section id="apropos" class="section-glass">
             <div class="section-header">
-                <h2 data-key="about-title">Mon Expertise</h2>
-                <p>Une approche technique rigoureuse pour des produits fiables.</p>
+                <h2 data-key="about-title">À Propos de Moi</h2>
             </div>
 
-            <div class="bento-grid">
+            <div class="bento-grid-expanded">
                 <div class="bento-card profile-card">
                     <div class="profile-header">
-                        <h3 data-key="about-info-title">Kamil CINAR</h3>
-                        <span class="role-badge">Développeur Fullstack</span>
+                        <h3 data-key="about-info-title">Infos & Contact</h3>
                     </div>
                     <ul class="info-list">
+                        <li><i class="fas fa-calendar-alt"></i> <span data-key="about-info-age">1 Mai 2006 (19ans)</span></li>
                         <li><i class="fas fa-map-marker-alt"></i> <span data-key="about-info-location">Annecy (74), France</span></li>
-                        <li><i class="fas fa-check-circle"></i> <span data-key="about-soft-1">Proactif & Orienté Solution</span></li>
-                        <li><i class="fas fa-check-circle"></i> <span data-key="about-soft-4">Contrôle Qualité</span></li>
+                        <li><i class="fas fa-envelope"></i> kamil.cinarpro@gmail.com</li>
+                        <li><i class="fas fa-phone"></i> 06 23 35 91 09</li>
+                        <li><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/kamilcinar/" target="_blank">Kamil CINAR</a></li>
+                    </ul>
+                </div>
+
+                <div class="bento-card hobbies-card">
+                    <h3 data-key="about-hobbies-title">Passions et Loisirs</h3>
+                    <ul class="check-list">
+                        <li data-key="about-hobbies-1">Apprentissage du piano</li>
+                        <li data-key="about-hobbies-2">Réalisation et montage vidéo</li>
+                        <li data-key="about-hobbies-3">Programmation & Veille tech</li>
+                        <li data-key="about-hobbies-4">L'univers de l'automobile</li>
+                        <li data-key="about-hobbies-5">Volley ball</li>
+                    </ul>
+                </div>
+
+                <div class="bento-card soft-card">
+                    <h3 data-key="about-soft-title">Compétences Générales</h3>
+                    <ul class="bullet-list">
+                        <li data-key="about-soft-1">Innovant, dynamique et confiant</li>
+                        <li data-key="about-soft-2">Digne de confiance & Responsable</li>
+                        <li data-key="about-soft-3">Adaptable & Aime apprendre</li>
+                        <li data-key="about-soft-4">Rigueur & Contrôle Qualité</li>
                     </ul>
                 </div>
 
                 <div class="bento-card lang-card">
-                    <h3 data-key="about-lang-title">International</h3>
+                    <h3 data-key="about-lang-title">Langues</h3>
                     <div class="lang-grid">
-                        <div class="lang-item"><span class="flag-icon flag-icon-fr"></span> <span class="lang-lvl">Natif</span></div>
-                        <div class="lang-item"><span class="flag-icon flag-icon-gb"></span> <span class="lang-lvl">Technique (B2)</span></div>
-                        <div class="lang-item"><span class="flag-icon flag-icon-tr"></span> <span class="lang-lvl">Bilingue</span></div>
+                        <div class="lang-item"><span class="flag-icon flag-icon-fr"></span> <span data-key="about-lang-1b">Natif (C2)</span></div>
+                        <div class="lang-item"><span class="flag-icon flag-icon-gb"></span> <span data-key="about-lang-2b">Anglais (B2)</span></div>
+                        <div class="lang-item"><span class="flag-icon flag-icon-es"></span> <span data-key="about-lang-3b">Espagnol (A2)</span></div>
+                        <div class="lang-item"><span class="flag-icon flag-icon-tr"></span> <span data-key="about-lang-5b">Turc (C2)</span></div>
                     </div>
                 </div>
 
                 <div class="bento-card tech-card">
-                    <h3 data-key="about-tech-title">Arsenal Technique</h3>
+                    <h3 data-key="about-tech-title">Compétences Techniques</h3>
                     <div id="skills-content-fr" class="tech-grid">
                         <div class="tech-group">
-                            <h4>Frontend</h4>
-                            <div class="tags"><span class="tag">React</span><span class="tag">JS (ES6+)</span><span class="tag">HTML5/CSS3</span></div>
+                            <h4 data-key="about-tech-front">Frontend</h4>
+                            <div class="tags"><span class="tag">JS (ES6+)</span><span class="tag">React</span><span class="tag">HTML5</span><span class="tag">CSS3/Sass</span></div>
                         </div>
                         <div class="tech-group">
-                            <h4>Backend</h4>
-                            <div class="tags"><span class="tag">Python</span><span class="tag">PHP</span><span class="tag">SQL</span><span class="tag">C#</span></div>
+                            <h4 data-key="about-tech-back">Backend</h4>
+                            <div class="tags"><span class="tag">Python</span><span class="tag">PHP</span><span class="tag">PostgreSQL</span><span class="tag">WordPress</span></div>
                         </div>
                         <div class="tech-group">
-                            <h4>Outils</h4>
-                            <div class="tags"><span class="tag">Git</span><span class="tag">VS Code</span><span class="tag">SEO</span></div>
+                            <h4 data-key="about-tech-tools">Outils</h4>
+                            <div class="tags"><span class="tag">Git/GitHub</span><span class="tag">VS Code</span><span class="tag" data-key="about-tech-seo">SEO</span></div>
                         </div>
                     </div>
                      <div id="skills-content-en" class="tech-grid" style="display: none;">
                         <div class="tech-group">
-                            <h4>Core</h4>
-                            <div class="tags"><span class="tag">C# .NET</span><span class="tag">Web Stack</span><span class="tag">PostgreSQL</span></div>
+                            <h4>Languages & DB</h4>
+                            <div class="tags"><span class="tag">C# (80%)</span><span class="tag">Web Stack (70%)</span><span class="tag">PostgreSQL (75%)</span><span class="tag">Python (50%)</span></div>
+                        </div>
+                         <div class="tech-group">
+                            <h4>Tools</h4>
+                            <div class="tags"><span class="tag">Linux</span><span class="tag">Git</span><span class="tag">Visual Paradigm</span></div>
                         </div>
                     </div>
                 </div>
@@ -120,115 +147,127 @@
 
         <section id="portfolio">
             <div class="section-header">
-                <h2 data-key="portfolio-title">Réalisations</h2>
+                <h2 data-key="portfolio-title">Portfolio</h2>
                 <div class="filters">
-                    <button class="filter-btn active" data-filter="all">Tout</button>
+                    <button class="filter-btn active" data-filter="all">Tous</button>
                     <button class="filter-btn" data-filter="web">Web</button>
-                    <button class="filter-btn" data-filter="app">Apps</button>
+                    <button class="filter-btn" data-filter="app">Logiciel</button>
                 </div>
             </div>
 
             <div class="project-grid">
                 <article class="glass-card project-card" data-category="web">
                     <div class="card-image">
-                        <img src="images/fifa.png" alt="FIFA E-shop">
+                        <img src="images/fifa.png" alt="Projet FIFA">
                         <div class="overlay">
                             <a href="http://51.83.36.122:6677/boutique" target="_blank" class="btn-overlay">Voir le site</a>
                         </div>
                     </div>
                     <div class="card-content">
-                        <div class="card-meta">E-COMMERCE • 2024</div>
-                        <h3 data-key="project1-title">E-Shop FIFA (Clone)</h3>
-                        <p data-key="project1-desc">Architecture e-commerce complète, responsive et optimisée pour la conversion.</p>
+                        <div class="card-meta">2024 • WEB FULLSTACK</div>
+                        <h3 data-key="project1-title">Projet Clonage site FIFA</h3>
+                        <p data-key="project1-desc">Développement d'un clone du site officiel pour étudier l'architecture web moderne et le responsive design.</p>
                         <div class="card-techs">
-                            <span>PHP</span><span>SQL</span><span>JS</span>
+                            <span>HTML5</span><span>CSS3</span><span>JS</span><span>PHP</span><span>SQL</span>
                         </div>
                     </div>
                 </article>
 
                 <article class="glass-card project-card" data-category="web">
                     <div class="card-image">
-                        <img src="images/portfolio.png" alt="Portfolio">
+                        <img src="images/portfolio.png" alt="Projet Portfolio">
                         <div class="overlay">
                             <a href="https://github.com/Ka-ory/Ka-ory.github.io" target="_blank" class="btn-overlay">Code Source</a>
                         </div>
                     </div>
                     <div class="card-content">
-                        <div class="card-meta">UI/UX DESIGN • 2025</div>
-                        <h3 data-key="project2-title">Portfolio Premium</h3>
-                        <p data-key="project2-desc">Site vitrine haute performance, multilingue avec design Glassmorphism.</p>
+                        <div class="card-meta">2025 • FRONTEND</div>
+                        <h3 data-key="project2-title">Mon Portfolio</h3>
+                        <p data-key="project2-desc">Conception de ce site vitrine interactif, multilingue et animé pour présenter mes compétences.</p>
                         <div class="card-techs">
-                            <span>HTML5</span><span>CSS3</span><span>Design</span>
+                            <span>HTML5</span><span>CSS3</span><span>Canvas JS</span>
                         </div>
                     </div>
                 </article>
 
                 <article class="glass-card project-card" data-category="app">
                     <div class="card-image">
-                        <img src="images/loxam.png" alt="ERP Loxam">
+                        <img src="images/loxam.png" alt="App Loxam">
                         <div class="overlay">
                             <a href="https://github.com/KaoryPrime/Sae-de-fou-" target="_blank" class="btn-overlay">Code Source</a>
                         </div>
                     </div>
                     <div class="card-content">
-                        <div class="card-meta">LOGICIEL MÉTIER • 2024</div>
-                        <h3 data-key="project3-title">ERP Loxam</h3>
-                        <p data-key="project3-desc">Solution lourde de gestion de stocks et location pour entreprise.</p>
+                        <div class="card-meta">2024 • LOGICIEL C#</div>
+                        <h3 data-key="project3-title">App Gestion (Loxam)</h3>
+                        <p data-key="project3-desc">Création d'un ERP lourd pour la gestion de location de matériel et de stocks.</p>
                         <div class="card-techs">
-                            <span>C#</span><span>.NET</span><span>MySQL</span>
+                            <span>C#</span><span>.NET (WPF)</span><span>MySQL</span>
                         </div>
                     </div>
                 </article>
             </div>
         </section>
 
-        <section id="formation" class="section-compact">
+        <section id="parcours" class="section-compact">
             <div class="grid-2-col">
                 <div class="col-glass">
                     <h3 data-key="education-title"><i class="fas fa-graduation-cap"></i> Formation</h3>
+                    
                     <div class="timeline-entry">
-                        <span class="date" data-key="edu1-date">2024 - 2027</span>
-                        <h4 data-key="edu1-title">BUT Informatique</h4>
-                        <p data-key="edu1-desc">Fullstack & Architecture SI</p>
+                        <span class="date" data-key="edu1-date">2024 - 2027 (prévu)</span>
+                        <h4 data-key="edu1-title">BUT Informatique - Parcours IAMSI</h4>
+                        <p class="location" data-key="edu1-location">Université Savoie Mont-Blanc, Annecy (74)</p>
+                        <p class="desc" data-key="edu1-desc">Développement web (Front/Back), gestion de BDD, management de SI.</p>
                     </div>
+
                     <div class="timeline-entry">
                         <span class="date" data-key="edu2-date">2024</span>
-                        <h4 data-key="edu2-title">Bac STMG (SIG)</h4>
-                        <p>Mention Assez Bien</p>
+                        <h4 data-key="edu2-title">Baccalauréat Technologique (STMG)</h4>
+                        <p class="location" data-key="edu2-location">Lycée du Granier, La Ravoire (73)</p>
+                        <p class="desc" data-key="edu2-desc">Spécialité Systèmes d'Information et de Gestion (SIG), Mention Assez Bien.</p>
                     </div>
                 </div>
                 
                 <div class="col-glass">
                     <h3 data-key="exp-title"><i class="fas fa-briefcase"></i> Expérience</h3>
+                    
                     <div class="timeline-entry">
-                        <span class="date" data-key="exp1-date">Depuis 11/2025</span>
-                        <h4 data-key="exp1-title">Gestion de Site</h4>
-                        <p class="company">Trialp</p>
+                        <span class="date" data-key="exp1-date">Depuis le 01/11/2025 (CDI)</span>
+                        <h4 data-key="exp1-title">Agent d'accueil en déchetterie</h4>
+                        <p class="location" data-key="exp1-location">Trialp, Secteur SIBRESCA</p>
+                        <p class="desc" data-key="exp1-desc">Gestion des usagers, conseil sur le tri, maintenance du site</p>
                     </div>
+
                     <div class="timeline-entry">
-                        <span class="date" data-key="exp2-date">Avril 2025</span>
-                        <h4 data-key="exp2-title">Préparateur Véhicule</h4>
-                        <p class="company">Jean Lain Occasions</p>
+                        <span class="date" data-key="exp2-date">Avril 2025 (2 semaines)</span>
+                        <h4 data-key="exp2-title">Préparateur de Véhicule</h4>
+                        <p class="location" data-key="exp2-location">Jean Lain Occasions, Chambéry (73)</p>
+                        <p class="desc" data-key="exp2-desc">Contrôle qualité, préparation esthétique et gestion du parc. Développement de compétences en rigueur et orientation client.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <section id="references" class="section-compact">
-            <h2 class="sr-only" data-key="ref-title">Références</h2>
-            <div class="glass-banner">
+            <h2 data-key="ref-title">Références</h2>
+            <div class="glass-banner references-container">
                 <div class="ref-item">
-                    <i class="fas fa-quote-left"></i>
+                    <i class="fas fa-user-tie"></i>
                     <div>
-                        <strong>Pascal COLIN</strong>
-                        <span data-key="ref1-role">Enseignant UML & SQL</span>
+                        <strong data-key="ref1-name">Pascal COLIN</strong>
+                        <span class="role" data-key="ref1-role">Enseignant d'UML et SQL</span>
+                        <a href="mailto:pascal.colin@univ-smb.fr" class="ref-link">pascal.colin@univ-smb.fr</a>
+                        <span class="ref-location">USMB, Annecy (74)</span>
                     </div>
                 </div>
                 <div class="ref-item">
-                    <i class="fas fa-quote-left"></i>
+                    <i class="fas fa-user-tie"></i>
                     <div>
-                        <strong>Luc DAMAS</strong>
-                        <span data-key="ref2-role">Enseignant Web</span>
+                        <strong data-key="ref2-name">Luc DAMAS</strong>
+                        <span class="role" data-key="ref2-role">Enseignant d'HTML et JS</span>
+                        <a href="mailto:Luc.damas@univ-smb.fr" class="ref-link">Luc.damas@univ-smb.fr</a>
+                        <a href="https://luc-damas.fr" target="_blank" class="ref-link">luc-damas.fr</a>
                     </div>
                 </div>
             </div>
@@ -236,20 +275,20 @@
 
         <footer id="contact">
             <div class="footer-glass">
-                <div class="footer-content">
-                    <div class="footer-cta">
-                        <h2 data-key="contact-title">Prêt à collaborer ?</h2>
-                        <p data-key="contact-subtitle">Créons ensemble une solution qui valorise votre activité.</p>
-                        <a href="mailto:kamil.cinarpro@gmail.com" class="btn-primary" data-key="contact-email">Lancer le projet</a>
-                    </div>
-                    <div class="footer-links">
-                        <a href="https://www.linkedin.com/in/kamilcinar/" target="_blank">LinkedIn</a>
-                        <a href="https://github.com/Ka-ory" target="_blank">GitHub</a>
-                        <a href="images/cv-kamil-fr.pdf" target="_blank">CV PDF</a>
-                    </div>
+                <h2 data-key="contact-title">Restons en contact</h2>
+                <p data-key="contact-subtitle">N'hésitez pas à me contacter, que ce soit pour une opportunité ou simplement pour échanger.</p>
+                
+                <div class="footer-cta-group">
+                    <a href="mailto:kamil.cinarpro@gmail.com" class="btn-primary" data-key="contact-email">Envoyer un E-mail</a>
                 </div>
+
+                <div class="footer-links">
+                    <a href="https://www.linkedin.com/in/kamilcinar/" target="_blank">LinkedIn</a>
+                    <a href="https://github.com/Ka-ory" target="_blank">GitHub</a>
+                </div>
+                
                 <div class="footer-bottom">
-                    &copy; 2025 Kamil CINAR. Design & Development.
+                    &copy; 2025 Kamil CINAR. Tous droits réservés.
                 </div>
             </div>
         </footer>
