@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio de Kamil CINAR</title>
+    <title>Kamil CINAR - Développeur Web & Solutions Digitales</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icon-css@1.0.12/css/flag-icon.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,15 +28,14 @@
             <div class="nav-menu mobile-nav">
                 <ul class="nav-list">
                     <li class="nav-item"><a href="#apropos" class="nav-link" data-key="nav-about">À Propos</a></li>
-                    <li class="nav-item"><a href="#portfolio" class="nav-link" data-key="nav-portfolio">Portfolio</a></li>
+                    <li class="nav-item"><a href="#portfolio" class="nav-link" data-key="nav-portfolio">Réalisations</a></li>
                     <li class="nav-item"><a href="#formation" class="nav-link" data-key="nav-education">Formation</a></li>
                     <li class="nav-item"><a href="#experience" class="nav-link" data-key="nav-experience">Expérience</a></li>
-                    <li class="nav-item"><a href="#references" class="nav-link" data-key="nav-references">Références</a></li>
                     <li class="nav-item"><a href="#contact" class="nav-link" data-key="nav-contact">Contact</a></li>
                 </ul>
 
                 <div class="mobile-extras">
-                    <a href="images/cv-kamil-fr.pdf" class="nav-cv-button mobile-cv-btn" target="_blank" data-key="nav-cv">Télécharger CV</a>
+                    <a href="images/cv-kamil-fr.pdf" class="nav-cv-button mobile-cv-btn" target="_blank" data-key="nav-cv">Mon CV</a>
                     <div class="lang-switcher">
                         <button class="lang-btn-mobile" data-lang="fr">FR</button>
                         <button class="lang-btn-mobile" data-lang="en">EN</button>
@@ -45,7 +44,8 @@
             </div>
 
             <div class="nav-right nav-right-pc">
-                <a href="images/cv-kamil-fr.pdf" class="nav-cv-button desktop-cv-btn" target="_blank" rel="noopener noreferrer" data-key="nav-cv">Télécharger mon CV</a>
+                <a href="#contact" class="nav-contact-btn">Me Contacter</a>
+                <a href="images/cv-kamil-fr.pdf" class="nav-cv-button desktop-cv-btn" target="_blank" rel="noopener noreferrer" data-key="nav-cv">CV</a>
                 <div class="lang-switcher">
                     <button id="lang-fr" class="active">FR</button>
                     <button id="lang-en">EN</button>
@@ -55,14 +55,16 @@
     </nav>
 
     <header class="hero-section" id="accueil">
-        <h1><span class="glitch-text" data-key="hero-title">Kamil CINAR</span></h1>
+        <h1><span class="gradient-text" data-key="hero-title">Kamil CINAR</span></h1>
         <p data-key="hero-subtitle">
-            Étudiant en BUT Informatique, développeur passionné par la création de solutions logicielles modernes et performantes.
+            Étudiant en Informatique & Développeur Web. J'accompagne les professionnels dans la création de solutions digitales performantes et sur-mesure.
         </p>
+        <div class="hero-cta">
+            <a href="#portfolio" class="cta-button">Voir mes projets</a>
+        </div>
     </header>
 
     <main>
-        
         <section id="apropos" class="animate-on-scroll">
             <h2 data-key="about-title">À Propos de Moi</h2>
             <div class="about-grid">
@@ -177,11 +179,11 @@
 
         <section id="portfolio" class="animate-on-scroll">
             <h2 data-key="portfolio-title">Portfolio</h2>
-            <p class="section-intro" data-key="portfolio-intro">Voici les projets sur lesquels j'ai travaillé, présentés sous forme de cas d'études.</p>
+            <p class="section-intro" data-key="portfolio-intro">Une sélection de projets démontrant mes capacités techniques et mon souci du détail.</p>
             
             <div class="portfolio-filters">
                 <button class="filter-btn active" data-filter="all">Tous</button>
-                <button class="filter-btn" data-filter="web">Web</button>
+                <button class="filter-btn" data-filter="web">Web & E-commerce</button>
                 <button class="filter-btn" data-filter="app">Logiciel</button>
             </div>
 
@@ -189,10 +191,10 @@
                 
                 <article class="project-card" data-category="web">
                     <div class="project-image-placeholder">
-                        <img src="images/fifa.png" alt="Projet FIFA">
+                        <img src="images/fifa.png" alt="Projet FIFA E-commerce">
                     </div>
                     <div class="project-card-content">
-                        <h3 data-key="project1-title">Projet Clonage site FIFA</h3>
+                        <h3 data-key="project1-title">E-Shop FIFA (Clone)</h3>
                         
                         <div class="project-specs">
                             <div class="spec-col">
@@ -200,8 +202,8 @@
                                 <span class="spec-val">2024</span>
                             </div>
                             <div class="spec-col">
-                                <span class="spec-lbl" data-key="lbl-context">Contexte</span>
-                                <span class="spec-val">Universitaire (BUT2)</span>
+                                <span class="spec-lbl" data-key="lbl-context">Type</span>
+                                <span class="spec-val">E-commerce</span>
                             </div>
                             <div class="spec-col">
                                 <span class="spec-lbl" data-key="lbl-role">Rôle</span>
@@ -209,7 +211,7 @@
                             </div>
                             <div class="spec-col">
                                 <span class="spec-lbl" data-key="lbl-status">Statut</span>
-                                <span class="spec-val st-active"><span class="dot"></span><span data-key="status-wip">En cours</span></span>
+                                <span class="spec-val st-active"><span class="dot"></span><span data-key="status-wip">En ligne</span></span>
                             </div>
                             <div class="spec-col spec-full">
                                 <span class="spec-lbl">Technos</span>
@@ -218,10 +220,12 @@
                         </div>
 
                         <p data-key="project1-desc">
-                            Développement d'un clone du site officiel pour étudier l'architecture web moderne et le responsive design.
+                            Développement complet d'une boutique en ligne (clone FIFA). Architecture robuste et responsive design adapté à tous les écrans.
                         </p>
                         <div class="project-links">
-                            <a href="#" class="link-button disabled" data-key="project1-code">Code bientôt dispo</a>
+                            <a href="http://51.83.36.122:6677/boutique" target="_blank" class="link-button main-link">
+                                <i class="fas fa-external-link-alt"></i> Voir le site en direct
+                            </a>
                         </div>
                     </div>
                 </article>
@@ -231,7 +235,7 @@
                         <img src="images/portfolio.png" alt="Projet Portfolio">
                     </div>
                     <div class="project-card-content">
-                        <h3 data-key="project2-title">Mon Portfolio</h3>
+                        <h3 data-key="project2-title">Portfolio Professionnel</h3>
 
                         <div class="project-specs">
                             <div class="spec-col">
@@ -239,8 +243,8 @@
                                 <span class="spec-val">2025</span>
                             </div>
                             <div class="spec-col">
-                                <span class="spec-lbl" data-key="lbl-context">Contexte</span>
-                                <span class="spec-val">Projet Personnel</span>
+                                <span class="spec-lbl" data-key="lbl-context">Type</span>
+                                <span class="spec-val">Site Vitrine</span>
                             </div>
                             <div class="spec-col">
                                 <span class="spec-lbl" data-key="lbl-role">Rôle</span>
@@ -252,15 +256,15 @@
                             </div>
                             <div class="spec-col spec-full">
                                 <span class="spec-lbl">Technos</span>
-                                <span class="spec-val">HTML5, CSS3, Canvas JS</span>
+                                <span class="spec-val">HTML5, CSS3, JS Moderne</span>
                             </div>
                         </div>
 
                         <p data-key="project2-desc">
-                            Conception de ce site vitrine interactif, multilingue et animé pour présenter mes compétences.
+                            Conception de ce site vitrine interactif et multilingue. Optimisé pour la présentation de services et l'expérience utilisateur.
                         </p>
                         <div class="project-links">
-                            <a href="https://github.com/Ka-ory/Ka-ory.github.io" target="_blank" class="link-button" data-key="project2-code">Voir le Code</a>
+                            <a href="https://github.com/Ka-ory/Ka-ory.github.io" target="_blank" class="link-button" data-key="project2-code">Voir le Code Source</a>
                         </div>
                     </div>
                 </article>
@@ -270,7 +274,7 @@
                         <img src="images/loxam.png" alt="Application Loxam">
                     </div>
                     <div class="project-card-content">
-                        <h3 data-key="project3-title">App Gestion (Loxam)</h3>
+                        <h3 data-key="project3-title">App Gestion ERP (Loxam)</h3>
 
                         <div class="project-specs">
                             <div class="spec-col">
@@ -278,8 +282,8 @@
                                 <span class="spec-val">2024</span>
                             </div>
                             <div class="spec-col">
-                                <span class="spec-lbl" data-key="lbl-context">Contexte</span>
-                                <span class="spec-val">Projet de Groupe</span>
+                                <span class="spec-lbl" data-key="lbl-context">Type</span>
+                                <span class="spec-val">Logiciel Métier</span>
                             </div>
                             <div class="spec-col">
                                 <span class="spec-lbl" data-key="lbl-role">Rôle</span>
@@ -296,10 +300,10 @@
                         </div>
 
                         <p data-key="project3-desc">
-                            Création d'un ERP lourd pour la gestion de location de matériel et de stocks.
+                            Création d'un ERP lourd pour la gestion de stocks et location de matériel. Solution logicielle pour l'optimisation des processus.
                         </p>
                         <div class="project-links">
-                            <a href="https://github.com/KaoryPrime/Sae-de-fou-" target="_blank" class="link-button" data-key="project3-code">Voir le Code</a>
+                            <a href="https://github.com/KaoryPrime/Sae-de-fou-" target="_blank" class="link-button" data-key="project3-code">Voir le Code Source</a>
                         </div>
                     </div>
                 </article>
@@ -372,10 +376,10 @@
         </section>
 
         <footer id="contact">
-            <h2 data-key="contact-title">Restons en contact</h2>
-            <p data-key="contact-subtitle">N'hésitez pas à me contacter, que ce soit pour une opportunité ou simplement pour échanger.</p>
+            <h2 data-key="contact-title">Démarrons un projet ensemble</h2>
+            <p data-key="contact-subtitle">Besoin d'un site web ou d'une solution logicielle ? Discutons de vos besoins.</p>
             <div class="social-links">
-                <a href="mailto:kamil.cinarpro@gmail.com" class="link-button" data-key="contact-email">Envoyer un E-mail</a>
+                <a href="mailto:kamil.cinarpro@gmail.com" class="link-button main-link" data-key="contact-email">Me contacter par E-mail</a>
                 <a href="https://www.linkedin.com/in/kamilcinar/" target="_blank" rel="noopener noreferrer" class="link-button">LinkedIn</a>
                 <a href="https://github.com/Ka-ory" target="_blank" rel="noopener noreferrer" class="link-button">GitHub</a>
             </div>
