@@ -3,28 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kamil CINAR | Développeur Web & Logiciel</title>
+    <title>Kamil CINAR | Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icon-css@1.0.12/css/flag-icon.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <div class="background-glow">
         <div class="orb orb-1"></div>
         <div class="orb orb-2"></div>
-        <div class="orb orb-3"></div>
     </div>
-    
     <canvas id="starfield"></canvas>
 
     <nav class="glass-nav">
         <div class="nav-container">
-            <a href="#accueil" class="nav-logo">Kamil CINAR<span class="dot">.</span></a>
+            <a href="#" class="nav-logo">Kamil CINAR</a>
             
-            <button class="nav-toggle" aria-label="Menu">
+            <button class="nav-toggle">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -34,15 +30,15 @@
                 <ul class="nav-list">
                     <li><a href="#apropos" class="nav-link" data-key="nav-about">À Propos</a></li>
                     <li><a href="#portfolio" class="nav-link" data-key="nav-portfolio">Portfolio</a></li>
-                    <li><a href="#formation" class="nav-link" data-key="nav-education">Parcours</a></li>
+                    <li><a href="#formation" class="nav-link" data-key="nav-education">Formation</a></li>
+                    <li><a href="#experience" class="nav-link" data-key="nav-experience">Expérience</a></li>
                     <li><a href="#contact" class="nav-link" data-key="nav-contact">Contact</a></li>
                 </ul>
-
                 <div class="nav-actions">
-                    <a href="images/cv-kamil-fr.pdf" target="_blank" class="btn-glass" data-key="nav-cv">CV</a>
+                    <a href="#contact" class="btn-contact-nav" data-key="nav-contact">Me Contacter</a>
+                    <a href="images/cv-kamil-fr.pdf" class="btn-cv-nav" target="_blank" data-key="nav-cv">Télécharger mon CV</a>
                     <div class="lang-switcher">
                         <button class="lang-btn active" data-lang="fr">FR</button>
-                        <span>/</span>
                         <button class="lang-btn" data-lang="en">EN</button>
                     </div>
                 </div>
@@ -50,249 +46,214 @@
         </div>
     </nav>
 
-    <header id="accueil" class="hero-section container">
-        <div class="hero-content fade-in">
-            <h1 data-key="hero-title">Kamil CINAR</h1>
+    <header class="hero-section container">
+        <div class="hero-content">
+            <h1><span class="glitch-text" data-key="hero-title">Kamil CINAR</span></h1>
             <p data-key="hero-subtitle">
-                Étudiant en BUT Informatique, développeur passionné par la création de solutions logicielles modernes, fiables et performantes.
+                Étudiant en BUT Informatique, développeur passionné par la création de solutions logicielles modernes et performantes.
             </p>
-            <div class="hero-buttons">
-                <a href="#portfolio" class="btn-primary" data-key="nav-portfolio">Voir mes projets</a>
-                <a href="#contact" class="btn-glass" data-key="nav-contact">Me contacter</a>
-            </div>
         </div>
     </header>
 
-    <main>
-        <section id="apropos" class="container">
-            <div class="section-header">
-                <h2 data-key="about-title">À Propos de Moi</h2>
-            </div>
-
-            <div class="bento-grid-expanded">
-                <div class="bento-card profile-card">
-                    <h3><i class="fas fa-user-circle"></i> <span data-key="about-info-title">Infos & Contact</span></h3>
-                    <ul class="info-list">
+    <main class="container">
+        <section id="apropos">
+            <h2 data-key="about-title">À Propos de Moi</h2>
+            
+            <div class="grid-3">
+                <div class="glass-card">
+                    <h3 data-key="about-info-title">Infos & Contact</h3>
+                    <ul>
                         <li><i class="fas fa-calendar-alt"></i> <span data-key="about-info-age">1 Mai 2006 (19ans)</span></li>
                         <li><i class="fas fa-map-marker-alt"></i> <span data-key="about-info-location">Annecy (74), France</span></li>
                         <li><i class="fas fa-envelope"></i> kamil.cinarpro@gmail.com</li>
                         <li><i class="fas fa-phone"></i> 06 23 35 91 09</li>
-                        <li><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/kamilcinar/" target="_blank">LinkedIn Profile</a></li>
+                        <li><i class="fab fa-linkedin"></i> <a href="https://linkedin.com" target="_blank">Kamil CINAR</a></li>
                     </ul>
                 </div>
 
-                <div class="bento-card hobbies-card">
-                    <h3 data-key="about-hobbies-title">Passions</h3>
-                    <ul class="check-list">
-                        <li data-key="about-hobbies-1">Apprentissage du piano</li>
-                        <li data-key="about-hobbies-2">Réalisation et montage vidéo</li>
-                        <li data-key="about-hobbies-3">Programmation & Veille tech</li>
-                        <li data-key="about-hobbies-4">Automobile & Mécanique</li>
-                        <li data-key="about-hobbies-5">Volley ball</li>
+                <div class="glass-card">
+                    <h3 data-key="about-hobbies-title">Passions et Loisirs</h3>
+                    <ul>
+                        <li data-key="about-hobbies-1"><i class="fas fa-check"></i> Apprentissage du piano</li>
+                        <li data-key="about-hobbies-2"><i class="fas fa-check"></i> Vidéo & Montage</li>
+                        <li data-key="about-hobbies-3"><i class="fas fa-check"></i> Prog & Veille Tech</li>
+                        <li data-key="about-hobbies-4"><i class="fas fa-check"></i> Automobile</li>
+                        <li data-key="about-hobbies-5"><i class="fas fa-check"></i> Volley ball</li>
                     </ul>
                 </div>
 
-                <div class="bento-card soft-card">
-                    <h3 data-key="about-soft-title">Savoir-Être</h3>
-                    <ul class="bullet-list">
-                        <li data-key="about-soft-1">Innovant & Dynamique</li>
-                        <li data-key="about-soft-2">Fiable & Responsable</li>
-                        <li data-key="about-soft-3">Grande capacité d'adaptation</li>
-                        <li data-key="about-soft-4">Rigueur & Souci du détail</li>
-                    </ul>
-                </div>
-
-                <div class="bento-card lang-card">
+                <div class="glass-card">
                     <h3 data-key="about-lang-title">Langues</h3>
-                    <div class="lang-grid">
-                        <div class="lang-item"><span class="flag-icon flag-icon-fr"></span> <span data-key="about-lang-1b">Natif (C2)</span></div>
-                        <div class="lang-item"><span class="flag-icon flag-icon-gb"></span> <span data-key="about-lang-2b">Anglais (B2)</span></div>
-                        <div class="lang-item"><span class="flag-icon flag-icon-es"></span> <span data-key="about-lang-3b">Espagnol (A2)</span></div>
-                        <div class="lang-item"><span class="flag-icon flag-icon-tr"></span> <span data-key="about-lang-5b">Turc (C2)</span></div>
+                    <ul>
+                        <li><span class="flag-icon flag-icon-fr"></span> <strong data-key="about-lang-1b">Natif (C2)</strong></li>
+                        <li><span class="flag-icon flag-icon-gb"></span> <span data-key="about-lang-2b">Anglais (B2)</span></li>
+                        <li><span class="flag-icon flag-icon-es"></span> <span data-key="about-lang-3b">Espagnol (A2)</span></li>
+                        <li><span class="flag-icon flag-icon-tr"></span> <span data-key="about-lang-5b">Turc (C2)</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="glass-card soft-skills-container">
+                <h3 data-key="about-soft-title">Compétences Générales</h3>
+                <ul class="bullet-list" style="display: flex; flex-wrap: wrap; gap: 20px;">
+                    <li data-key="about-soft-1">Innovant, dynamique et confiant</li>
+                    <li data-key="about-soft-2">Digne de confiance & Responsable</li>
+                    <li data-key="about-soft-3">Adaptable & Aime apprendre</li>
+                    <li data-key="about-soft-4">Rigueur & Contrôle Qualité</li>
+                </ul>
+            </div>
+
+            <div class="tech-container">
+                <h3 data-key="about-tech-title">Compétences Techniques</h3>
+                <div id="skills-content-fr" class="tech-grid-inner">
+                    <div class="tech-col">
+                        <h4 data-key="about-tech-front">Frontend</h4>
+                        <div class="tech-item"><img src="images/javascript.png"> JS (ES6+)</div>
+                        <div class="tech-item"><img src="images/react.png"> React</div>
+                        <div class="tech-item"><img src="images/html5.png"> HTML5</div>
+                        <div class="tech-item"><img src="images/css3.png"> CSS3</div>
+                    </div>
+                    <div class="tech-col">
+                        <h4 data-key="about-tech-back">Backend</h4>
+                        <div class="tech-item"><img src="images/python.png"> Python</div>
+                        <div class="tech-item"><img src="images/php.png"> PHP</div>
+                        <div class="tech-item"><img src="images/sql.png"> PostgreSQL</div>
+                        <div class="tech-item"><img src="images/wordpress.png"> WordPress</div>
+                    </div>
+                    <div class="tech-col">
+                        <h4 data-key="about-tech-tools">Outils & Web</h4>
+                        <div class="tech-item"><img src="images/github.png"> Git & GitHub</div>
+                        <div class="tech-item"><img src="images/vscode.png"> VS Code</div>
+                        <div class="tech-item"><img src="images/seo.png"> SEO</div>
                     </div>
                 </div>
-
-                <div class="bento-card tech-card">
-                    <h3 data-key="about-tech-title">Stack Technique</h3>
-                    <div id="skills-content-fr" class="tech-grid">
-                        <div class="tech-group">
-                            <h4 data-key="about-tech-front">Frontend</h4>
-                            <div class="tags"><span class="tag">JS (ES6+)</span><span class="tag">React</span><span class="tag">HTML5</span><span class="tag">CSS3/Sass</span></div>
-                        </div>
-                        <div class="tech-group">
-                            <h4 data-key="about-tech-back">Backend</h4>
-                            <div class="tags"><span class="tag">Python</span><span class="tag">PHP</span><span class="tag">PostgreSQL</span><span class="tag">WordPress</span></div>
-                        </div>
-                        <div class="tech-group">
-                            <h4 data-key="about-tech-tools">Outils</h4>
-                            <div class="tags"><span class="tag">Git</span><span class="tag">VS Code</span><span class="tag">SEO</span></div>
-                        </div>
+                <div id="skills-content-en" class="tech-grid-inner" style="display: none;">
+                    <div class="tech-col">
+                        <h4>Languages</h4>
+                        <div class="tech-item">C# .NET</div>
+                        <div class="tech-item">Python</div>
                     </div>
-                     <div id="skills-content-en" class="tech-grid" style="display: none;">
-                        <div class="tech-group">
-                            <h4>Languages & DB</h4>
-                            <div class="tags"><span class="tag">C# .NET</span><span class="tag">Web Stack</span><span class="tag">PostgreSQL</span><span class="tag">Python</span></div>
-                        </div>
-                         <div class="tech-group">
-                            <h4>Tools</h4>
-                            <div class="tags"><span class="tag">Linux</span><span class="tag">Git</span><span class="tag">Visual Paradigm</span></div>
-                        </div>
+                    <div class="tech-col">
+                        <h4>Database</h4>
+                        <div class="tech-item">PostgreSQL</div>
+                        <div class="tech-item">MySQL</div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="portfolio" class="container">
-            <div class="section-header">
-                <h2 data-key="portfolio-title">Réalisations</h2>
-                <div class="filters">
-                    <button class="filter-btn active" data-filter="all">Tout</button>
-                    <button class="filter-btn" data-filter="web">Web</button>
-                    <button class="filter-btn" data-filter="app">Logiciel</button>
-                </div>
+        <section id="portfolio">
+            <h2 data-key="portfolio-title">Portfolio</h2>
+            <div class="portfolio-filters">
+                <button class="filter-btn active" data-filter="all">Tous</button>
+                <button class="filter-btn" data-filter="web">Web</button>
+                <button class="filter-btn" data-filter="app">Logiciel</button>
             </div>
 
             <div class="project-grid">
-                <article class="glass-card project-card" data-category="web">
-                    <div class="card-image">
-                        <img src="images/fifa.png" alt="Projet FIFA">
-                        <div class="overlay">
-                            <a href="http://51.83.36.122:6677/boutique" target="_blank" class="btn-overlay">Visiter le site</a>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <div class="card-meta">2024 • WEB FULLSTACK</div>
-                        <h3 data-key="project1-title">E-Shop FIFA (Clone)</h3>
-                        <p data-key="project1-desc">Architecture e-commerce complète basée sur le site officiel. Responsive design, gestion panier et base de données.</p>
-                        <div class="card-techs">
-                            <span>HTML5</span><span>CSS3</span><span>JS</span><span>PHP</span><span>SQL</span>
-                        </div>
+                <article class="project-card" data-category="web">
+                    <div class="project-img"><img src="images/fifa.png" alt="FIFA"></div>
+                    <div class="project-content">
+                        <div class="project-meta">2024 • WEB FULLSTACK</div>
+                        <h3 data-key="project1-title">Projet Clonage site FIFA</h3>
+                        <p data-key="project1-desc">Clone du site officiel FIFA. Architecture web moderne.</p>
+                        <a href="http://51.83.36.122:6677/boutique" target="_blank" class="project-link">Voir le site</a>
                     </div>
                 </article>
 
-                <article class="glass-card project-card" data-category="web">
-                    <div class="card-image">
-                        <img src="images/portfolio.png" alt="Projet Portfolio">
-                        <div class="overlay">
-                            <a href="https://github.com/Ka-ory/Ka-ory.github.io" target="_blank" class="btn-overlay">Voir le Code</a>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <div class="card-meta">2025 • FRONTEND</div>
-                        <h3 data-key="project2-title">Portfolio Premium</h3>
-                        <p data-key="project2-desc">Site vitrine haute performance. Design "Glassmorphism" soigné, animations fluides et support multilingue.</p>
-                        <div class="card-techs">
-                            <span>HTML5</span><span>CSS3</span><span>Canvas JS</span>
-                        </div>
+                <article class="project-card" data-category="web">
+                    <div class="project-img"><img src="images/portfolio.png" alt="Portfolio"></div>
+                    <div class="project-content">
+                        <div class="project-meta">2025 • FRONTEND</div>
+                        <h3 data-key="project2-title">Mon Portfolio</h3>
+                        <p data-key="project2-desc">Site vitrine interactif et multilingue.</p>
+                        <a href="#" class="project-link">Code Source</a>
                     </div>
                 </article>
 
-                <article class="glass-card project-card" data-category="app">
-                    <div class="card-image">
-                        <img src="images/loxam.png" alt="App Loxam">
-                        <div class="overlay">
-                            <a href="https://github.com/KaoryPrime/Sae-de-fou-" target="_blank" class="btn-overlay">Voir le Code</a>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <div class="card-meta">2024 • LOGICIEL C#</div>
-                        <h3 data-key="project3-title">ERP Loxam</h3>
-                        <p data-key="project3-desc">Solution lourde pour la gestion de stocks et location de matériel pro. Interface WPF et base de données MySQL.</p>
-                        <div class="card-techs">
-                            <span>C#</span><span>.NET (WPF)</span><span>MySQL</span>
-                        </div>
+                <article class="project-card" data-category="app">
+                    <div class="project-img"><img src="images/loxam.png" alt="Loxam"></div>
+                    <div class="project-content">
+                        <div class="project-meta">2024 • LOGICIEL C#</div>
+                        <h3 data-key="project3-title">App Gestion (Loxam)</h3>
+                        <p data-key="project3-desc">ERP lourd pour la gestion de location et stocks.</p>
+                        <a href="#" class="project-link">Voir le projet</a>
                     </div>
                 </article>
             </div>
         </section>
 
-        <section id="formation" class="container">
-            <div class="grid-2-col">
-                <div class="col-glass">
-                    <h3 data-key="education-title"><i class="fas fa-graduation-cap"></i> Formation</h3>
-                    
-                    <div class="timeline-entry">
-                        <span class="date" data-key="edu1-date">2024 - 2027 (En cours)</span>
-                        <h4 data-key="edu1-title">BUT Informatique - Parcours IAMSI</h4>
-                        <p class="location" data-key="edu1-location">Université Savoie Mont-Blanc, Annecy (74)</p>
-                        <p class="desc" data-key="edu1-desc">Développement web (Front/Back), gestion de BDD, management de SI.</p>
+        <section id="formation">
+            <div class="grid-2">
+                <div class="timeline-card">
+                    <h2 style="text-align: left; margin-bottom: 30px;" data-key="education-title">Formation</h2>
+                    <div class="timeline-item">
+                        <span class="t-date" data-key="edu1-date">2024 - 2027</span>
+                        <h4 class="t-title" data-key="edu1-title">BUT Informatique - IAMSI</h4>
+                        <p class="t-loc" data-key="edu1-location">USMB, Annecy</p>
+                        <p data-key="edu1-desc">Dev Web, BDD, Management SI.</p>
                     </div>
-
-                    <div class="timeline-entry">
-                        <span class="date" data-key="edu2-date">2024</span>
-                        <h4 data-key="edu2-title">Baccalauréat Technologique (STMG)</h4>
-                        <p class="location" data-key="edu2-location">Lycée du Granier, La Ravoire (73)</p>
-                        <p class="desc" data-key="edu2-desc">Spécialité Systèmes d'Information et de Gestion (SIG), Mention Assez Bien.</p>
+                    <div class="timeline-item">
+                        <span class="t-date" data-key="edu2-date">2024</span>
+                        <h4 class="t-title" data-key="edu2-title">Bac STMG (SIG)</h4>
+                        <p class="t-loc" data-key="edu2-location">Lycée du Granier</p>
+                        <p data-key="edu2-desc">Mention Assez Bien.</p>
                     </div>
                 </div>
-                
-                <div class="col-glass">
-                    <h3 data-key="exp-title"><i class="fas fa-briefcase"></i> Expérience</h3>
-                    
-                    <div class="timeline-entry">
-                        <span class="date" data-key="exp1-date">Depuis Nov. 2025</span>
-                        <h4 data-key="exp1-title">Agent d'accueil (Gestion Site)</h4>
-                        <p class="location" data-key="exp1-location">Trialp, Secteur SIBRESCA</p>
-                        <p class="desc" data-key="exp1-desc">Gestion des usagers, conseil sur le tri, maintenance et responsabilité du site.</p>
-                    </div>
 
-                    <div class="timeline-entry">
-                        <span class="date" data-key="exp2-date">Avril 2025 (2 semaines)</span>
-                        <h4 data-key="exp2-title">Préparateur de Véhicule</h4>
-                        <p class="location" data-key="exp2-location">Jean Lain Occasions, Chambéry (73)</p>
-                        <p class="desc" data-key="exp2-desc">Contrôle qualité, préparation esthétique. Développement de compétences en rigueur et relation client.</p>
+                <div class="timeline-card">
+                    <h2 style="text-align: left; margin-bottom: 30px;" data-key="exp-title">Expérience</h2>
+                    <div class="timeline-item">
+                        <span class="t-date" data-key="exp1-date">Depuis Nov 2025</span>
+                        <h4 class="t-title" data-key="exp1-title">Agent d'accueil</h4>
+                        <p class="t-loc" data-key="exp1-location">Trialp</p>
+                        <p data-key="exp1-desc">Gestion usagers, maintenance site.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="t-date" data-key="exp2-date">Avril 2025</span>
+                        <h4 class="t-title" data-key="exp2-title">Préparateur Véhicule</h4>
+                        <p class="t-loc" data-key="exp2-location">Jean Lain Occasions</p>
+                        <p data-key="exp2-desc">Contrôle qualité, préparation esthétique.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="references" class="container">
-            <div class="section-header">
-                <h2 data-key="ref-title">Références</h2>
-            </div>
-            <div class="references-container">
-                <div class="ref-item">
-                    <i class="fas fa-quote-left"></i>
+        <section id="references">
+            <h2 data-key="ref-title">Références</h2>
+            <div class="ref-grid">
+                <div class="ref-card">
+                    <i class="fas fa-user-tie ref-icon"></i>
                     <div>
-                        <strong data-key="ref1-name">Pascal COLIN</strong>
-                        <span class="role" data-key="ref1-role">Enseignant d'UML et SQL</span>
-                        <a href="mailto:pascal.colin@univ-smb.fr">pascal.colin@univ-smb.fr</a>
-                        <span class="ref-location">USMB, Annecy (74)</span>
+                        <h4 data-key="ref1-name">Pascal COLIN</h4>
+                        <p style="color:var(--accent); font-size:0.9rem;" data-key="ref1-role">Enseignant UML & SQL</p>
+                        <p style="color:#888; font-size:0.9rem;">pascal.colin@univ-smb.fr</p>
                     </div>
                 </div>
-                <div class="ref-item">
-                    <i class="fas fa-quote-left"></i>
+                <div class="ref-card">
+                    <i class="fas fa-user-tie ref-icon"></i>
                     <div>
-                        <strong data-key="ref2-name">Luc DAMAS</strong>
-                        <span class="role" data-key="ref2-role">Enseignant d'HTML et JS</span>
-                        <a href="mailto:Luc.damas@univ-smb.fr">Luc.damas@univ-smb.fr</a>
-                        <a href="https://luc-damas.fr" target="_blank">Site Web Perso</a>
+                        <h4 data-key="ref2-name">Luc DAMAS</h4>
+                        <p style="color:var(--accent); font-size:0.9rem;" data-key="ref2-role">Enseignant HTML & JS</p>
+                        <p style="color:#888; font-size:0.9rem;">Luc.damas@univ-smb.fr</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <footer id="contact">
-            <div class="footer-glass container">
-                <h2 data-key="contact-title">Démarrons un projet</h2>
-                <p data-key="contact-subtitle">Disponible pour discuter de vos besoins en développement web ou logiciel.</p>
-                
-                <div class="footer-cta-group">
-                    <a href="mailto:kamil.cinarpro@gmail.com" class="btn-primary" data-key="contact-email">M'envoyer un E-mail</a>
-                </div>
-
-                <div class="footer-links">
-                    <a href="https://www.linkedin.com/in/kamilcinar/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                    <a href="https://github.com/Ka-ory" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                </div>
-                
-                <div class="footer-bottom">
-                    &copy; 2025 Kamil CINAR. Design & Développement.
-                </div>
+            <h2 data-key="contact-title">Restons en contact</h2>
+            <p style="color:#888;" data-key="contact-subtitle">N'hésitez pas à me contacter pour une opportunité.</p>
+            <div style="margin-top: 30px;">
+                <a href="mailto:kamil.cinarpro@gmail.com" class="footer-btn" data-key="contact-email">Envoyer un E-mail</a>
+                <a href="https://linkedin.com" class="footer-btn">LinkedIn</a>
+                <a href="https://github.com" class="footer-btn">GitHub</a>
             </div>
+            <p style="margin-top: 50px; color:#444; font-size: 0.8rem;">&copy; 2025 Kamil CINAR. Tous droits réservés.</p>
         </footer>
+
     </main>
 
-    <script src="main.js" defer></script>
+    <script src="main.js"></script>
 </body>
 </html>
