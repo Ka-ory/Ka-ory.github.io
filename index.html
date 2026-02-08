@@ -3,255 +3,386 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Kamil CINAR</title>
+    <title>Portfolio de Kamil CINAR</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icon-css@1.0.12/css/flag-icon.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <div class="ambient-light"></div>
-    <div class="noise-overlay"></div>
-    <div class="custom-cursor"></div>
-    
+    <canvas id="starfield"></canvas>
+    <div class="cursor-halo"></div> 
+
     <nav class="navbar">
-        <div class="nav-container">
-            <a href="#" class="logo">KC<span class="dot">.</span></a>
+        <div class="navbar-container">
+            <a href="#accueil" class="navbar-logo">Kamil CINAR</a>
             
-            <div class="nav-links">
-                <a href="#about" class="magnetic-btn">À propos</a>
-                <a href="#competences" class="magnetic-btn">Compétences</a>
-                <a href="#projets" class="magnetic-btn">Projets</a>
-                <a href="#parcours" class="magnetic-btn">Parcours</a>
+            <button class="nav-toggle" aria-label="Ouvrir le menu">
+                <span class="burger-bar"></span>
+                <span class="burger-bar"></span>
+                <span class="burger-bar"></span>
+            </button>
+
+            <div class="nav-menu mobile-nav">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="#apropos" class="nav-link" data-key="nav-about">À Propos</a></li>
+                    <li class="nav-item"><a href="#portfolio" class="nav-link" data-key="nav-portfolio">Portfolio</a></li>
+                    <li class="nav-item"><a href="#formation" class="nav-link" data-key="nav-education">Formation</a></li>
+                    <li class="nav-item"><a href="#experience" class="nav-link" data-key="nav-experience">Expérience</a></li>
+                    <li class="nav-item"><a href="#references" class="nav-link" data-key="nav-references">Références</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link" data-key="nav-contact">Contact</a></li>
+                </ul>
+
+                <div class="mobile-extras">
+                    <a href="images/cv-kamil-fr.pdf" class="nav-cv-button mobile-cv-btn" target="_blank" data-key="nav-cv">Télécharger CV</a>
+                    <div class="lang-switcher">
+                        <button class="lang-btn-mobile" data-lang="fr">FR</button>
+                        <button class="lang-btn-mobile" data-lang="en">EN</button>
+                    </div>
+                </div>
             </div>
 
-            <div class="nav-actions">
-                <div class="lang-switch">
-                    <button class="active">FR</button>
-                    </div>
-                <a href="#contact" class="cta-button magnetic-btn">Contact</a>
+            <div class="nav-right nav-right-pc">
+                <a href="images/cv-kamil-fr.pdf" class="nav-cv-button desktop-cv-btn" target="_blank" rel="noopener noreferrer" data-key="nav-cv">Télécharger mon CV</a>
+                <div class="lang-switcher">
+                    <button id="lang-fr" class="active">FR</button>
+                    <button id="lang-en">EN</button>
+                </div>
             </div>
-            
-            <button class="mobile-toggle">
-                <span></span><span></span>
-            </button>
         </div>
     </nav>
 
+    <header class="hero-section" id="accueil">
+        <h1><span class="glitch-text" data-key="hero-title">Kamil CINAR</span></h1>
+        <p data-key="hero-subtitle">
+            Étudiant en BUT Informatique, développeur passionné par la création de solutions logicielles modernes et performantes.
+        </p>
+    </header>
+
     <main>
-        <section id="home" class="hero">
-            <div class="hero-content">
-                <div class="status-badge fade-in">
-                    <span class="status-dot"></span> Étudiant & Développeur
-                </div>
-                <h1 class="hero-title">
-                    <span class="reveal-text">Kamil</span>
-                    <span class="reveal-text accent-text">CINAR</span>
-                </h1>
-                <p class="hero-subtitle fade-in-up">
-                    Actuellement en <strong>BUT Informatique</strong> à l'IUT d'Annecy (USMB).<br>
-                    Passionné par le développement web, la cybersécurité et les nouvelles technologies.
-                </p>
-                <div class="hero-cta fade-in-up delay-1">
-                    <a href="#projets" class="primary-btn magnetic-btn">Mes Projets <i class="fas fa-arrow-right"></i></a>
-                    <a href="images/cv-kamil-fr.pdf" target="_blank" class="secondary-btn magnetic-btn"><i class="fas fa-download"></i> Télécharger CV</a>
-                </div>
-            </div>
-            
-            <div class="hero-visual">
-                <div class="glass-card float-anim">
-                    <img src="images/react.png" alt="React" style="width:24px;">
-                    <span>React Native</span>
-                </div>
-                <div class="glass-card float-anim delay-2">
-                    <img src="images/php.png" alt="PHP" style="width:24px;">
-                    <span>Backend PHP</span>
-                </div>
-                <div class="glass-card float-anim delay-3">
-                    <img src="images/python.png" alt="Python" style="width:24px;">
-                    <span>Python & IA</span>
-                </div>
-            </div>
-        </section>
-
-        <section id="about" class="section-padding">
-            <div class="about-layout">
-                <div class="about-text">
-                    <h2 class="section-title">Qui suis-je ?</h2>
-                    <p>
-                        Je m'appelle <strong>Kamil CINAR</strong>, j'ai 19 ans et je suis étudiant en 2ème année de BUT Informatique.
-                    </p>
-                    <p>
-                        Depuis toujours, je suis fasciné par le fonctionnement des systèmes informatiques. Ce qui n'était qu'une curiosité est devenu une véritable passion. 
-                        Aujourd'hui, je conçois des sites web, des applications et je m'intéresse de près à la sécurité des systèmes.
-                    </p>
-                    <div class="stats-row">
-                        <div class="stat-item">
-                            <span class="stat-number">2+</span>
-                            <span class="stat-label">Années d'études</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">5+</span>
-                            <span class="stat-label">Projets Réalisés</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-visual">
-                     </div>
-            </div>
-        </section>
-
-        <section id="competences" class="section-padding">
-            <h2 class="section-title">Mes Compétences</h2>
-            
-            <div class="marquee-container">
-                <div class="marquee-content">
-                    <span>HTML5</span><span>CSS3</span><span>JAVASCRIPT</span><span>PHP</span><span>PYTHON</span><span>SQL</span><span>REACT</span><span>C#</span><span>GIT</span><span>WORDPRESS</span>
-                    <span>HTML5</span><span>CSS3</span><span>JAVASCRIPT</span><span>PHP</span><span>PYTHON</span><span>SQL</span><span>REACT</span><span>C#</span><span>GIT</span><span>WORDPRESS</span>
-                </div>
-            </div>
-
-            <div class="skills-wrapper">
-                <div class="skill-column">
-                    <h3><i class="fas fa-laptop-code"></i> Développement Web</h3>
-                    <ul class="skill-list">
-                        <li>
-                            <div class="skill-info"><img src="images/html5.png" width="20"> HTML / CSS</div>
-                            <div class="skill-bar"><div class="fill" style="width: 95%"></div></div>
-                        </li>
-                        <li>
-                            <div class="skill-info"><img src="images/javascript.png" width="20"> JavaScript</div>
-                            <div class="skill-bar"><div class="fill" style="width: 80%"></div></div>
-                        </li>
-                        <li>
-                            <div class="skill-info"><img src="images/php.png" width="20"> PHP / SQL</div>
-                            <div class="skill-bar"><div class="fill" style="width: 85%"></div></div>
-                        </li>
-                        <li>
-                            <div class="skill-info"><img src="images/wordpress.png" width="20"> CMS (WordPress)</div>
-                            <div class="skill-bar"><div class="fill" style="width: 90%"></div></div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="skill-column">
-                    <h3><i class="fas fa-terminal"></i> Logiciel & Autres</h3>
-                    <ul class="skill-list">
-                        <li>
-                            <div class="skill-info"><img src="images/python.png" width="20"> Python</div>
-                            <div class="skill-bar"><div class="fill" style="width: 75%"></div></div>
-                        </li>
-                        <li>
-                            <div class="skill-info"><img src="images/loxam.png" width="20"> C# / .NET</div>
-                            <div class="skill-bar"><div class="fill" style="width: 70%"></div></div>
-                        </li>
-                        <li>
-                            <div class="skill-info"><i class="fas fa-search"></i> SEO / Référencement</div>
-                            <div class="skill-bar"><div class="fill" style="width: 60%"></div></div>
-                        </li>
-                        <li>
-                            <div class="skill-info"><img src="images/github.png" width="20"> Git / GitHub</div>
-                            <div class="skill-bar"><div class="fill" style="width: 80%"></div></div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section id="projets" class="section-padding">
-            <div class="section-header">
-                <h2 class="section-title">Mes Projets</h2>
-                <p>Une sélection de mes réalisations académiques et personnelles.</p>
-            </div>
-
-            <div class="bento-grid">
-                <article class="bento-card large spotlight-card" onclick="window.open('http://51.83.36.122:6677', '_blank')">
-                    <div class="card-content">
-                        <div class="card-tags">
-                            <span>HTML/CSS</span><span>JS</span><span>Responsive</span>
-                        </div>
-                        <h3>Clone Officiel FIFA</h3>
-                        <p>Reproduction fidèle du site de la FIFA. Travail approfondi sur le responsive design et les interactions utilisateurs.</p>
-                        <div class="card-arrow"><i class="fas fa-external-link-alt"></i></div>
-                    </div>
-                    <div class="card-bg" style="background-image: url('images/fifa.png');"></div>
-                </article>
-
-                <article class="bento-card medium spotlight-card" onclick="window.open('https://github.com/KaoryPrime/Sae-de-fou-', '_blank')">
-                    <div class="card-content">
-                        <div class="card-tags">
-                            <span>C#</span><span>.NET</span><span>SQL</span>
-                        </div>
-                        <h3>ERP Gestion (Type Loxam)</h3>
-                        <p>Application lourde de gestion de stocks et locations de matériel.</p>
-                        <div class="card-arrow"><i class="fab fa-github"></i></div>
-                    </div>
-                    <div class="card-bg" style="background-image: url('images/loxam.png');"></div>
-                </article>
-
-                <article class="bento-card tall spotlight-card">
-                    <div class="card-content">
-                        <div class="card-tags">
-                            <span>Design</span><span>UI/UX</span>
-                        </div>
-                        <h3>Mon Portfolio</h3>
-                        <p>Le site sur lequel vous naviguez. Conçu pour présenter mes compétences avec un design moderne.</p>
-                        <div class="card-arrow"><i class="fas fa-code"></i></div>
-                    </div>
-                    <div class="card-bg" style="background-image: url('images/portfolio.png');"></div>
-                </article>
+        
+        <section id="apropos" class="animate-on-scroll">
+            <h2 data-key="about-title">À Propos de Moi</h2>
+            <div class="about-grid">
                 
-                <article class="bento-card medium spotlight-card">
-                    <div class="card-content">
-                        <div class="card-tags">
-                            <span>SEO</span><span>Analytics</span>
-                        </div>
-                        <h3>Optimisation SEO</h3>
-                        <p>Projets d'amélioration de visibilité et référencement web.</p>
+                <div class="about-info-card">
+                    <h3 data-key="about-info-title">Infos & Contact</h3>
+                    <ul>
+                        <li><i class="fas fa-calendar-alt"></i> <span data-key="about-info-age">1 Mai 2006 (19ans)</span></li>
+                        <li><i class="fas fa-envelope"></i> kamil.cinarpro@gmail.com</li>
+                        <li><i class="fas fa-phone"></i> 06 23 35 91 09</li>
+                        <li><i class="fas fa-map-marker-alt"></i> <span data-key="about-info-location">Annecy (74), France</span></li>
+                        <li><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/kamilcinar/" target="_blank" rel="noopener noreferrer" data-key="about-info-linkedin">Kamil CINAR</a></li>
+                    </ul>
+                </div>
+
+                <div class="about-info-card">
+                    <h3 data-key="about-hobbies-title">Passions et Loisirs</h3>
+                    <ul>
+                        <li><i class="fas fa-music"></i> <span data-key="about-hobbies-1">Apprentissage du piano</span></li>
+                        <li><i class="fas fa-video"></i> <span data-key="about-hobbies-2">Réalisation et montage vidéo</span></li>
+                        <li><i class="fas fa-laptop-code"></i> <span data-key="about-hobbies-3">Programmation & Veille tech</span></li>
+                        <li><i class="fas fa-car"></i> <span data-key="about-hobbies-4">L'univers de l'automobile</span></li>
+                        <li><i class="fas fa-dumbbell"></i> <span data-key="about-hobbies-5">Je suis des cours de volley ball</span></li>
+                    </ul>
+                </div>
+
+                <div class="about-info-card">
+                    <h3 data-key="about-lang-title">Langues</h3>
+                    <ul>
+                        <li><span class="flag-icon flag-icon-fr"></span> <strong data-key="about-lang-1a">Français :</strong> <span data-key="about-lang-1b">Natif (C2)</span></li>
+                        <li><span class="flag-icon flag-icon-gb"></span> <strong data-key="about-lang-2a">Anglais :</strong> <span data-key="about-lang-2b">Intermédiaire Sup. (B2)</span></li>
+                        <li><span class="flag-icon flag-icon-es"></span> <strong data-key="about-lang-3a">Espagnol :</strong> <span data-key="about-lang-3b">Pré-Intermédiaire (A2)</span></li>
+                        <li><span class="flag-icon flag-icon-jp"></span> <strong data-key="about-lang-4a">Japonais :</strong> <span data-key="about-lang-4b">Débutant (A0)</span></li>
+                        <li><span class="flag-icon flag-icon-tr"></span> <strong data-key="about-lang-5a">Turc :</strong> <span data-key="about-lang-5b">Bilingue (C2)</span></li>
+                    </ul>
+                </div>
+
+                <div class="about-info-card">
+                    <h3 data-key="about-soft-title">Compétences Générales</h3>
+                    <ul class="bullet-list">
+                        <li data-key="about-soft-1">Innovant, dynamique et confiant</li>
+                        <li data-key="about-soft-2">Digne de confiance & Responsable</li>
+                        <li data-key="about-soft-3">Adaptable & Aime apprendre</li>
+                        <li data-key="about-soft-4">Rigueur & Contrôle Qualité</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3 class="subsection-title" data-key="about-tech-title">Compétences Techniques</h3>
+            
+            <div id="skills-content-fr" class="skills-grid">
+                <div class="skill-category-card">
+                    <h4 data-key="about-tech-front">Frontend</h4>
+                    <ul>
+                        <li><img src="images/javascript.png" alt="JS Logo"> JavaScript (ES6+)</li>
+                        <li><img src="images/react.png" alt="React Logo"> React</li>
+                        <li><img src="images/html5.png" alt="HTML5 Logo"> HTML5</li>
+                        <li><img src="images/css3.png" alt="CSS3 Logo"> CSS3 (Sass)</li>
+                    </ul>
+                </div>
+                <div class="skill-category-card">
+                    <h4 data-key="about-tech-back">Backend</h4>
+                    <ul>
+                        <li><img src="images/python.png" alt="Python Logo"> Python</li>
+                        <li><img src="images/php.png" alt="PHP Logo"> PHP</li>
+                        <li><img src="images/sql.png" alt="SQL Logo"> PostgreSQL</li>
+                        <li><img src="images/wordpress.png" alt="WordPress Logo"> WordPress</li>
+                    </ul>
+                </div>
+                <div class="skill-category-card">
+                    <h4 data-key="about-tech-tools">Outils & Web</h4>
+                    <ul>
+                        <li><img src="images/github.png" alt="Git Logo"> Git & GitHub</li>
+                        <li><img src="images/vscode.png" alt="VS Code Logo"> VS Code</li>
+                        <li><img src="images/seo.png" alt="SEO Logo"> <span data-key="about-tech-seo">Principes de SEO</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="skills-content-en" class="skills-en-container" style="display: none;">
+                <div class="skill-en-card">
+                    <h4>LANGUAGES & DB</h4>
+                    <div class="progress-item">
+                        <div class="progress-info"><span>C#</span><span>80%</span></div>
+                        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 80%;"></div></div>
                     </div>
-                    <div class="card-bg" style="background-image: url('images/seo.png');"></div>
-                </article>
+                    <div class="progress-item">
+                        <div class="progress-info"><span>HTML/CSS, JS, PHP</span><span>70%</span></div>
+                        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 70%;"></div></div>
+                    </div>
+                    <div class="progress-item">
+                        <div class="progress-info"><span>PostgreSQL</span><span>75%</span></div>
+                        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 75%;"></div></div>
+                    </div>
+                    <div class="progress-item">
+                        <div class="progress-info"><span>Python</span><span>50%</span></div>
+                        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 50%;"></div></div>
+                    </div>
+                </div>
+                <div class="skill-en-card">
+                    <h4>TOOLS & SYSTEMS</h4>
+                    <div class="tools-grid">
+                        <span class="tool-tag">Linux Debian</span>
+                        <span class="tool-tag">Git / GitHub</span>
+                        <span class="tool-tag">VS Code / Visual Studio</span>
+                        <span class="tool-tag">Visual Paradigm</span>
+                        <span class="tool-tag">PowerAMC</span>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section id="parcours" class="section-padding">
-            <h2 class="section-title">Mon Parcours</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <span class="date">2024 - Présent</span>
-                    <h4>BUT Informatique</h4>
-                    <p><strong>IUT Annecy (USMB)</strong> <br> Spécialisation développement d'applications et administration système.</p>
+        <section id="portfolio" class="animate-on-scroll">
+            <h2 data-key="portfolio-title">Portfolio</h2>
+            <p class="section-intro" data-key="portfolio-intro">Voici les projets sur lesquels j'ai travaillé, présentés sous forme de cas d'études.</p>
+            
+            <div class="portfolio-filters">
+                <button class="filter-btn active" data-filter="all">Tous</button>
+                <button class="filter-btn" data-filter="web">Web</button>
+                <button class="filter-btn" data-filter="app">Logiciel</button>
+            </div>
+
+            <div class="project-grid-container">
+                
+                <article class="project-card" data-category="web">
+                    <div class="project-image-placeholder">
+                        <img src="images/fifa.png" alt="Projet FIFA">
+                    </div>
+                    <div class="project-card-content">
+                        <h3 data-key="project1-title">Projet Clonage site FIFA</h3>
+                        
+                        <div class="project-specs">
+                            <div class="spec-col">
+                                <span class="spec-lbl" data-key="lbl-date">Date</span>
+                                <span class="spec-val">2024</span>
+                            </div>
+                            <div class="spec-col">
+                                <span class="spec-lbl" data-key="lbl-context">Contexte</span>
+                                <span class="spec-val">Universitaire (BUT2)</span>
+                            </div>
+                            <div class="spec-col">
+                                <span class="spec-lbl" data-key="lbl-role">Rôle</span>
+                                <span class="spec-val">Fullstack Dev</span>
+                            </div>
+                            <div class="spec-col">
+                                <span class="spec-lbl" data-key="lbl-status">Statut</span>
+                                <span class="spec-val st-active"><span class="dot"></span><span data-key="status-wip">En cours</span></span>
+                            </div>
+                            <div class="spec-col spec-full">
+                                <span class="spec-lbl">Technos</span>
+                                <span class="spec-val">HTML5, CSS3, JS, PHP, SQL</span>
+                            </div>
+                        </div>
+
+                        <p data-key="project1-desc">
+                            Développement d'un clone du site officiel pour étudier l'architecture web moderne et le responsive design.
+                        </p>
+                        <div class="project-links">
+                            <a href="http://51.83.36.122:6677" class="link-button" target="_blank" data-key="project1-code">Voir le Site</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card" data-category="web">
+                    <div class="project-image-placeholder">
+                        <img src="images/portfolio.png" alt="Projet Portfolio">
+                    </div>
+                    <div class="project-card-content">
+                        <h3 data-key="project2-title">Mon Portfolio</h3>
+
+                        <div class="project-specs">
+                            <div class="spec-col">
+                                <span class="spec-lbl" data-key="lbl-date">Date</span>
+                                <span class="spec-val">2025</span>
+                            </div>
+                            <div class="spec-col">
+                                <span class="spec-lbl" data-key="lbl-context">Contexte</span>
+                                <span class="spec-val">Projet Personnel</span>
+                            </div>
+                            <div class="spec-col">
+                                <span class="spec-lbl" data-key="lbl-role">Rôle</span>
+                                <span class="spec-val">Frontend / UI</span>
+                            </div>
+                            <div class="spec-col">
+                                <span class="spec-lbl" data-key="lbl-status">Statut</span>
+                                <span class="spec-val st-done"><span class="dot"></span><span data-key="status-done">Terminé</span></span>
+                            </div>
+                            <div class="spec-col spec-full">
+                                <span class="spec-lbl">Technos</span>
+                                <span class="spec-val">HTML5, CSS3, Canvas JS</span>
+                            </div>
+                        </div>
+
+                        <p data-key="project2-desc">
+                            Conception de ce site vitrine interactif, multilingue et animé pour présenter mes compétences.
+                        </p>
+                        <div class="project-links">
+                            <a href="https://ka-ory.github.io/" class="link-button" target="_blank">Voir le Site</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card" data-category="app">
+                    <div class="project-image-placeholder">
+                        <img src="images/loxam.png" alt="Application Loxam">
+                    </div>
+                    <div class="project-card-content">
+                        <h3 data-key="project3-title">App Gestion (Loxam)</h3>
+
+                        <div class="project-specs">
+                            <div class="spec-col">
+                                <span class="spec-lbl" data-key="lbl-date">Date</span>
+                                <span class="spec-val">2024</span>
+                            </div>
+                            <div class="spec-col">
+                                <span class="spec-lbl" data-key="lbl-context">Contexte</span>
+                                <span class="spec-val">Projet de Groupe</span>
+                            </div>
+                            <div class="spec-col">
+                                <span class="spec-lbl" data-key="lbl-role">Rôle</span>
+                                <span class="spec-val">Backend C#</span>
+                            </div>
+                            <div class="spec-col">
+                                <span class="spec-lbl" data-key="lbl-status">Statut</span>
+                                <span class="spec-val st-done"><span class="dot"></span><span data-key="status-done">Terminé</span></span>
+                            </div>
+                            <div class="spec-col spec-full">
+                                <span class="spec-lbl">Technos</span>
+                                <span class="spec-val">C#, .NET (WPF), MySQL</span>
+                            </div>
+                        </div>
+
+                        <p data-key="project3-desc">
+                            Création d'un ERP lourd pour la gestion de location de matériel et de stocks.
+                        </p>
+                        <div class="project-links">
+                            <a href="https://github.com/KaoryPrime/Sae-de-fou-" target="_blank" class="link-button" data-key="project3-code">Voir le Code</a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <section id="formation" class="animate-on-scroll">
+            <h2 data-key="education-title">Formation</h2>
+            <div class="timeline-container">
+                <div class="timeline-column">
+                    <div class="timeline-item">
+                        <span class="timeline-date" data-key="edu1-date">2024 - 2027 (prévu)</span>
+                        <h4 data-key="edu1-title">BUT Informatique - Parcours IAMSI</h4>
+                        <p class="timeline-location" data-key="edu1-location">Université Savoie Mont-Blanc, Annecy (74)</p>
+                        <p data-key="edu1-desc">Développement web (Front/Back), gestion de BDD, management de SI.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-date" data-key="edu2-date">2024</span>
+                        <h4 data-key="edu2-title">Baccalauréat Technologique (STMG)</h4>
+                        <p class="timeline-location" data-key="edu2-location">Lycée du Granier, La Ravoire (73)</p>
+                        <p data-key="edu2-desc">Spécialité Systèmes d'Information et de Gestion (SIG), Mention Assez Bien.</p>
+                    </div>
                 </div>
-                <div class="timeline-item">
-                    <span class="date">Avril 2025 (Stage)</span>
-                    <h4>Préparateur Véhicule</h4>
-                    <p><strong>Jean Lain Occasions</strong> <br> Expérience professionnelle : rigueur, travail d'équipe et relation client.</p>
+            </div>
+        </section>
+
+        <section id="experience" class="animate-on-scroll">
+            <h2 data-key="exp-title">Expérience</h2>
+            <div class="timeline-container">
+                <div class="timeline-column">
+                    <div class="timeline-item">
+                        <span class="timeline-date" data-key="exp1-date">Depuis le 01/11/2025 (CDI)</span>
+                        <h4 data-key="exp1-title">Agent d'accueil en déchetterie</h4>
+                        <p class="timeline-location" data-key="exp1-location">Trialp, Secteur SIBRESCA</p>
+                        <p data-key="exp1-desc">Gestion des usagers, conseil sur le tri, maintenance du site</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-date" data-key="exp2-date">Avril 2025 (2 semaines)</span>
+                        <h4 data-key="exp2-title">Préparateur de Véhicule</h4>
+                        <p class="timeline-location" data-key="exp2-location">Jean Lain Occasions, Chambéry (73)</p>
+                        <p data-key="exp2-desc">Contrôle qualité, préparation esthétique et gestion du parc. Développement de compétences en rigueur et orientation client.</p>
+                    </div>
                 </div>
-                <div class="timeline-item">
-                    <span class="date">2024</span>
-                    <h4>Baccalauréat STMG</h4>
-                    <p>Mention Assez Bien - Option Systèmes d'Information de Gestion (SIG).</p>
+            </div>
+        </section>
+
+        <section id="references" class="animate-on-scroll">
+            <h2 data-key="ref-title">Références</h2>
+            <div class="references-grid">
+                <div class="reference-card">
+                    <h3 data-key="ref1-name">Pascal COLIN</h3>
+                    <ul>
+                        <li><i class="fas fa-briefcase"></i> <span data-key="ref1-role">Enseignant d'UML et SQL</span></li>
+                        <li><i class="fas fa-map-marker-alt"></i> USMB, Annecy (74)</li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:pascal.colin@univ-smb.fr">pascal.colin@univ-smb.fr</a></li>
+                    </ul>
+                </div>
+
+                <div class="reference-card">
+                    <h3 data-key="ref2-name">Luc DAMAS</h3>
+                    <ul>
+                        <li><i class="fas fa-briefcase"></i> <span data-key="ref2-role">Enseignant d'HTML et JS</span></li>
+                        <li><i class="fas fa-map-marker-alt"></i> USMB, Annecy (74)</li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:Luc.damas@univ-smb.fr">Luc.damas@univ-smb.fr</a></li>
+                        <li><i class="fas fa-globe"></i> <a href="https://luc-damas.fr" target="_blank" rel="noopener noreferrer">https://luc-damas.fr</a></li>
+                    </ul>
                 </div>
             </div>
         </section>
 
         <footer id="contact">
-            <div class="footer-content">
-                <h2>Me Contacter</h2>
-                <p>Ouvert aux opportunités de stage et d'alternance.</p>
-                <a href="mailto:kamil.cinarpro@gmail.com" class="big-mail magnetic-btn">kamil.cinarpro@gmail.com</a>
-                
-                <div class="footer-links">
-                    <a href="https://github.com/Ka-ory" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                    <a href="https://www.linkedin.com/in/kamilcinar/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                    <a href="images/cv-kamil-fr.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Mon CV</a>
-                </div>
-                
-                <p class="copyright">© 2026 Kamil CINAR.</p>
+            <h2 data-key="contact-title">Restons en contact</h2>
+            <p data-key="contact-subtitle">N'hésitez pas à me contacter, que ce soit pour une opportunité ou simplement pour échanger.</p>
+            <div class="social-links">
+                <a href="mailto:kamil.cinarpro@gmail.com" class="link-button" data-key="contact-email">Envoyer un E-mail</a>
+                <a href="https://www.linkedin.com/in/kamilcinar/" target="_blank" rel="noopener noreferrer" class="link-button">LinkedIn</a>
+                <a href="https://github.com/Ka-ory" target="_blank" rel="noopener noreferrer" class="link-button">GitHub</a>
             </div>
+            <p class="copyright">&copy; 2025 Kamil CINAR. Tous droits réservés.</p>
         </footer>
     </main>
 
-    <script src="main.js"></script>
+    <script src="main.js" defer></script>
 </body>
 </html>
