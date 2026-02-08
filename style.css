@@ -349,4 +349,27 @@ footer {
     .nav-link { font-size: 1.8rem; font-weight: 700; color: #fff; }
     .mobile-extras { display: flex; flex-direction: column; align-items: center; gap: 20px; }
     .project-specs { grid-template-columns: 1fr; }
+
+    /* --- FIX LOGOS COMPÉTENCES --- */
+.skill-category-card img {
+    width: 28px;              /* Taille fixe petite */
+    height: 28px;             /* Taille fixe petite */
+    object-fit: contain;      /* Garde les proportions sans déformer */
+    vertical-align: middle;   /* Aligne avec le texte */
+    filter: drop-shadow(0 0 3px var(--neon-cyan)); /* Petit effet néon autour du logo */
+    transition: transform 0.3s;
+}
+
+/* On s'assure que le texte et l'image sont bien alignés */
+.skill-category-card li {
+    display: flex;
+    align-items: center;
+    gap: 15px;               /* Espace entre logo et texte */
+}
+
+/* Petit effet quand tu passes la souris sur une ligne de compétence */
+.skill-category-card li:hover img {
+    transform: scale(1.2) rotate(5deg); /* Le logo grandit un peu */
+    filter: drop-shadow(0 0 8px var(--neon-purple));
+}
 }
