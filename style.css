@@ -52,8 +52,8 @@ body {
     width: 400px; 
     height: 400px;
     z-index: -1;
-    pointer-events: none; /* IMPORTANT: pour cliquer au travers */
-    transform: translate(-50%, -50%); /* Centre le halo sur la souris */
+    pointer-events: none;
+    transform: translate(-50%, -50%);
     border-radius: 50%;
 }
 
@@ -136,7 +136,7 @@ ul {
     background: var(--primary-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    z-index: 1002; /* Au-dessus du menu mobile si ouvert */
+    z-index: 1002;
     position: relative;
 }
 
