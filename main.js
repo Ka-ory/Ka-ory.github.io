@@ -304,6 +304,64 @@
             }
         },
         {
+            id: 'annuaire', gen: 'DJANGO', status: 'done', links: [],
+            gallery: [
+                { src: 'images/annuaire-vide.webp', fr: 'Page d\'accueil : l\'annuaire encore vide', en: 'Home page: the directory, still empty' },
+                { src: 'images/annuaire-formulaire.webp', fr: 'Formulaire d\'inscription : nom, e-mail, promotion et métier', en: 'Sign-up form: name, e-mail, class year and job' },
+                { src: 'images/annuaire-liste.webp', fr: 'Retour sur l\'annuaire avec le message de confirmation', en: 'Back on the directory with the confirmation message' }
+            ],
+            fr: {
+                title: 'Annuaire des alumni (Django)',
+                sub: 'Une petite application Django construite pas à pas pour comprendre comment fonctionne le framework : formulaire validé, base de données et tests.',
+                spec: { date: '2026', context: 'Projet personnel', role: 'Développement complet' },
+                stack: ['Python 3.11', 'Django 5.2', 'SQLite', 'HTML / CSS'],
+                sections: [
+                    { t: 'Ce que fait l\'application', l: [
+                        'Affiche la liste des anciens élèves inscrits, avec un message tant que l\'annuaire est vide',
+                        'Formulaire d\'inscription : nom, e-mail, année de promotion et métier (facultatif)',
+                        'Refuse un e-mail déjà utilisé et une année de promotion absurde (par exemple 1800)',
+                        'Interface d\'administration Django pour consulter et modifier les inscrits'
+                    ] },
+                    { t: 'Comment ça marche', p: 'L\'adresse demandée passe par les routes, qui choisissent la vue. La vue lit ou enregistre les données grâce au modèle, puis les envoie à un template HTML. Pour l\'inscription, la vue affiche un formulaire vide, ou vérifie les données envoyées, les enregistre et redirige vers l\'annuaire avec un message de confirmation.' },
+                    { t: 'Les fichiers clés', chips: ['models.py', 'forms.py', 'views.py', 'urls.py', 'templates', 'tests.py'] },
+                    { t: 'Comment je l\'ai réalisé', l: [
+                        'Environnement virtuel, projet Django et application « annuaire » créés dans VS Code',
+                        'Modèle Alumni et migrations vers SQLite, vérifiés dans l\'administration',
+                        'Formulaire, vues, routes et templates, avec validation de l\'année de promotion',
+                        'Quatre tests automatiques (annuaire vide, inscription valide, année invalide, e-mail en double) : tous passent',
+                        'Aide d\'un assistant IA pour la documentation et une partie du code, puis tout relu et testé pour comprendre chaque fichier'
+                    ] },
+                    { gallery: true, t: 'En images' },
+                    { t: 'Pour aller plus loin', p: 'Transformer l\'annuaire en API avec Django REST Framework, passer de SQLite à PostgreSQL et afficher les données avec un front en Vue.js.' }
+                ]
+            },
+            en: {
+                title: 'Alumni directory (Django)',
+                sub: 'A small Django app built step by step to understand how the framework works: validated form, database and tests.',
+                spec: { date: '2026', context: 'Personal project', role: 'Full development' },
+                stack: ['Python 3.11', 'Django 5.2', 'SQLite', 'HTML / CSS'],
+                sections: [
+                    { t: 'What the app does', l: [
+                        'Lists registered alumni, with a message while the directory is empty',
+                        'Sign-up form: name, e-mail, class year and job (optional)',
+                        'Rejects an e-mail already in use and an absurd class year (for example 1800)',
+                        'Django admin to view and edit entries'
+                    ] },
+                    { t: 'How it works', p: 'The requested URL goes through the routes, which pick the view. The view reads or saves data through the model, then sends it to an HTML template. For sign-up, the view shows an empty form, or checks the submitted data, saves it and redirects to the directory with a confirmation message.' },
+                    { t: 'Key files', chips: ['models.py', 'forms.py', 'views.py', 'urls.py', 'templates', 'tests.py'] },
+                    { t: 'How I built it', l: [
+                        'Virtual environment, Django project and "annuaire" app created in VS Code',
+                        'Alumni model and migrations to SQLite, checked in the admin',
+                        'Form, views, routes and templates, with class-year validation',
+                        'Four automated tests (empty directory, valid sign-up, invalid year, duplicate e-mail): all pass',
+                        'Help from an AI assistant for documentation and part of the code, then everything reviewed and tested to understand each file'
+                    ] },
+                    { gallery: true, t: 'In pictures' },
+                    { t: 'Next steps', p: 'Turn the directory into an API with Django REST Framework, move from SQLite to PostgreSQL and display the data with a Vue.js front end.' }
+                ]
+            }
+        },
+        {
             id: 'portfolio', image: 'images/portfolio.png', status: 'done',
             links: [{ k: 'code', href: 'https://github.com/Ka-ory/Ka-ory.github.io' }],
             fr: {
@@ -336,7 +394,7 @@
             }
         }
     ];
-    const ORDER = ['odoo', 'kctech', 'namerakorp', 'amg', 'loxam', 'fifa', 'portfolio'];
+    const ORDER = ['odoo', 'kctech', 'namerakorp', 'amg', 'loxam', 'fifa', 'portfolio', 'annuaire'];
     PROJECTS.sort((a, b) => ORDER.indexOf(a.id) - ORDER.indexOf(b.id));
 
     /* ==========================================================
