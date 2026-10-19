@@ -3,356 +3,260 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio de Kamil CINAR</title>
+    <title>Kamil CINAR · Portfolio</title>
+    <meta name="description" content="Portfolio de Kamil CINAR, étudiant en BUT Informatique (parcours IAMSI) : développement web, bases de données et intégration Odoo.">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icon-css@1.0.12/css/flag-icon.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <canvas id="starfield"></canvas>
-    <div class="cursor-halo"></div> 
-    
-    <div class="scroll-progress"></div>
-    
-    <div class="nebula-container">
-        <div class="nebula one"></div>
-        <div class="nebula two"></div>
-        <div class="nebula three"></div>
-    </div>
 
-
-    
     <nav class="navbar">
         <div class="navbar-container">
-            <a href="#accueil" class="navbar-logo">Kamil CINAR</a>
-            
-            <button class="nav-toggle" aria-label="Ouvrir le menu">
+            <a href="#accueil" class="navbar-logo">kamil<span>.</span>cinar</a>
+
+            <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
                 <span class="burger-bar"></span>
                 <span class="burger-bar"></span>
                 <span class="burger-bar"></span>
             </button>
 
-            <div class="nav-menu mobile-nav">
+            <div class="nav-menu">
                 <ul class="nav-list">
-                    <li class="nav-item"><a href="#apropos" class="nav-link" data-key="nav-about">À Propos</a></li>
-                    <li class="nav-item"><a href="#portfolio" class="nav-link" data-key="nav-portfolio">Portfolio</a></li>
-                    <li class="nav-item"><a href="#formation" class="nav-link" data-key="nav-education">Formation</a></li>
-                    <li class="nav-item"><a href="#experience" class="nav-link" data-key="nav-experience">Expérience</a></li>
-                    <li class="nav-item"><a href="#references" class="nav-link" data-key="nav-references">Références</a></li>
-                    <li class="nav-item"><a href="#contact" class="nav-link" data-key="nav-contact">Contact</a></li>
+                    <li><a href="#apropos" class="nav-link" data-en="About">À propos</a></li>
+                    <li><a href="#portfolio" class="nav-link" data-en="Projects">Projets</a></li>
+                    <li><a href="#formation" class="nav-link" data-en="Education">Formation</a></li>
+                    <li><a href="#experience" class="nav-link" data-en="Experience">Expérience</a></li>
+                    <li><a href="#references" class="nav-link" data-en="References">Références</a></li>
+                    <li><a href="#contact" class="nav-link" data-en="Contact">Contact</a></li>
                 </ul>
-
-                <div class="mobile-extras">
-                    <a href="images/cv-kamil-fr.pdf" class="nav-cv-button mobile-cv-btn" target="_blank" data-key="nav-cv">Télécharger CV</a>
-                    <div class="lang-switcher">
-                        <button class="lang-btn-mobile" data-lang="fr">FR</button>
-                        <button class="lang-btn-mobile" data-lang="en">EN</button>
+                <div class="nav-right">
+                    <a href="images/cv-kamil-fr.pdf" class="btn btn-outline btn-sm nav-cv-button" target="_blank" rel="noopener noreferrer" data-en="Download CV">Télécharger le CV</a>
+                    <div class="lang-switcher" role="group" aria-label="Langue">
+                        <button type="button" data-lang="fr" class="active">FR</button>
+                        <button type="button" data-lang="en">EN</button>
                     </div>
-                </div>
-            </div>
-
-            <div class="nav-right nav-right-pc">
-                <a href="images/cv-kamil-fr.pdf" class="nav-cv-button desktop-cv-btn" target="_blank" rel="noopener noreferrer" data-key="nav-cv">Télécharger mon CV</a>
-                <div class="lang-switcher">
-                    <button id="lang-fr" class="active">FR</button>
-                    <button id="lang-en">EN</button>
                 </div>
             </div>
         </div>
     </nav>
 
-    <header class="hero-section" id="accueil">
-        <h1><span class="glitch-text" data-key="hero-title">Kamil CINAR</span></h1>
-        <p data-key="hero-subtitle">
-            Étudiant en BUT Informatique, développeur passionné par la création de solutions logicielles modernes et performantes.
-        </p>
+    <header class="hero" id="accueil">
+        <div class="hero-inner">
+            <p class="eyebrow" data-en="BUT Computer Science · IAMSI track">BUT Informatique · Parcours IAMSI</p>
+            <h1>Kamil CINAR</h1>
+            <p class="hero-lead" data-en="Computer science student. I work on web development, databases and ERP integration with Odoo.">
+                Étudiant en informatique. Je travaille sur le développement web, les bases de données et l'intégration d'ERP avec Odoo.
+            </p>
+            <p class="status"><span class="dot"></span><span data-en="Looking for a 12-month work-study contract · available immediately">Recherche une alternance de 12 mois · disponible immédiatement</span></p>
+            <div class="hero-actions">
+                <a href="#portfolio" class="btn btn-primary" data-en="See my projects">Voir mes projets</a>
+                <a href="#contact" class="btn btn-outline" data-en="Get in touch">Me contacter</a>
+            </div>
+            <p class="stack-line" aria-label="Technologies">PHP · Python · C# · JavaScript · SQL · Odoo</p>
+        </div>
     </header>
 
     <main>
-        
-        <section id="apropos" class="animate-on-scroll">
-            <h2 data-key="about-title">À Propos de Moi</h2>
-            <div class="about-grid">
-                
-                <div class="about-info-card">
-                    <h3 data-key="about-info-title">Infos & Contact</h3>
-                    <ul>
-                        <li><i class="fas fa-calendar-alt"></i> <span data-key="about-info-age">1 Mai 2006 (19ans)</span></li>
-                        <li><i class="fas fa-envelope"></i> kamil.cinarpro@gmail.com</li>
-                        <li><i class="fas fa-phone"></i> 06 23 35 91 09</li>
-                        <li><i class="fas fa-map-marker-alt"></i> <span data-key="about-info-location">Annecy (74), France</span></li>
-                        <li><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/kamilcinar/" target="_blank" rel="noopener noreferrer" data-key="about-info-linkedin">Kamil CINAR</a></li>
+
+        <section id="apropos" class="reveal">
+            <h2 class="section-title"><span class="idx">01</span><span data-en="About">À propos</span></h2>
+
+            <div class="card-grid">
+                <div class="card contact">
+                    <h3 data-en="Contact">Infos &amp; contact</h3>
+                    <ul class="plain">
+                        <li><span class="k" data-en="Location">Localisation</span><span data-en="Haute-Savoie, France">Haute-Savoie, France</span></li>
+                        <li><span class="k">E-mail</span><a href="mailto:kamil.cinarpro@gmail.com">kamil.cinarpro@gmail.com</a></li>
+                        <li><span class="k">LinkedIn</span><a href="https://www.linkedin.com/in/kamilcinar/" target="_blank" rel="noopener noreferrer">kamilcinar</a></li>
+                        <li><span class="k">GitHub</span><a href="https://github.com/Ka-ory" target="_blank" rel="noopener noreferrer">Ka-ory</a></li>
                     </ul>
                 </div>
 
-                <div class="about-info-card">
-                    <h3 data-key="about-hobbies-title">Passions et Loisirs</h3>
-                    <ul>
-                        <li><i class="fas fa-music"></i> <span data-key="about-hobbies-1">Apprentissage du piano</span></li>
-                        <li><i class="fas fa-video"></i> <span data-key="about-hobbies-2">Réalisation et montage vidéo</span></li>
-                        <li><i class="fas fa-laptop-code"></i> <span data-key="about-hobbies-3">Programmation & Veille tech</span></li>
-                        <li><i class="fas fa-car"></i> <span data-key="about-hobbies-4">L'univers de l'automobile</span></li>
-                        <li><i class="fas fa-dumbbell"></i> <span data-key="about-hobbies-5">Je suis des cours de volley ball</span></li>
+                <div class="card">
+                    <h3 data-en="Interests">Passions et loisirs</h3>
+                    <ul class="plain">
+                        <li data-en="Learning the piano">Apprentissage du piano</li>
+                        <li data-en="Video shooting and editing">Réalisation et montage vidéo</li>
+                        <li data-en="Programming and tech watch">Programmation &amp; veille tech</li>
+                        <li data-en="The automotive world">L'univers de l'automobile</li>
+                        <li data-en="Volleyball lessons">Cours de volley-ball</li>
                     </ul>
                 </div>
 
-                <div class="about-info-card">
-                    <h3 data-key="about-lang-title">Langues</h3>
-                    <ul>
-                        <li><span class="flag-icon flag-icon-fr"></span> <strong data-key="about-lang-1a">Français :</strong> <span data-key="about-lang-1b">Natif (C2)</span></li>
-                        <li><span class="flag-icon flag-icon-gb"></span> <strong data-key="about-lang-2a">Anglais :</strong> <span data-key="about-lang-2b">Intermédiaire Sup. (B2)</span></li>
-                        <li><span class="flag-icon flag-icon-es"></span> <strong data-key="about-lang-3a">Espagnol :</strong> <span data-key="about-lang-3b">Pré-Intermédiaire (A2)</span></li>
-                        <li><span class="flag-icon flag-icon-jp"></span> <strong data-key="about-lang-4a">Japonais :</strong> <span data-key="about-lang-4b">Débutant (A0)</span></li>
-                        <li><span class="flag-icon flag-icon-tr"></span> <strong data-key="about-lang-5a">Turc :</strong> <span data-key="about-lang-5b">Bilingue (C2)</span></li>
+                <div class="card langs">
+                    <h3 data-en="Languages">Langues</h3>
+                    <ul class="plain">
+                        <li><span class="k">FR</span><span data-en="French · Native (C2)">Français · Natif (C2)</span></li>
+                        <li><span class="k">EN</span><span data-en="English · Upper intermediate (B2)">Anglais · Intermédiaire sup. (B2)</span></li>
+                        <li><span class="k">ES</span><span data-en="Spanish · Pre-intermediate (A2)">Espagnol · Pré-intermédiaire (A2)</span></li>
+                        <li><span class="k">JA</span><span data-en="Japanese · Beginner (A0)">Japonais · Débutant (A0)</span></li>
+                        <li><span class="k">TR</span><span data-en="Turkish · Bilingual (C2)">Turc · Bilingue (C2)</span></li>
                     </ul>
                 </div>
 
-                <div class="about-info-card">
-                    <h3 data-key="about-soft-title">Compétences Générales</h3>
-                    <ul class="bullet-list">
-                        <li data-key="about-soft-1">Innovant, dynamique et confiant</li>
-                        <li data-key="about-soft-2">Digne de confiance & Responsable</li>
-                        <li data-key="about-soft-3">Adaptable & Aime apprendre</li>
-                        <li data-key="about-soft-4">Rigueur & Contrôle Qualité</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <h3 class="subsection-title" data-key="about-tech-title">Compétences Techniques</h3>
-            
-            <div id="skills-content-fr" class="skills-grid">
-                <div class="skill-category-card">
-                    <h4 data-key="about-tech-front">Frontend</h4>
-                    <ul>
-                        <li><img src="images/javascript.png" alt="JS Logo"> JavaScript (ES6+)</li>
-                        <li><img src="images/react.png" alt="React Logo"> React</li>
-                        <li><img src="images/html5.png" alt="HTML5 Logo"> HTML5</li>
-                        <li><img src="images/css3.png" alt="CSS3 Logo"> CSS3 (Sass)</li>
-                    </ul>
-                </div>
-                <div class="skill-category-card">
-                    <h4 data-key="about-tech-back">Backend</h4>
-                    <ul>
-                        <li><img src="images/python.png" alt="Python Logo"> Python</li>
-                        <li><img src="images/php.png" alt="PHP Logo"> PHP</li>
-                        <li><img src="images/sql.png" alt="SQL Logo"> PostgreSQL</li>
-                        <li><img src="images/wordpress.png" alt="WordPress Logo"> WordPress</li>
-                    </ul>
-                </div>
-                <div class="skill-category-card">
-                    <h4 data-key="about-tech-tools">Outils & Web</h4>
-                    <ul>
-                        <li><img src="images/github.png" alt="Git Logo"> Git & GitHub</li>
-                        <li><img src="images/vscode.png" alt="VS Code Logo"> VS Code</li>
-                        <li><img src="images/seo.png" alt="SEO Logo"> <span data-key="about-tech-seo">Principes de SEO</span></li>
+                <div class="card">
+                    <h3 data-en="Soft skills">Compétences générales</h3>
+                    <ul class="plain">
+                        <li data-en="Innovative, dynamic and confident">Innovant, dynamique et confiant</li>
+                        <li data-en="Trustworthy and responsible">Digne de confiance &amp; responsable</li>
+                        <li data-en="Adaptable, eager to learn">Adaptable &amp; aime apprendre</li>
+                        <li data-en="Rigor and quality control">Rigueur &amp; contrôle qualité</li>
                     </ul>
                 </div>
             </div>
 
-            <div id="skills-content-en" class="skills-en-container" style="display: none;">
-                <div class="skill-en-card">
-                    <h4>LANGUAGES & DB</h4>
-                    <div class="progress-item">
-                        <div class="progress-info"><span>C#</span><span>80%</span></div>
-                        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 80%;"></div></div>
-                    </div>
-                    <div class="progress-item">
-                        <div class="progress-info"><span>HTML/CSS, JS, PHP</span><span>70%</span></div>
-                        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 70%;"></div></div>
-                    </div>
-                    <div class="progress-item">
-                        <div class="progress-info"><span>PostgreSQL</span><span>75%</span></div>
-                        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 75%;"></div></div>
-                    </div>
-                    <div class="progress-item">
-                        <div class="progress-info"><span>Python</span><span>50%</span></div>
-                        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 50%;"></div></div>
+            <h3 class="subsection-title" data-en="Technical skills">Compétences techniques</h3>
+
+            <div class="skills">
+                <div class="skill-group">
+                    <h4>Frontend</h4>
+                    <div class="chips">
+                        <span>JavaScript (ES6+)</span><span>React</span><span>HTML5</span><span>CSS3 / Sass</span><span>Three.js</span>
                     </div>
                 </div>
-                <div class="skill-en-card">
-                    <h4>TOOLS & SYSTEMS</h4>
-                    <div class="tools-grid">
-                        <span class="tool-tag">Linux Debian</span>
-                        <span class="tool-tag">Git / GitHub</span>
-                        <span class="tool-tag">VS Code / Visual Studio</span>
-                        <span class="tool-tag">Visual Paradigm</span>
-                        <span class="tool-tag">PowerAMC</span>
+                <div class="skill-group">
+                    <h4 data-en="Backend &amp; data">Backend &amp; données</h4>
+                    <div class="chips">
+                        <span>Python</span><span>PHP</span><span>C# / .NET</span><span>PostgreSQL</span><span>MySQL</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <h4 data-en="ERP &amp; CMS">ERP &amp; CMS</h4>
+                    <div class="chips">
+                        <span>Odoo</span><span>WordPress</span><span data-en="SEO basics">Principes de SEO</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <h4 data-en="Tools &amp; systems">Outils &amp; systèmes</h4>
+                    <div class="chips">
+                        <span>Git / GitHub</span><span>Docker</span><span>Linux (Debian)</span><span>VS Code / Visual Studio</span><span>PowerAMC</span><span>Visual Paradigm</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="portfolio" class="animate-on-scroll">
-            <h2 data-key="portfolio-title">Portfolio</h2>
-            <p class="section-intro" data-key="portfolio-intro">Voici les projets sur lesquels j'ai travaillé, présentés sous forme de cas d'études.</p>
-            
-            <div class="portfolio-filters">
-                <button class="filter-btn active" data-filter="all">Tous</button>
-                <button class="filter-btn" data-filter="web">Web</button>
-                <button class="filter-btn" data-filter="app">Logiciel</button>
+        <section id="portfolio" class="reveal">
+            <h2 class="section-title"><span class="idx">02</span><span data-en="Projects">Projets</span></h2>
+            <p class="section-intro" data-en="Projects I worked on, presented as short case studies.">Les projets sur lesquels j'ai travaillé, présentés sous forme de cas d'études.</p>
+
+            <div class="filters" role="group" aria-label="Filtres">
+                <button type="button" class="filter-btn active" data-filter="all" data-en="All">Tous</button>
+                <button type="button" class="filter-btn" data-filter="web">Web</button>
+                <button type="button" class="filter-btn" data-filter="erp" data-en="ERP &amp; IS">ERP &amp; SI</button>
+                <button type="button" class="filter-btn" data-filter="app" data-en="Software">Logiciel</button>
             </div>
 
-            <div class="project-grid-container">
+            <div class="project-grid">
 
-
-                <article class="project-card" data-category="web">
-    <div class="project-image-placeholder">
-        <img src="images/amg-preview.png" alt="Configurateur AMG 3D">
-    </div>
-    <div class="project-card-content">
-        <h3 data-key="project4-title">Configurateur AMG 3D</h3>
-        
-        <div class="project-specs">
-            <div class="spec-col">
-                <span class="spec-lbl" data-key="lbl-date">Date</span>
-                <span class="spec-val">2025</span>
-            </div>
-            <div class="spec-col">
-                <span class="spec-lbl" data-key="lbl-context">Contexte</span>
-                <span class="spec-val">Projet Personnel</span>
-            </div>
-            <div class="spec-col">
-                <span class="spec-lbl" data-key="lbl-role">Rôle</span>
-                <span class="spec-val">Dév. 3D WebGL</span>
-            </div>
-            <div class="spec-col">
-                <span class="spec-lbl" data-key="lbl-status">Statut</span>
-                <span class="spec-val st-done"><span class="dot"></span><span data-key="status-done">Terminé</span></span>
-            </div>
-            <div class="spec-col spec-full">
-                <span class="spec-lbl">Technos</span>
-                <span class="spec-val">Three.js, JavaScript, HTML5</span>
-            </div>
-        </div>
-
-        <p data-key="project4-desc">
-            Expérience interactive 3D en temps réel pour la configuration de véhicules : gestion de la peinture, caméras dynamiques et cycle jour/nuit.
-        </p>
-        <div class="project-links">
-            <a href="https://ka-ory.github.io/configurateur-amg/" class="link-button" target="_blank" data-key="project4-demo">Voir le Site</a>
-            <a href="https://github.com/Ka-ory/configurateur-amg" class="link-button" target="_blank" data-key="project4-code">Voir le Code</a>
-        </div>
-    </div>
-</article>
-
-                
-                
-                <article class="project-card" data-category="web">
-                    <div class="project-image-placeholder">
-                        <img src="images/fifa.png" alt="Projet FIFA">
-                    </div>
-                    <div class="project-card-content">
-                        <h3 data-key="project1-title">Projet Clonage site FIFA</h3>
-                        
-                        <div class="project-specs">
-                            <div class="spec-col">
-                                <span class="spec-lbl" data-key="lbl-date">Date</span>
-                                <span class="spec-val">2024</span>
-                            </div>
-                            <div class="spec-col">
-                                <span class="spec-lbl" data-key="lbl-context">Contexte</span>
-                                <span class="spec-val">Universitaire (BUT2)</span>
-                            </div>
-                            <div class="spec-col">
-                                <span class="spec-lbl" data-key="lbl-role">Rôle</span>
-                                <span class="spec-val">Fullstack Dev</span>
-                            </div>
-                            <div class="spec-col">
-                                <span class="spec-lbl" data-key="lbl-status">Statut</span>
-                                <span class="spec-val st-active"><span class="dot"></span><span data-key="status-wip">En cours</span></span>
-                            </div>
-                            <div class="spec-col spec-full">
-                                <span class="spec-lbl">Technos</span>
-                                <span class="spec-val">HTML5, CSS3, JS, PHP, SQL</span>
-                            </div>
-                        </div>
-
-                        <p data-key="project1-desc">
-                            Développement d'un clone du site officiel pour étudier l'architecture web moderne et le responsive design.
+                <article class="project" data-category="erp">
+                    <div class="project-body">
+                        <h3 data-en="Odoo ERP deployment">Déploiement d'un ERP Odoo</h3>
+                        <p data-en="Rolling out Odoo in a company: module configuration, connecting the ERP to the website, and preparing electronic invoicing.">
+                            Mise en place d'Odoo en entreprise : paramétrage des modules, interconnexion de l'ERP avec le site web et préparation de la facturation électronique.
                         </p>
+                        <dl class="specs">
+                            <div><dt data-en="Context">Contexte</dt><dd data-en="3-month internship (BUT)">Stage de 3 mois (BUT)</dd></div>
+                            <div><dt data-en="Role">Rôle</dt><dd data-en="Odoo integrator">Intégrateur Odoo</dd></div>
+                            <div><dt data-en="Status">Statut</dt><dd class="st-done"><span class="dot"></span><span data-en="Completed">Terminé</span></dd></div>
+                            <div class="full"><dt data-en="Stack">Technos</dt><dd>Odoo, Python, PostgreSQL</dd></div>
+                        </dl>
+                    </div>
+                </article>
+
+                <article class="project" data-category="web">
+                    <div class="project-img"><img src="images/amg-preview.jpg" alt="Aperçu du configurateur AMG 3D" loading="lazy"></div>
+                    <div class="project-body">
+                        <h3 data-en="3D AMG configurator">Configurateur AMG 3D</h3>
+                        <p data-en="Real-time 3D experience to configure a vehicle: paint selection, dynamic cameras and a day/night cycle.">
+                            Expérience 3D interactive en temps réel pour configurer un véhicule : choix de la peinture, caméras dynamiques et cycle jour/nuit.
+                        </p>
+                        <dl class="specs">
+                            <div><dt>Date</dt><dd>2025</dd></div>
+                            <div><dt data-en="Context">Contexte</dt><dd data-en="Personal project">Projet personnel</dd></div>
+                            <div><dt data-en="Role">Rôle</dt><dd data-en="3D / WebGL dev">Dév. 3D WebGL</dd></div>
+                            <div><dt data-en="Status">Statut</dt><dd class="st-done"><span class="dot"></span><span data-en="Completed">Terminé</span></dd></div>
+                            <div class="full"><dt data-en="Stack">Technos</dt><dd>Three.js, JavaScript, HTML5</dd></div>
+                        </dl>
                         <div class="project-links">
-                            <a href="http://51.83.36.122:6677" class="link-button" target="_blank" data-key="project1-code">Voir le Site</a>
+                            <a href="https://ka-ory.github.io/configurateur-amg/" class="link" target="_blank" rel="noopener noreferrer" data-en="View site">Voir le site</a>
+                            <a href="https://github.com/Ka-ory/configurateur-amg" class="link" target="_blank" rel="noopener noreferrer" data-en="View code">Voir le code</a>
                         </div>
                     </div>
                 </article>
 
-                <article class="project-card" data-category="web">
-                    <div class="project-image-placeholder">
-                        <img src="images/portfolio.png" alt="Projet Portfolio">
-                    </div>
-                    <div class="project-card-content">
-                        <h3 data-key="project2-title">Mon Portfolio</h3>
-
-                        <div class="project-specs">
-                            <div class="spec-col">
-                                <span class="spec-lbl" data-key="lbl-date">Date</span>
-                                <span class="spec-val">2025</span>
-                            </div>
-                            <div class="spec-col">
-                                <span class="spec-lbl" data-key="lbl-context">Contexte</span>
-                                <span class="spec-val">Projet Personnel</span>
-                            </div>
-                            <div class="spec-col">
-                                <span class="spec-lbl" data-key="lbl-role">Rôle</span>
-                                <span class="spec-val">Frontend / UI</span>
-                            </div>
-                            <div class="spec-col">
-                                <span class="spec-lbl" data-key="lbl-status">Statut</span>
-                                <span class="spec-val st-done"><span class="dot"></span><span data-key="status-done">Terminé</span></span>
-                            </div>
-                            <div class="spec-col spec-full">
-                                <span class="spec-lbl">Technos</span>
-                                <span class="spec-val">HTML5, CSS3, Canvas JS</span>
-                            </div>
-                        </div>
-
-                        <p data-key="project2-desc">
-                            Conception de ce site vitrine interactif, multilingue et animé pour présenter mes compétences.
+                <article class="project" data-category="erp">
+                    <div class="project-body">
+                        <h3>NameraKorp</h3>
+                        <p data-en="Website built with Power Pages and connected to a Dataverse CRM, for a fictional car-parts maker. Agile work over 3 sprints.">
+                            Site Power Pages relié à un CRM Dataverse pour un équipementier automobile fictif. Travail en méthode agile sur 3 sprints.
                         </p>
+                        <dl class="specs">
+                            <div><dt data-en="Context">Contexte</dt><dd data-en="Group project (BUT 3)">Projet de groupe (BUT 3)</dd></div>
+                            <div><dt data-en="Role">Rôle</dt><dd data-en="Site creation, multilingual">Création du site, multilingue</dd></div>
+                            <div><dt data-en="Status">Statut</dt><dd class="st-active"><span class="dot"></span><span data-en="In progress">En cours</span></dd></div>
+                            <div class="full"><dt data-en="Stack">Technos</dt><dd>Power Pages, Dataverse, Scrum, Azure DevOps</dd></div>
+                        </dl>
+                    </div>
+                </article>
+
+                <article class="project" data-category="app">
+                    <div class="project-img"><img src="images/loxam.png" alt="Aperçu de l'application Loxam" loading="lazy"></div>
+                    <div class="project-body">
+                        <h3 data-en="Management app (Loxam)">Application de gestion (Loxam)</h3>
+                        <p data-en="Desktop ERP for equipment rental and stock management.">
+                            ERP de bureau pour la gestion de la location de matériel et des stocks.
+                        </p>
+                        <dl class="specs">
+                            <div><dt>Date</dt><dd>2024</dd></div>
+                            <div><dt data-en="Context">Contexte</dt><dd data-en="Group project">Projet de groupe</dd></div>
+                            <div><dt data-en="Role">Rôle</dt><dd data-en="C# backend">Backend C#</dd></div>
+                            <div><dt data-en="Status">Statut</dt><dd class="st-done"><span class="dot"></span><span data-en="Completed">Terminé</span></dd></div>
+                            <div class="full"><dt data-en="Stack">Technos</dt><dd>C#, .NET (WPF), MySQL</dd></div>
+                        </dl>
                         <div class="project-links">
-                            <a href="https://ka-ory.github.io/" class="link-button" target="_blank">Voir le Site</a>
+                            <a href="https://github.com/KaoryPrime/Sae-de-fou-" class="link" target="_blank" rel="noopener noreferrer" data-en="View code">Voir le code</a>
                         </div>
                     </div>
                 </article>
 
-                <article class="project-card" data-category="app">
-                    <div class="project-image-placeholder">
-                        <img src="images/loxam.png" alt="Application Loxam">
-                    </div>
-                    <div class="project-card-content">
-                        <h3 data-key="project3-title">App Gestion (Loxam)</h3>
-
-                        <div class="project-specs">
-                            <div class="spec-col">
-                                <span class="spec-lbl" data-key="lbl-date">Date</span>
-                                <span class="spec-val">2024</span>
-                            </div>
-                            <div class="spec-col">
-                                <span class="spec-lbl" data-key="lbl-context">Contexte</span>
-                                <span class="spec-val">Projet de Groupe</span>
-                            </div>
-                            <div class="spec-col">
-                                <span class="spec-lbl" data-key="lbl-role">Rôle</span>
-                                <span class="spec-val">Backend C#</span>
-                            </div>
-                            <div class="spec-col">
-                                <span class="spec-lbl" data-key="lbl-status">Statut</span>
-                                <span class="spec-val st-done"><span class="dot"></span><span data-key="status-done">Terminé</span></span>
-                            </div>
-                            <div class="spec-col spec-full">
-                                <span class="spec-lbl">Technos</span>
-                                <span class="spec-val">C#, .NET (WPF), MySQL</span>
-                            </div>
-                        </div>
-
-                        <p data-key="project3-desc">
-                            Création d'un ERP lourd pour la gestion de location de matériel et de stocks.
+                <article class="project" data-category="web">
+                    <div class="project-img"><img src="images/fifa.png" alt="Aperçu du projet de clone de site e-commerce" loading="lazy"></div>
+                    <div class="project-body">
+                        <h3 data-en="E-commerce site clone (FIFA)">Clone de site e-commerce (FIFA)</h3>
+                        <p data-en="Clone of an official e-commerce site to study modern web architecture, database design and responsive layout.">
+                            Clone d'un site e-commerce officiel pour étudier l'architecture web, la conception de base de données et le responsive.
                         </p>
+                        <dl class="specs">
+                            <div><dt>Date</dt><dd>2024</dd></div>
+                            <div><dt data-en="Context">Contexte</dt><dd data-en="University (BUT 2)">Universitaire (BUT 2)</dd></div>
+                            <div><dt data-en="Role">Rôle</dt><dd>Fullstack</dd></div>
+                            <div><dt data-en="Status">Statut</dt><dd class="st-active"><span class="dot"></span><span data-en="In progress">En cours</span></dd></div>
+                            <div class="full"><dt data-en="Stack">Technos</dt><dd>HTML5, CSS3, JS, PHP, SQL</dd></div>
+                        </dl>
                         <div class="project-links">
-                            <a href="https://github.com/KaoryPrime/Sae-de-fou-" target="_blank" class="link-button" data-key="project3-code">Voir le Code</a>
+                            <a href="http://51.83.36.122:6677" class="link" target="_blank" rel="noopener noreferrer" data-en="View site">Voir le site</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project" data-category="web">
+                    <div class="project-img"><img src="images/portfolio.png" alt="Aperçu de la première version du portfolio" loading="lazy"></div>
+                    <div class="project-body">
+                        <h3 data-en="This portfolio">Ce portfolio</h3>
+                        <p data-en="Bilingual showcase site built without any framework to present my skills and projects.">
+                            Site vitrine bilingue, réalisé sans framework, pour présenter mes compétences et mes projets.
+                        </p>
+                        <dl class="specs">
+                            <div><dt>Date</dt><dd>2025</dd></div>
+                            <div><dt data-en="Context">Contexte</dt><dd data-en="Personal project">Projet personnel</dd></div>
+                            <div><dt data-en="Role">Rôle</dt><dd>Frontend / UI</dd></div>
+                            <div><dt data-en="Status">Statut</dt><dd class="st-done"><span class="dot"></span><span data-en="Completed">Terminé</span></dd></div>
+                            <div class="full"><dt data-en="Stack">Technos</dt><dd>HTML5, CSS3, JavaScript</dd></div>
+                        </dl>
+                        <div class="project-links">
+                            <a href="https://github.com/Ka-ory/Ka-ory.github.io" class="link" target="_blank" rel="noopener noreferrer" data-en="View code">Voir le code</a>
                         </div>
                     </div>
                 </article>
@@ -360,81 +264,91 @@
             </div>
         </section>
 
-        <section id="formation" class="animate-on-scroll">
-            <h2 data-key="education-title">Formation</h2>
-            <div class="timeline-container">
-                <div class="timeline-column">
-                    <div class="timeline-item">
-                        <span class="timeline-date" data-key="edu1-date">2024 - 2027 (prévu)</span>
-                        <h4 data-key="edu1-title">BUT Informatique - Parcours IAMSI</h4>
-                        <p class="timeline-location" data-key="edu1-location">Université Savoie Mont-Blanc, Annecy (74)</p>
-                        <p data-key="edu1-desc">Développement web (Front/Back), gestion de BDD, management de SI.</p>
-                    </div>
-                    <div class="timeline-item">
-                        <span class="timeline-date" data-key="edu2-date">2024</span>
-                        <h4 data-key="edu2-title">Baccalauréat Technologique (STMG)</h4>
-                        <p class="timeline-location" data-key="edu2-location">Lycée du Granier, La Ravoire (73)</p>
-                        <p data-key="edu2-desc">Spécialité Systèmes d'Information et de Gestion (SIG), Mention Assez Bien.</p>
-                    </div>
+        <section id="formation" class="reveal">
+            <h2 class="section-title"><span class="idx">03</span><span data-en="Education">Formation</span></h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="timeline-date" data-en="2024 – 2027 (expected)">2024 – 2027 (prévu)</span>
+                    <h4 data-en="BUT Computer Science · IAMSI track">BUT Informatique · Parcours IAMSI</h4>
+                    <p class="timeline-place" data-en="Savoie Mont-Blanc University, Annecy">Université Savoie Mont-Blanc, Annecy</p>
+                    <p data-en="Web development (front/back), database management, information systems management.">Développement web (front/back), gestion de bases de données, management de SI.</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-date">2024</span>
+                    <h4 data-en="Technological Baccalaureate (STMG)">Baccalauréat technologique (STMG)</h4>
+                    <p class="timeline-place" data-en="Lycée du Granier, Savoie">Lycée du Granier, Savoie</p>
+                    <p data-en="Information Systems and Management (SIG) specialty, with honours (Assez Bien).">Spécialité Systèmes d'Information et de Gestion (SIG), mention Assez Bien.</p>
                 </div>
             </div>
         </section>
 
-        <section id="experience" class="animate-on-scroll">
-            <h2 data-key="exp-title">Expérience</h2>
-            <div class="timeline-container">
-                <div class="timeline-column">
-                    <div class="timeline-item">
-                        <span class="timeline-date" data-key="exp1-date">Depuis le 01/11/2025 (CDI)</span>
-                        <h4 data-key="exp1-title">Agent d'accueil en déchetterie</h4>
-                        <p class="timeline-location" data-key="exp1-location">Trialp, Secteur SIBRESCA</p>
-                        <p data-key="exp1-desc">Gestion des usagers, conseil sur le tri, maintenance du site</p>
-                    </div>
-                    <div class="timeline-item">
-                        <span class="timeline-date" data-key="exp2-date">Avril 2025 (2 semaines)</span>
-                        <h4 data-key="exp2-title">Préparateur de Véhicule</h4>
-                        <p class="timeline-location" data-key="exp2-location">Jean Lain Occasions, Chambéry (73)</p>
-                        <p data-key="exp2-desc">Contrôle qualité, préparation esthétique et gestion du parc. Développement de compétences en rigueur et orientation client.</p>
-                    </div>
+        <section id="experience" class="reveal">
+            <h2 class="section-title"><span class="idx">04</span><span data-en="Experience">Expérience</span></h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="timeline-date" data-en="Since 2026">Depuis 2026</span>
+                    <h4>KC Tech</h4>
+                    <p class="timeline-place" data-en="Sole proprietorship (micro-entrepreneur)">Entreprise individuelle (micro-entrepreneur)</p>
+                    <p data-en="Odoo services and small websites for local businesses.">Prestations Odoo et création de petits sites web.</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-date" data-en="3-month internship">Stage de 3 mois</span>
+                    <h4 data-en="Odoo ERP integrator (intern)">Stagiaire intégrateur Odoo</h4>
+                    <p class="timeline-place" data-en="BUT Computer Science internship">Stage de BUT Informatique</p>
+                    <p data-en="Odoo deployment, website interconnection and electronic invoicing preparation.">Déploiement d'Odoo, interconnexion avec le site web et préparation de la facturation électronique.</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-date" data-en="Since 01/11/2025 (permanent contract)">Depuis le 01/11/2025 (CDI)</span>
+                    <h4 data-en="Recycling centre attendant">Agent d'accueil en déchetterie</h4>
+                    <p class="timeline-place">Trialp, secteur SIBRESCA</p>
+                    <p data-en="Welcoming users, sorting advice, site upkeep.">Accueil des usagers, conseil sur le tri, entretien du site.</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-date" data-en="April 2025 (2 weeks)">Avril 2025 (2 semaines)</span>
+                    <h4 data-en="Vehicle preparer">Préparateur de véhicules</h4>
+                    <p class="timeline-place">Jean Lain Occasions, Chambéry</p>
+                    <p data-en="Quality control, cosmetic preparation and fleet handling. Built rigor and customer focus.">Contrôle qualité, préparation esthétique et gestion du parc. Développement de la rigueur et de l'orientation client.</p>
                 </div>
             </div>
         </section>
 
-        <section id="references" class="animate-on-scroll">
-            <h2 data-key="ref-title">Références</h2>
-            <div class="references-grid">
-                <div class="reference-card">
-                    <h3 data-key="ref1-name">Pascal COLIN</h3>
-                    <ul>
-                        <li><i class="fas fa-briefcase"></i> <span data-key="ref1-role">Enseignant d'UML et SQL</span></li>
-                        <li><i class="fas fa-map-marker-alt"></i> USMB, Annecy (74)</li>
-                        <li><i class="fas fa-envelope"></i> <a href="mailto:pascal.colin@univ-smb.fr">pascal.colin@univ-smb.fr</a></li>
+        <section id="references" class="reveal">
+            <h2 class="section-title"><span class="idx">05</span><span data-en="References">Références</span></h2>
+            <div class="card-grid two">
+                <div class="card">
+                    <h3>Pascal COLIN</h3>
+                    <ul class="plain">
+                        <li data-en="UML and SQL teacher">Enseignant d'UML et SQL</li>
+                        <li>USMB, Annecy</li>
+                        <li class="muted" data-en="Contact details available on request">Coordonnées disponibles sur demande</li>
                     </ul>
                 </div>
-
-                <div class="reference-card">
-                    <h3 data-key="ref2-name">Luc DAMAS</h3>
-                    <ul>
-                        <li><i class="fas fa-briefcase"></i> <span data-key="ref2-role">Enseignant d'HTML et JS</span></li>
-                        <li><i class="fas fa-map-marker-alt"></i> USMB, Annecy (74)</li>
-                        <li><i class="fas fa-envelope"></i> <a href="mailto:Luc.damas@univ-smb.fr">Luc.damas@univ-smb.fr</a></li>
-                        <li><i class="fas fa-globe"></i> <a href="https://luc-damas.fr" target="_blank" rel="noopener noreferrer">https://luc-damas.fr</a></li>
+                <div class="card">
+                    <h3>Luc DAMAS</h3>
+                    <ul class="plain">
+                        <li data-en="HTML and JS teacher">Enseignant d'HTML et JS</li>
+                        <li>USMB, Annecy</li>
+                        <li><a href="https://luc-damas.fr" target="_blank" rel="noopener noreferrer">luc-damas.fr</a></li>
+                        <li class="muted" data-en="Contact details available on request">Coordonnées disponibles sur demande</li>
                     </ul>
                 </div>
             </div>
         </section>
 
-        <footer id="contact">
-            <h2 data-key="contact-title">Restons en contact</h2>
-            <p data-key="contact-subtitle">N'hésitez pas à me contacter, que ce soit pour une opportunité ou simplement pour échanger.</p>
-            <div class="social-links">
-                <a href="mailto:kamil.cinarpro@gmail.com" class="link-button" data-key="contact-email">Envoyer un E-mail</a>
-                <a href="https://www.linkedin.com/in/kamilcinar/" target="_blank" rel="noopener noreferrer" class="link-button">LinkedIn</a>
-                <a href="https://github.com/Ka-ory" target="_blank" rel="noopener noreferrer" class="link-button">GitHub</a>
-            </div>
-            <p class="copyright">&copy; 2025 Kamil CINAR. Tous droits réservés.</p>
-        </footer>
     </main>
+
+    <footer id="contact">
+        <div class="footer-inner">
+            <h2 class="section-title"><span class="idx">06</span><span data-en="Get in touch">Restons en contact</span></h2>
+            <p class="section-intro" data-en="Feel free to reach out, whether for an opportunity or simply to talk.">N'hésitez pas à me contacter, que ce soit pour une opportunité ou simplement pour échanger.</p>
+            <div class="hero-actions">
+                <a href="mailto:kamil.cinarpro@gmail.com" class="btn btn-primary" data-en="Send an e-mail">Envoyer un e-mail</a>
+                <a href="https://www.linkedin.com/in/kamilcinar/" target="_blank" rel="noopener noreferrer" class="btn btn-outline">LinkedIn</a>
+                <a href="https://github.com/Ka-ory" target="_blank" rel="noopener noreferrer" class="btn btn-outline">GitHub</a>
+            </div>
+            <p class="copyright">&copy; 2026 Kamil CINAR</p>
+        </div>
+    </footer>
 
     <script src="main.js" defer></script>
 </body>
