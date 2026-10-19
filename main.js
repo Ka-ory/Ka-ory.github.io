@@ -156,6 +156,59 @@
             }
         },
         {
+            id: 'kctech', image: 'images/kctech-hero.webp', status: 'wip',
+            links: [{ k: 'site', href: 'https://kctech.fr' }],
+            gallery: [
+                { src: 'images/kctech-hero.webp', fr: 'Accueil : la promesse, et une facture qui suit son parcours en temps réel', en: 'Home: the promise, and an invoice moving through its journey' },
+                { src: 'images/kctech-prestations.webp', fr: 'Les quatre prestations et le fil directeur qui se trace au scroll', en: 'The four services and the guiding line drawn on scroll' },
+                { src: 'images/kctech-methode.webp', fr: 'La méthode en quatre étapes, du diagnostic au suivi', en: 'The four-step method, from diagnosis to follow-up' }
+            ],
+            fr: {
+                title: 'KC Tech, mon entreprise',
+                sub: 'La micro-entreprise que j\'ai lancée en septembre 2026 à Annecy : intégration Odoo, facture électronique et développement web pour les TPE et PME de Savoie et Haute-Savoie.',
+                spec: { date: 'Depuis septembre 2026', context: 'Entreprise individuelle', role: 'Fondateur' },
+                stack: ['HTML5', 'CSS3', 'JavaScript', 'Données structurées', 'OVH'],
+                sections: [
+                    { t: 'Pourquoi cette entreprise', p: 'La réforme de la facture électronique oblige toutes les TPE et PME à émettre des factures électroniques à partir du 1er septembre 2027. KC Tech les accompagne avec Odoo, en s\'appuyant sur ce que j\'ai mis en place pendant mon stage.' },
+                    { t: 'Les prestations', l: [
+                        'Mise en conformité facture électronique avec Odoo',
+                        'Déploiement d\'Odoo sur mesure',
+                        'Connexions et automatisations (WooCommerce, Python)',
+                        'Développement web : sites vitrines et applications sur mesure'
+                    ] },
+                    { t: 'Le site kctech.fr', l: [
+                        'Analyse du marché, de la concurrence et des obligations légales avant la conception',
+                        'Site statique rapide, hébergé chez OVH, sans cookie',
+                        'Compte à rebours jusqu\'à l\'échéance de 2027, facture animée, fil directeur et thème clair ou sombre',
+                        'Référencement local : données structurées, plan du site et FAQ'
+                    ] },
+                    { gallery: true, t: 'En images' }
+                ]
+            },
+            en: {
+                title: 'KC Tech, my company',
+                sub: 'The micro-business I launched in September 2026 in Annecy: Odoo integration, e-invoicing and web development for small businesses in Savoie and Haute-Savoie.',
+                spec: { date: 'Since September 2026', context: 'Sole proprietorship', role: 'Founder' },
+                stack: ['HTML5', 'CSS3', 'JavaScript', 'Structured data', 'OVH'],
+                sections: [
+                    { t: 'Why this company', p: 'France\'s e-invoicing reform requires every small business to issue electronic invoices from 1 September 2027. KC Tech helps them do it with Odoo, building on what I set up during my internship.' },
+                    { t: 'Services', l: [
+                        'E-invoicing compliance with Odoo',
+                        'Tailored Odoo deployment',
+                        'Integrations and automation (WooCommerce, Python)',
+                        'Web development: showcase sites and custom web apps'
+                    ] },
+                    { t: 'The kctech.fr website', l: [
+                        'Market, competition and legal analysis before design',
+                        'Fast static site hosted at OVH, no cookies',
+                        'Countdown to the 2027 deadline, animated invoice, guiding line, light and dark themes',
+                        'Local SEO: structured data, sitemap and FAQ'
+                    ] },
+                    { gallery: true, t: 'In pictures' }
+                ]
+            }
+        },
+        {
             id: 'namerakorp', gen: 'CRM', status: 'wip', links: [],
             fr: {
                 title: 'NameraKorp',
@@ -283,7 +336,7 @@
             }
         }
     ];
-    const ORDER = ['odoo', 'namerakorp', 'amg', 'loxam', 'fifa', 'portfolio'];
+    const ORDER = ['odoo', 'kctech', 'namerakorp', 'amg', 'loxam', 'fifa', 'portfolio'];
     PROJECTS.sort((a, b) => ORDER.indexOf(a.id) - ORDER.indexOf(b.id));
 
     /* ==========================================================
