@@ -14,7 +14,7 @@ Portfolio bilingue (FR / EN) en fichiers statiques, hébergé sur GitHub Pages. 
 | `scene.js` | Scène 3D, chargée en différé seulement si l'appareil le permet |
 | `favicon.svg` | Icône de l'onglet |
 | `images/` | Captures des projets (WebP) |
-| `A-VALIDER.md` | Points à confirmer avant mise en ligne (à ne pas laisser dans le dépôt public si tu préfères) |
+
 
 Aucune compilation : on modifie un fichier, on pousse, GitHub Pages publie.
 
