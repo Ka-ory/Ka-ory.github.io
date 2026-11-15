@@ -3,168 +3,155 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="claude:viewport-fit-sides" content="cover">
-<title>Kamil CINAR Portfolio</title>
+<title>Kamil CINAR · Portfolio</title>
 <meta name="description" content="Portfolio de Kamil CINAR, étudiant en BUT Informatique (parcours IAMSI) : développement web, bases de données et intégration d'ERP Odoo.">
+<meta name="theme-color" content="#0d0f12">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800&family=Instrument+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=5">
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=6">
+<script>
+/* Avant le premier affichage : active les styles « avec JavaScript » et décide si la 3D est envisageable. */
+(function () {
+  var d = document.documentElement, q = function (m) { return window.matchMedia && window.matchMedia(m).matches; };
+  d.classList.add('js');
+  var off = /[?&]3d=off/.test(location.search), force = /[?&]3d=force/.test(location.search);
+  var reduce = q('(prefers-reduced-motion: reduce)');
+  if (reduce) d.classList.add('reduce');
+  var c = navigator.connection || {};
+  var weak = (navigator.deviceMemory && navigator.deviceMemory <= 2) || (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 2) || c.saveData || /(^|-)2g$/.test(c.effectiveType || '');
+  if (!off && !reduce && window.WebGLRenderingContext && (force || !weak)) d.classList.add('want-3d');
+  /* Filet de sécurité : si main.js ne démarre pas, tout le contenu redevient visible. */
+  window.__pfSafety = setTimeout(function () { d.classList.add('static'); d.classList.remove('want-3d'); }, 4000);
+})();
+</script>
 </head>
 <body>
+<a class="skip" href="#contenu" data-en="Skip to content">Aller au contenu</a>
+
+<!-- ================= DÉCOR : scène 3D + version statique ================= -->
+<div class="stage" aria-hidden="true">
+  <div class="ambient">
+    <!-- Version statique : le système une fois relié (écrans, API, bases de données) -->
+    <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" focusable="false">
+      <defs>
+        <linearGradient id="g-screen" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1c2129"/><stop offset="1" stop-color="#12151a"/></linearGradient>
+        <linearGradient id="g-metal" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1b1f25"/><stop offset=".5" stop-color="#363c46"/><stop offset="1" stop-color="#1b1f25"/></linearGradient>
+        <filter id="f-far"><feGaussianBlur stdDeviation="7"/></filter>
+        <filter id="f-mid"><feGaussianBlur stdDeviation="2.4"/></filter>
+        <g id="s-screen"><rect width="260" height="190" rx="12" fill="url(#g-screen)" stroke="#c9b48a" stroke-opacity=".55" stroke-width="1.5"/><rect width="260" height="22" rx="11" fill="#232931"/><circle cx="16" cy="11" r="3.4" fill="#e8674f"/><circle cx="28" cy="11" r="3.4" fill="#c9b48a"/><rect x="18" y="40" width="96" height="8" rx="2" fill="#ece6d8" opacity=".75"/><rect x="18" y="58" width="150" height="5" rx="2" fill="#ece6d8" opacity=".28"/><g fill="#c9b48a" opacity=".7"><rect x="22" y="130" width="18" height="40"/><rect x="50" y="112" width="18" height="58"/><rect x="78" y="122" width="18" height="48"/><rect x="106" y="96" width="18" height="74"/><rect x="134" y="104" width="18" height="66"/><rect x="162" y="84" width="18" height="86"/><rect x="190" y="92" width="18" height="78"/><rect x="218" y="76" width="18" height="94"/></g></g>
+        <g id="s-db"><path d="M0 16v84c0 9 27 16 60 16s60-7 60-16V16" fill="url(#g-metal)"/><ellipse cx="60" cy="16" rx="60" ry="16" fill="#2b3038" stroke="#c9b48a" stroke-opacity=".7" stroke-width="1.4"/><path d="M0 44c0 9 27 16 60 16s60-7 60-16M0 72c0 9 27 16 60 16s60-7 60-16M0 100c0 9 27 16 60 16s60-7 60-16" fill="none" stroke="#c9b48a" stroke-opacity=".75" stroke-width="1.4"/></g>
+        <g id="s-api"><path d="M46 0 92 26v52L46 104 0 78V26z" fill="#2b3038" stroke="#c9b48a" stroke-opacity=".8" stroke-width="1.4"/><path d="M46 0v52M0 78l46-26 46 26" fill="none" stroke="#c9b48a" stroke-opacity=".4" stroke-width="1.2"/></g>
+      </defs>
+      <g filter="url(#f-far)" opacity=".5">
+        <use href="#s-screen" transform="translate(120 90) scale(.8) rotate(-8)"/><use href="#s-db" transform="translate(460 700) scale(.9)"/><use href="#s-api" transform="translate(240 560) scale(1.2)"/><use href="#s-screen" transform="translate(1320 640) scale(1.1) rotate(6)"/>
+      </g>
+      <g fill="none" stroke="#d9c59a" stroke-width="1.6" stroke-linecap="round" opacity=".7">
+        <path d="M1090 360 1290 190"/><path d="M1290 250 1420 520"/><path d="M1010 470 900 690"/><path d="M930 720 1380 600"/><path d="M1290 190 1500 120" opacity=".5"/><path d="M700 250 900 330" opacity=".5"/>
+      </g>
+      <g fill="#e6d6ae"><circle cx="1190" cy="275" r="4"/><circle cx="1355" cy="385" r="4"/><circle cx="955" cy="580" r="4"/><circle cx="1150" cy="661" r="4"/></g>
+      <g filter="url(#f-mid)" opacity=".8"><use href="#s-api" transform="translate(1455 70) scale(.8)"/><use href="#s-screen" transform="translate(560 170) scale(.6) rotate(5)"/><use href="#s-db" transform="translate(1380 520) scale(.95)"/></g>
+      <use href="#s-screen" transform="translate(850 270) scale(1.25) rotate(-3)"/>
+      <use href="#s-api" transform="translate(1244 140)"/>
+      <use href="#s-db" transform="translate(850 660) scale(.9)"/>
+    </svg>
+  </div>
+  <canvas id="scene"></canvas>
+  <div class="grain"></div>
+</div>
+
+<div class="cursor" id="cursor" aria-hidden="true"><i></i><b></b></div>
 <div class="progress" id="progress" aria-hidden="true"></div>
 
+<!-- ================= NAVIGATION ================= -->
 <header class="nav" id="nav">
   <div class="nav-inner wrap">
     <a href="#accueil" class="brand" aria-label="Kamil Cinar, accueil">K<span>.</span>CINAR</a>
-
     <nav class="nav-links" id="nav-links" aria-label="Navigation principale">
       <a href="#profil" data-en="Profile">Profil</a>
       <a href="#projets" data-en="Projects">Projets</a>
       <a href="#parcours" data-en="Background">Parcours</a>
-      <a href="#references" data-en="References">Références</a>
       <a href="#contact" data-en="Contact">Contact</a>
-      <div class="nav-actions-mobile">
-        <a href="images/cv-kamil-fr.pdf" class="btn btn-ghost cv-link" target="_blank" rel="noopener noreferrer" data-en="Download CV">Télécharger le CV</a>
-      </div>
     </nav>
-
     <div class="nav-actions">
-      <a href="images/cv-kamil-fr.pdf" class="btn btn-ghost btn-sm cv-link" target="_blank" rel="noopener noreferrer" data-en="Download CV">Télécharger le CV</a>
-      <div class="lang" role="group" aria-label="Langue">
-        <button type="button" data-lang="fr" class="on">FR</button>
-        <button type="button" data-lang="en">EN</button>
+      <div class="lang" role="group" aria-label="Langue / Language">
+        <button type="button" data-lang="fr" aria-pressed="true" lang="fr" aria-label="Français">FR</button>
+        <button type="button" data-lang="en" aria-pressed="false" lang="en" aria-label="English">EN</button>
       </div>
       <button class="burger" id="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span></button>
     </div>
   </div>
 </header>
 
-<div class="page" id="page">
-<div class="spine" id="spine" aria-hidden="true">
-  <svg id="spine-svg"><defs><linearGradient id="spine-grad" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="1000"><stop offset="0" stop-color="#8fc6e9" stop-opacity=".2"/><stop offset=".15" stop-color="#8fc6e9"/><stop offset="1" stop-color="#e9eff6"/></linearGradient></defs><path class="spine-track" id="spine-track"/><path class="spine-fill" id="spine-fill"/><circle class="spine-halo" id="spine-halo" r="14"/><circle class="spine-head" id="spine-head" r="4"/></svg>
-  <div class="spine-nodes" id="spine-nodes"></div>
-</div>
-<main>
-  <!-- ================= HERO ================= -->
-  <section class="hero" id="accueil">
-    <canvas class="hero-canvas" id="grid" aria-hidden="true"></canvas>
-    <div class="hero-glow" aria-hidden="true"></div>
+<main id="contenu" tabindex="-1">
 
-    <div class="hero-inner wrap">
-      <div class="hero-copy">
-        <p class="status"><span class="pulse"></span><span data-en="Looking for a 12-month work-study contract · available now">Recherche une alternance de 12 mois · disponible immédiatement</span></p>
-
-        <h1 class="name" aria-label="Kamil Cinar">
-          <span class="line"><span>Kamil</span></span>
-          <span class="line outline"><span>Cinar</span></span>
-        </h1>
-
-        <p class="lead" data-en="Computer science student. I build web applications from the database to the interface, and I integrate ERP systems with Odoo.">
-          Étudiant en informatique. Je construis des applications web de la base de données à l'interface, et j'intègre des ERP avec Odoo.
-        </p>
-
-        <div class="cta">
+  <!-- ================= ACCUEIL ================= -->
+  <section class="hero" id="accueil" data-scene="0" aria-labelledby="hero-title">
+    <div class="wrap hero-grid">
+      <div class="hero-copy veil">
+        <p class="status" data-reveal><span class="pulse" aria-hidden="true"></span><span data-en="Looking for a 12-month work-study contract · available now">Recherche une alternance de 12 mois · disponible immédiatement</span></p>
+        <h1 id="hero-title" data-split><span class="h1-a">Kamil</span> <span class="h1-b">Cinar</span></h1>
+        <p class="lead" data-reveal style="--d:.25s" data-en="Computer science student. I build web applications from the database to the interface, and I integrate ERP systems with Odoo.">Étudiant en informatique. Je construis des applications web de la base de données à l'interface, et j'intègre des ERP avec Odoo.</p>
+        <div class="hero-cta" data-reveal style="--d:.4s">
           <a href="#projets" class="btn btn-primary" data-en="See the projects">Voir les projets</a>
           <a href="#contact" class="btn btn-ghost" data-en="Get in touch">Me contacter</a>
         </div>
       </div>
-
-      <div class="deck" id="deck">
-        <div class="deck-stack">
-          <button class="deck-card is-front" type="button" data-open="odoo" data-deck="0" aria-label="Ouvrir la fiche du stage : déploiement d'un ERP Odoo">
-            <span class="deck-frame">
-              <img src="images/stage-entrepot.webp" alt="Les locaux de La Boutique du Pro, lieu du stage" width="1087" height="815">
-              <span class="shine" aria-hidden="true"></span>
-              <span class="grade" aria-hidden="true"><b>17</b>/20</span>
-            </span>
-            <span class="plate">
-              <span class="plate-k" data-en="Featured · Internship">Projet phare · Stage</span>
-              <span class="plate-v" data-en="Odoo ERP deployment">Déploiement ERP Odoo</span>
-              <span class="plate-s" data-en="La Boutique du Pro · graded 17/20">La Boutique du Pro · noté 17/20</span>
-            </span>
-          </button>
-          <button class="deck-card is-back" type="button" data-open="kctech" data-deck="1" aria-label="Ouvrir la fiche de KC Tech, mon entreprise">
-            <span class="deck-frame">
-              <img src="images/kctech-hero.webp" alt="Page d'accueil du site kctech.fr" width="1308" height="896">
-              <span class="shine" aria-hidden="true"></span>
-            </span>
-            <span class="plate">
-              <span class="plate-k" data-en="Featured · My company">Projet phare · Entreprise</span>
-              <span class="plate-v">KC Tech</span>
-              <span class="plate-s" data-en="Launched in September 2026">Lancée en septembre 2026</span>
-            </span>
-          </button>
-        </div>
-        <div class="deck-tabs" role="group" aria-label="Projets phares">
-          <button type="button" class="deck-tab on" data-to="0"><span data-en="Odoo internship">Stage Odoo</span><i><b></b></i></button>
-          <button type="button" class="deck-tab" data-to="1"><span data-en="My company">KC Tech</span><i><b></b></i></button>
-        </div>
-      </div>
     </div>
-
-    <div class="marquee" aria-label="Technologies">
-      <div class="marquee-track">
-        <ul>
-          <li>PHP</li><li>Python</li><li>C# / .NET</li><li>JavaScript</li><li>React</li><li>PostgreSQL</li><li>MySQL</li><li>Odoo</li><li>WordPress</li><li>Docker</li><li>Linux</li><li>Git</li>
-        </ul>
-        <ul aria-hidden="true">
-          <li>PHP</li><li>Python</li><li>C# / .NET</li><li>JavaScript</li><li>React</li><li>PostgreSQL</li><li>MySQL</li><li>Odoo</li><li>WordPress</li><li>Docker</li><li>Linux</li><li>Git</li>
-        </ul>
-      </div>
+    <!-- Chiffres : tous issus de la fiche du stage Odoo -->
+    <div class="wrap">
+      <dl class="figures glass" data-reveal style="--d:.55s" aria-label="Chiffres du stage Odoo">
+        <div><dd><span data-count="17">17</span><small>/20</small></dd><dt data-en="grade for the Odoo internship and its defence">note du stage Odoo et de sa soutenance</dt></div>
+        <div><dd><span data-count="30000">30 000</span></dd><dt data-en="products in the catalogue of the company I worked for">références au catalogue de l'entreprise d'accueil</dt></div>
+        <div><dd><span data-count="1830">1 830</span></dd><dt data-en="products assigned to a rack automatically">références rangées automatiquement par rack</dt></div>
+        <div><dd><span data-count="8">8</span></dd><dt data-en="weeks of internship as an Odoo integrator">semaines de stage comme intégrateur Odoo</dt></div>
+      </dl>
     </div>
   </section>
 
   <!-- ================= PROFIL ================= -->
-  <section class="section" id="profil">
+  <section class="section" id="profil" data-scene="1" aria-labelledby="profil-title">
     <div class="wrap">
-      <header class="section-head reveal">
-        <p class="eyebrow" data-en="Profile">Profil</p>
-        <h2 data-en="Who I am">Qui je suis</h2>
+      <header class="section-head veil">
+        <p class="eyebrow" data-reveal data-en="01 · Profile">01 · Profil</p>
+        <h2 id="profil-title" data-split data-en="Who I am">Qui je suis</h2>
       </header>
 
-      <div class="bento">
-        <article class="tile tile-bio reveal">
-          <p class="tile-bio-text" data-en="I'm Kamil, a BUT Computer Science student in Annecy (IAMSI track). I like building applications end to end, from the database to the interface, with a strong interest in ERP systems, Odoo above all. Outside the screen: cars and everything mechanical.">
-            Je m'appelle Kamil, étudiant en BUT Informatique à Annecy (parcours IAMSI). J'aime construire des applications de bout en bout, de la base de données à l'interface, avec un intérêt marqué pour les ERP, Odoo en tête. Hors écran&nbsp;: l'automobile et tout ce qui est mécanique.
-          </p>
+      <div class="profile">
+        <article class="glass tile tile-bio" data-reveal data-glow>
+          <p class="bio" data-en="I'm Kamil, a third-year BUT Computer Science student (IAMSI track: application integration and information systems management). I like building applications end to end, from the database to the interface, with a strong interest in ERP systems, Odoo above all.">Je m'appelle Kamil, étudiant en 3<sup>e</sup> année de BUT Informatique (parcours IAMSI : intégration d'applications et management du SI). J'aime construire des applications de bout en bout, de la base de données à l'interface, avec un intérêt marqué pour les ERP, Odoo en tête.</p>
+          <ul class="goals">
+            <li><b data-en="Work-study">Alternance</b><span data-en="12-month contract, available now">Contrat de 12 mois, disponible immédiatement</span></li>
+            <li><b data-en="Freelance">Missions</b><span data-en="Odoo integration and web development through KC Tech">Intégration Odoo et développement web via KC Tech</span></li>
+          </ul>
         </article>
 
-        <article class="tile tile-contact reveal">
+        <article class="glass tile" data-reveal data-glow>
           <h3 class="tile-title" data-en="Contact">Contact</h3>
-          <dl class="kv">
-            <div><dt data-en="Location">Localisation</dt><dd data-en="Haute-Savoie, France">Haute-Savoie, France</dd></div>
+          <dl class="facts">
+            <div><dt data-en="Area">Région</dt><dd data-en="Savoie / Haute-Savoie, France">Savoie / Haute-Savoie</dd></div>
             <div><dt>E-mail</dt><dd><a href="mailto:kamil.cinarpro@gmail.com">kamil.cinarpro@gmail.com</a></dd></div>
             <div><dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/kamilcinar/" target="_blank" rel="noopener noreferrer">kamilcinar</a></dd></div>
             <div><dt>GitHub</dt><dd><a href="https://github.com/Ka-ory" target="_blank" rel="noopener noreferrer">Ka-ory</a></dd></div>
           </dl>
         </article>
 
-        <article class="tile reveal">
+        <!-- Langues : bloc à supprimer en entier si tu préfères ne pas les afficher (voir A-VALIDER.md) -->
+        <article class="glass tile" data-reveal data-glow>
           <h3 class="tile-title" data-en="Languages">Langues</h3>
           <ul class="langs">
-            <li><b>FR</b><span data-en="French">Français</span><i data-en="Native · C2">Natif · C2</i></li>
-            <li><b>TR</b><span data-en="Turkish">Turc</span><i data-en="Bilingual · C2">Bilingue · C2</i></li>
-            <li><b>EN</b><span data-en="English">Anglais</span><i data-en="Upper intermediate · B2">Intermédiaire sup. · B2</i></li>
-            <li><b>ES</b><span data-en="Spanish">Espagnol</span><i data-en="Pre-intermediate · A2">Pré-intermédiaire · A2</i></li>
-            <li><b>JA</b><span data-en="Japanese">Japonais</span><i data-en="Beginner · A0">Débutant · A0</i></li>
+            <li><span data-en="French">Français</span><i data-en="Native">Natif</i></li>
+            <li><span data-en="Turkish">Turc</span><i data-en="Bilingual">Bilingue</i></li>
+            <li><span data-en="English">Anglais</span><i data-en="Read and spoken, working towards professional level">Lu et parlé, niveau professionnel en cours</i></li>
+            <li><span data-en="Spanish">Espagnol</span><i data-en="Pre-intermediate · A2">Pré-intermédiaire · A2</i></li>
           </ul>
         </article>
 
-        <article class="tile reveal">
-          <h3 class="tile-title" data-en="Interests">Passions et loisirs</h3>
-          <ul class="plain">
-            <li data-en="Learning the piano">Apprentissage du piano</li>
-            <li data-en="Video shooting and editing">Réalisation et montage vidéo</li>
-            <li data-en="Programming and tech watch">Programmation &amp; veille tech</li>
-            <li data-en="The automotive world">L'univers de l'automobile</li>
-            <li data-en="Volleyball lessons">Cours de volley-ball</li>
-          </ul>
-        </article>
-
-        <article class="tile reveal">
+        <article class="glass tile" data-reveal data-glow>
           <h3 class="tile-title" data-en="Strengths">Compétences générales</h3>
-          <ul class="plain">
+          <ul class="ticks">
             <li data-en="Innovative, dynamic and confident">Innovant, dynamique et confiant</li>
             <li data-en="Trustworthy and responsible">Digne de confiance &amp; responsable</li>
             <li data-en="Adaptable, eager to learn">Adaptable &amp; aime apprendre</li>
@@ -173,186 +160,166 @@
         </article>
       </div>
 
-      <div class="skills reveal">
+      <!-- Compétences : rangées comme la scène 3D, de l'interface jusqu'aux données -->
+      <div class="glass skills" data-reveal data-glow>
         <h3 class="skills-title" data-en="Technical skills">Compétences techniques</h3>
         <div class="skills-grid">
-          <div class="skill-col">
-            <h4>Frontend</h4>
-            <ul class="chips"><li>JavaScript (ES6+)</li><li>React</li><li>HTML5</li><li>CSS3 / Sass</li><li>Three.js</li></ul>
-          </div>
-          <div class="skill-col">
-            <h4 data-en="Backend &amp; data">Backend &amp; données</h4>
-            <ul class="chips"><li>Python</li><li>PHP</li><li>C# / .NET</li><li>PostgreSQL</li><li>MySQL</li></ul>
-          </div>
-          <div class="skill-col">
-            <h4 data-en="ERP &amp; CMS">ERP &amp; CMS</h4>
-            <ul class="chips"><li>Odoo</li><li>WordPress</li><li data-en="SEO basics">Principes de SEO</li></ul>
-          </div>
-          <div class="skill-col">
-            <h4 data-en="Tools &amp; systems">Outils &amp; systèmes</h4>
-            <ul class="chips"><li>Git / GitHub</li><li>Docker</li><li>Linux (Debian)</li><li>VS Code / Visual Studio</li><li>PowerAMC</li><li>Visual Paradigm</li></ul>
-          </div>
+          <div><h4><span class="layer" aria-hidden="true">01</span>Frontend</h4>
+            <ul class="chips"><li>JavaScript (ES6+)</li><li>React</li><li>Vue.js</li><li>HTML5</li><li>CSS3 / Sass</li><li>Three.js</li></ul></div>
+          <div><h4><span class="layer" aria-hidden="true">02</span><span data-en="Backend &amp; data">Backend &amp; données</span></h4>
+            <ul class="chips"><li>Python</li><li>PHP</li><li>C# / .NET</li><li>PostgreSQL</li><li>MySQL</li></ul></div>
+          <div><h4><span class="layer" aria-hidden="true">03</span>ERP &amp; CMS</h4>
+            <ul class="chips"><li>Odoo</li><li>WordPress</li><li data-en="SEO basics">Principes de SEO</li></ul></div>
+          <div><h4><span class="layer" aria-hidden="true">04</span><span data-en="Tools &amp; systems">Outils &amp; systèmes</span></h4>
+            <ul class="chips"><li>Git / GitHub</li><li>Docker</li><li>Linux (Debian)</li><li>VS Code / Visual Studio</li><li>PowerAMC</li><li>Visual Paradigm</li></ul></div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ================= PROJETS ================= -->
-  <section class="section" id="projets">
+  <section class="section" id="projets" data-scene="2" aria-labelledby="projets-title">
     <div class="wrap">
-      <header class="section-head reveal">
-        <p class="eyebrow" data-en="Selected work">Réalisations</p>
-        <h2 data-en="Projects">Projets</h2>
-        <p class="section-intro" data-en="Open any project to read its full case sheet: context, my part, stack and links.">Ouvrez un projet pour lire sa fiche complète : contexte, ma part du travail, stack et liens.</p>
+      <header class="section-head veil">
+        <p class="eyebrow" data-reveal data-en="02 · Selected work">02 · Réalisations</p>
+        <h2 id="projets-title" data-split data-en="Projects">Projets</h2>
+        <p class="section-intro" data-reveal data-en="Open any project to read its full case sheet: context, my part, stack and links.">Ouvrez un projet pour lire sa fiche complète : contexte, ma part du travail, stack et liens.</p>
       </header>
 
-      <div class="filters reveal" role="group" aria-label="Filtres">
-        <button type="button" class="filter on" data-filter="all" data-en="All">Tous</button>
-        <button type="button" class="filter" data-filter="web">Web</button>
-        <button type="button" class="filter" data-filter="erp" data-en="ERP &amp; IS">ERP &amp; SI</button>
-        <button type="button" class="filter" data-filter="app" data-en="Software">Logiciel</button>
+      <div class="filters" role="group" aria-label="Filtrer les projets" data-reveal>
+        <button type="button" class="filter" data-filter="all" aria-pressed="true" data-en="All">Tous</button>
+        <button type="button" class="filter" data-filter="web" aria-pressed="false">Web</button>
+        <button type="button" class="filter" data-filter="erp" aria-pressed="false" data-en="ERP &amp; IS">ERP &amp; SI</button>
+        <button type="button" class="filter" data-filter="app" aria-pressed="false" data-en="Software">Logiciel</button>
       </div>
 
       <div class="projects" id="projects">
-
-        <article class="project project-lg project-star reveal" data-category="erp" data-id="odoo">
-          <div class="cover"><img src="images/stage-entrepot.webp" alt="" loading="lazy"><span class="grade"><b>17</b>/20</span></div>
+        <article class="project project-lg glass" data-category="erp" data-id="odoo" data-reveal data-glow data-tilt>
+          <div class="cover"><img src="images/stage-entrepot.webp" alt="" width="1087" height="815" loading="lazy"><span class="grade"><b>17</b>/20</span></div>
           <div class="project-body">
-            <p class="project-meta"><span data-en="BUT 2 internship">Stage BUT 2</span><span class="sep">/</span><span data-en="Apr – Jun 2026">Avril – juin 2026</span></p>
+            <p class="project-meta"><span data-en="BUT 2 internship">Stage BUT 2</span><span class="sep" aria-hidden="true">/</span><span data-en="Apr – Jun 2026">Avril – juin 2026</span></p>
             <h3><a href="#projet-odoo" data-open="odoo" data-en="Odoo ERP deployment">Déploiement d'un ERP Odoo</a></h3>
             <p class="project-sum" data-en="Making Odoo 19 truly operational for a 30,000-product online retailer: quotes and invoices, logistics, catalogue and automation.">Rendre Odoo 19 vraiment opérationnel chez un e-commerçant de 30 000 références : devis et factures, logistique, catalogue et automatisations.</p>
-            <ul class="chips small"><li>Odoo 19</li><li>QWeb</li><li>Python</li><li>WooCommerce</li></ul>
+            <ul class="tags"><li>Odoo 19</li><li>QWeb</li><li>Python</li><li>WooCommerce</li></ul>
             <span class="more" aria-hidden="true"><span data-en="Open the sheet">Ouvrir la fiche</span><i>→</i></span>
           </div>
         </article>
-        <article class="project project-lg reveal" data-category="web" data-id="kctech">
-          <div class="cover"><img src="images/kctech-hero.webp" alt="" loading="lazy"></div>
+
+        <article class="project project-lg glass" data-category="web" data-id="kctech" data-reveal data-glow data-tilt>
+          <div class="cover"><img src="images/kctech-hero.webp" alt="" width="1308" height="896" loading="lazy"></div>
           <div class="project-body">
-            <p class="project-meta"><span data-en="My company">Mon entreprise</span><span class="sep">/</span><span data-en="Since Sept. 2026">Depuis sept. 2026</span></p>
+            <p class="project-meta"><span data-en="My company">Mon entreprise</span><span class="sep" aria-hidden="true">/</span><span data-en="Since Sept. 2026">Depuis sept. 2026</span></p>
             <h3><a href="#projet-kctech" data-open="kctech">KC Tech</a></h3>
             <p class="project-sum" data-en="The micro-business I launched in September 2026: Odoo integration, e-invoicing and web development for small businesses in Savoie and Haute-Savoie.">La micro-entreprise que j'ai lancée en septembre 2026 : intégration Odoo, facture électronique et développement web pour les TPE et PME de Savoie et Haute-Savoie.</p>
-            <ul class="chips small"><li>Odoo</li><li>HTML / CSS / JS</li><li>SEO local</li><li>OVH</li></ul>
+            <ul class="tags"><li>Odoo</li><li>HTML / CSS / JS</li><li data-en="Local SEO">SEO local</li><li>OVH</li></ul>
             <span class="more" aria-hidden="true"><span data-en="Open the sheet">Ouvrir la fiche</span><i>→</i></span>
           </div>
         </article>
-        <article class="project reveal" data-category="erp" data-id="namerakorp">
-          <div class="cover cover-gen cover-power"><span>CRM</span><i>Power Pages</i></div>
+
+        <article class="project glass" data-category="erp" data-id="namerakorp" data-reveal data-glow data-tilt>
+          <div class="cover cover-gen" aria-hidden="true"><span>CRM</span><small>Power Pages</small></div>
           <div class="project-body">
             <p class="project-meta"><span data-en="Group project · BUT 3">Projet de groupe · BUT 3</span></p>
             <h3><a href="#projet-namerakorp" data-open="namerakorp">NameraKorp</a></h3>
             <p class="project-sum" data-en="A Power Pages site linked to a Dataverse CRM, built in Scrum over 3 sprints.">Un site Power Pages relié à un CRM Dataverse, mené en Scrum sur 3 sprints.</p>
-            <ul class="chips small"><li>Power Pages</li><li>Dataverse</li><li>Scrum</li></ul>
+            <ul class="tags"><li>Power Pages</li><li>Dataverse</li><li>Scrum</li></ul>
             <span class="more" aria-hidden="true"><span data-en="Open the sheet">Ouvrir la fiche</span><i>→</i></span>
           </div>
         </article>
-        <article class="project reveal" data-category="web" data-id="amg">
-          <div class="cover"><img src="images/amg-preview.jpg" alt="" loading="lazy"></div>
+
+        <article class="project glass" data-category="web" data-id="amg" data-reveal data-glow data-tilt>
+          <div class="cover"><img src="images/amg-preview.jpg" alt="" width="790" height="541" loading="lazy"></div>
           <div class="project-body">
-            <p class="project-meta"><span data-en="Personal project">Projet personnel</span><span class="sep">/</span><span>2025</span></p>
+            <p class="project-meta"><span data-en="Personal project">Projet personnel</span><span class="sep" aria-hidden="true">/</span><span>2025</span></p>
             <h3><a href="#projet-amg" data-open="amg" data-en="3D AMG configurator">Configurateur AMG 3D</a></h3>
             <p class="project-sum" data-en="A real-time 3D experience to configure an AMG: paint, wheels, glass tint and a day/night cycle.">Une expérience 3D temps réel pour configurer une AMG : peinture, jantes, vitres et cycle jour/nuit.</p>
-            <ul class="chips small"><li>Three.js</li><li>WebGL</li><li>JavaScript</li></ul>
+            <ul class="tags"><li>Three.js</li><li>WebGL</li><li>JavaScript</li></ul>
             <span class="more" aria-hidden="true"><span data-en="Open the sheet">Ouvrir la fiche</span><i>→</i></span>
           </div>
         </article>
-        <article class="project project-lg reveal" data-category="app" data-id="loxam">
-          <div class="cover"><img src="images/loxam.png" alt="" loading="lazy"></div>
+
+        <article class="project glass" data-category="app" data-id="loxam" data-reveal data-glow data-tilt>
+          <div class="cover"><img src="images/loxam.webp" alt="" width="658" height="369" loading="lazy"></div>
           <div class="project-body">
-            <p class="project-meta"><span data-en="Group project">Projet de groupe</span><span class="sep">/</span><span>2024</span></p>
+            <p class="project-meta"><span data-en="Group project">Projet de groupe</span><span class="sep" aria-hidden="true">/</span><span>2024</span></p>
             <h3><a href="#projet-loxam" data-open="loxam" data-en="Management app (Loxam)">Application de gestion (Loxam)</a></h3>
-            <p class="project-sum" data-en="A desktop ERP for equipment rental and stock management.">Un ERP de bureau pour la location de matériel et la gestion des stocks.</p>
-            <ul class="chips small"><li>C#</li><li>.NET WPF</li><li>MySQL</li></ul>
+            <p class="project-sum" data-en="A desktop application to manage equipment rental and stock.">Une application de bureau pour gérer la location de matériel et les stocks.</p>
+            <ul class="tags"><li>C#</li><li>.NET (WPF)</li><li>MySQL</li></ul>
             <span class="more" aria-hidden="true"><span data-en="Open the sheet">Ouvrir la fiche</span><i>→</i></span>
           </div>
         </article>
-        <article class="project project-lg reveal" data-category="web" data-id="fifa">
-          <div class="cover"><img src="images/fifa.png" alt="" loading="lazy"></div>
+
+        <article class="project glass" data-category="web" data-id="fifa" data-reveal data-glow data-tilt>
+          <div class="cover"><img src="images/fifa.webp" alt="" width="1400" height="717" loading="lazy"></div>
           <div class="project-body">
             <p class="project-meta"><span data-en="University · BUT 2">Universitaire · BUT 2</span></p>
             <h3><a href="#projet-fifa" data-open="fifa" data-en="E-commerce site clone (FIFA)">Clone de site e-commerce (FIFA)</a></h3>
             <p class="project-sum" data-en="Cloning an e-commerce site to study web architecture, database design and responsive layout.">Clone d'un site e-commerce pour étudier l'architecture web, la base de données et le responsive.</p>
-            <ul class="chips small"><li>PHP</li><li>SQL</li><li>JavaScript</li></ul>
-            <span class="more" aria-hidden="true"><span data-en="Open the sheet">Ouvrir la fiche</span><i>→</i></span>
-          </div>
-        </article>
-        <article class="project reveal" data-category="web" data-id="portfolio">
-          <div class="cover"><img src="images/portfolio.png" alt="" loading="lazy"></div>
-          <div class="project-body">
-            <p class="project-meta"><span data-en="Personal project">Projet personnel</span><span class="sep">/</span><span>2025</span></p>
-            <h3><a href="#projet-portfolio" data-open="portfolio" data-en="This portfolio">Ce portfolio</a></h3>
-            <p class="project-sum" data-en="A bilingual showcase site built without any framework.">Un site vitrine bilingue, réalisé sans framework.</p>
-            <ul class="chips small"><li>HTML5</li><li>CSS3</li><li>JavaScript</li></ul>
-            <span class="more" aria-hidden="true"><span data-en="Open the sheet">Ouvrir la fiche</span><i>→</i></span>
-          </div>
-        </article>
-        <article class="project reveal" data-category="web" data-id="annuaire">
-          <div class="cover cover-gen cover-power"><span style="font-size:clamp(2.6rem,5vw,4.2rem)">DJANGO</span><i>Python · SQLite</i></div>
-          <div class="project-body">
-            <p class="project-meta"><span data-en="Personal project">Projet personnel</span><span class="sep">/</span><span>2026</span></p>
-            <h3><a href="#projet-annuaire" data-open="annuaire" data-en="Alumni directory (Django)">Annuaire des alumni (Django)</a></h3>
-            <p class="project-sum" data-en="A small Django app built step by step to understand the framework: model, validated form, views, templates and tests.">Une petite application Django construite pas à pas pour comprendre le framework : modèle, formulaire validé, vues, templates et tests.</p>
-            <ul class="chips small"><li>Python</li><li>Django</li><li>SQLite</li></ul>
+            <ul class="tags"><li>PHP</li><li>SQL</li><li>JavaScript</li></ul>
             <span class="more" aria-hidden="true"><span data-en="Open the sheet">Ouvrir la fiche</span><i>→</i></span>
           </div>
         </article>
 
+        <article class="project glass" data-category="web" data-id="portfolio" data-reveal data-glow data-tilt>
+          <div class="cover"><img src="images/portfolio.webp" alt="" width="1440" height="900" loading="lazy"></div>
+          <div class="project-body">
+            <p class="project-meta"><span data-en="Personal project">Projet personnel</span><span class="sep" aria-hidden="true">/</span><span data-en="2025 · redesigned 2026">2025 · refonte 2026</span></p>
+            <h3><a href="#projet-portfolio" data-open="portfolio" data-en="This portfolio">Ce portfolio</a></h3>
+            <p class="project-sum" data-en="A bilingual showcase site with a scroll-driven 3D scene, no framework and no build step.">Un site vitrine bilingue avec une scène 3D pilotée par le scroll, sans framework ni étape de build.</p>
+            <ul class="tags"><li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>Three.js</li></ul>
+            <span class="more" aria-hidden="true"><span data-en="Open the sheet">Ouvrir la fiche</span><i>→</i></span>
+          </div>
+        </article>
+
+        <article class="project glass" data-category="web" data-id="annuaire" data-reveal data-glow data-tilt>
+          <div class="cover cover-gen" aria-hidden="true"><span>DJANGO</span><small>Python · SQLite</small></div>
+          <div class="project-body">
+            <p class="project-meta"><span data-en="Personal project">Projet personnel</span><span class="sep" aria-hidden="true">/</span><span>2026</span></p>
+            <h3><a href="#projet-annuaire" data-open="annuaire" data-en="Alumni directory (Django)">Annuaire des alumni (Django)</a></h3>
+            <p class="project-sum" data-en="A small Django app built step by step to understand the framework: model, validated form, views, templates and tests.">Une petite application Django construite pas à pas pour comprendre le framework : modèle, formulaire validé, vues, templates et tests.</p>
+            <ul class="tags"><li>Python</li><li>Django</li><li>SQLite</li></ul>
+            <span class="more" aria-hidden="true"><span data-en="Open the sheet">Ouvrir la fiche</span><i>→</i></span>
+          </div>
+        </article>
       </div>
+      <p class="filter-status" id="filter-status" role="status" aria-live="polite"></p>
     </div>
   </section>
 
   <!-- ================= PARCOURS ================= -->
-  <section class="section" id="parcours">
+  <section class="section" id="parcours" data-scene="3" aria-labelledby="parcours-title">
     <div class="wrap">
-      <header class="section-head reveal">
-        <p class="eyebrow" data-en="Background">Parcours</p>
-        <h2 data-en="Education and experience">Formation et expérience</h2>
+      <header class="section-head veil">
+        <p class="eyebrow" data-reveal data-en="03 · Background">03 · Parcours</p>
+        <h2 id="parcours-title" data-split data-en="Education and experience">Formation et expérience</h2>
       </header>
 
       <div class="paths">
-        <div class="path reveal">
+        <div class="glass path" data-reveal data-glow>
           <h3 class="path-title" data-en="Education">Formation</h3>
           <ol class="timeline">
             <li>
-              <time data-en="2024 – 2027 (expected)">2024 – 2027 (prévu)</time>
+              <p class="when" data-en="2024 – 2027 (expected)">2024 – 2027 (prévu)</p>
               <h4 data-en="BUT Computer Science · IAMSI track">BUT Informatique · Parcours IAMSI</h4>
-              <p class="place" data-en="Savoie Mont-Blanc University, Annecy">Université Savoie Mont-Blanc, Annecy</p>
+              <p class="place" data-en="Savoie Mont-Blanc University">Université Savoie Mont-Blanc</p>
               <p data-en="Web development (front/back), database management, information systems management.">Développement web (front/back), gestion de bases de données, management de SI.</p>
-            </li>
-            <li>
-              <time>2024</time>
-              <h4 data-en="Technological Baccalaureate (STMG)">Baccalauréat technologique (STMG)</h4>
-              <p class="place">Lycée du Granier, Savoie</p>
-              <p data-en="Information Systems and Management (SIG) specialty, with honours (Assez Bien).">Spécialité Systèmes d'Information et de Gestion (SIG), mention Assez Bien.</p>
             </li>
           </ol>
         </div>
-
-        <div class="path reveal">
+        <div class="glass path" data-reveal data-glow>
           <h3 class="path-title" data-en="Experience">Expérience</h3>
           <ol class="timeline">
             <li>
-              <time data-en="Since September 2026">Depuis septembre 2026</time>
+              <p class="when" data-en="Since September 2026">Depuis septembre 2026</p>
               <h4>KC Tech</h4>
               <p class="place" data-en="Sole proprietorship (micro-entrepreneur)">Entreprise individuelle (micro-entrepreneur)</p>
-              <p data-en="Odoo integration, e-invoicing compliance and web development for small businesses. Website: kctech.fr">Intégration Odoo, mise en conformité facture électronique et développement web pour les TPE et PME. Site : <a href="https://kctech.fr" target="_blank" rel="noopener noreferrer">kctech.fr</a></p>
+              <p><span data-en="Odoo integration, e-invoicing compliance and web development for small businesses. Website:">Intégration Odoo, mise en conformité facture électronique et développement web pour les TPE et PME. Site :</span> <a href="https://kctech.fr" target="_blank" rel="noopener noreferrer">kctech.fr</a></p>
             </li>
             <li>
-              <time data-en="Apr – Jun 2026 · 8 weeks">Avril – juin 2026 · 8 semaines</time>
+              <p class="when" data-en="Apr – Jun 2026 · 8 weeks">Avril – juin 2026 · 8 semaines</p>
               <h4 data-en="Odoo ERP integrator (intern)">Stagiaire intégrateur Odoo</h4>
-              <p class="place">La Boutique du Pro · Méry (Savoie)</p>
+              <p class="place">La Boutique du Pro · Savoie</p>
               <p data-en="Digitalising and automating sales processes around Odoo 19 and WooCommerce. Internship and defence graded 17/20.">Digitalisation et automatisation des processus commerciaux autour d'Odoo 19 et de WooCommerce. Stage et soutenance notés 17/20.</p>
-            </li>
-            <li>
-              <time data-en="Since 01/11/2025 (permanent contract)">Depuis le 01/11/2025 (CDI)</time>
-              <h4 data-en="Recycling centre attendant">Agent d'accueil en déchetterie</h4>
-              <p class="place">Trialp, secteur SIBRESCA</p>
-              <p data-en="Welcoming users, sorting advice, site upkeep.">Accueil des usagers, conseil sur le tri, entretien du site.</p>
-            </li>
-            <li>
-              <time data-en="April 2025 (2 weeks)">Avril 2025 (2 semaines)</time>
-              <h4 data-en="Vehicle preparer">Préparateur de véhicules</h4>
-              <p class="place">Jean Lain Occasions, Chambéry</p>
-              <p data-en="Quality control, cosmetic preparation and fleet handling. Built rigor and customer focus.">Contrôle qualité, préparation esthétique et gestion du parc. Développement de la rigueur et de l'orientation client.</p>
             </li>
           </ol>
         </div>
@@ -360,78 +327,63 @@
     </div>
   </section>
 
-  <!-- ================= RÉFÉRENCES ================= -->
-  <section class="section" id="references">
+  <!-- ================= CONTACT ================= -->
+  <section class="section contact" id="contact" data-scene="4" aria-labelledby="contact-title">
     <div class="wrap">
-      <header class="section-head reveal">
-        <p class="eyebrow" data-en="References">Références</p>
-        <h2 data-en="Who can vouch for me">Qui peut témoigner</h2>
-      </header>
-      <div class="refs">
-        <article class="tile reveal">
-          <h3 class="ref-name">Pascal COLIN</h3>
-          <p data-en="UML and SQL teacher">Enseignant d'UML et SQL</p>
-          <p class="place">USMB, Annecy</p>
-          <p class="muted" data-en="Contact details available on request">Coordonnées disponibles sur demande</p>
-        </article>
-        <article class="tile reveal">
-          <h3 class="ref-name">Luc DAMAS</h3>
-          <p data-en="HTML and JS teacher">Enseignant d'HTML et JS</p>
-          <p class="place">USMB, Annecy · <a href="https://luc-damas.fr" target="_blank" rel="noopener noreferrer">luc-damas.fr</a></p>
-          <p class="muted" data-en="Contact details available on request">Coordonnées disponibles sur demande</p>
-        </article>
+      <div class="glass contact-card" data-reveal data-glow>
+        <p class="eyebrow" data-en="04 · Contact">04 · Contact</p>
+        <h2 id="contact-title" data-split data-en="Let's talk about your next project.">Parlons de votre prochain projet.</h2>
+        <p class="section-intro" data-en="Work-study offer, Odoo mission or just a question: I answer quickly.">Une offre d'alternance, une mission Odoo ou une simple question : je réponds vite.</p>
+        <a class="mail" href="mailto:kamil.cinarpro@gmail.com" id="mail">kamil.cinarpro@gmail.com<i aria-hidden="true">→</i></a>
+        <div class="contact-actions">
+          <button type="button" class="btn btn-ghost" id="copy-mail" data-en="Copy the e-mail address">Copier l'adresse e-mail</button>
+          <a href="https://www.linkedin.com/in/kamilcinar/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">LinkedIn</a>
+          <a href="https://github.com/Ka-ory" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">GitHub</a>
+          <a href="https://kctech.fr" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">kctech.fr</a>
+        </div>
+        <p class="copy-status" id="copy-status" role="status" aria-live="polite"></p>
+        <p class="refs-note" data-en="References available on request.">Références disponibles sur demande.</p>
       </div>
     </div>
   </section>
 </main>
 
-<!-- ================= CONTACT ================= -->
-<footer class="contact" id="contact">
-  <div class="wrap contact-inner">
-    <header class="section-head contact-head reveal">
-    <p class="eyebrow" data-en="Contact">Contact</p>
-    <h2 class="contact-title" data-en="Let's talk about your next project.">Parlons de votre prochain projet.</h2>
-    </header>
-    <p class="section-intro" data-en="Work-study offer, Odoo mission or just a question: I answer quickly.">Une offre d'alternance, une mission Odoo ou une simple question : je réponds vite.</p>
-    <a class="mail" href="mailto:kamil.cinarpro@gmail.com" id="mail">kamil.cinarpro@gmail.com<i>→</i></a>
-    <div class="cta">
-      <button type="button" class="btn btn-ghost" id="copy-mail" data-en="Copy the e-mail address">Copier l'adresse e-mail</button>
-      <a href="https://www.linkedin.com/in/kamilcinar/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">LinkedIn</a>
-      <a href="https://github.com/Ka-ory" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">GitHub</a>
-    </div>
-    <p class="copyright">© 2026 Kamil CINAR</p>
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <p>© 2026 Kamil CINAR</p>
+    <p class="footer-3d" id="mode-3d" data-en="Savoie / Haute-Savoie, France">Savoie / Haute-Savoie</p>
   </div>
 </footer>
-</div>
 
-<!-- ================= FICHE PROJET ================= -->
-<div class="sheet" id="sheet" aria-hidden="true">
+<!-- ================= FICHE PROJET (vue détaillée) ================= -->
+<div class="sheet" id="sheet" hidden>
   <div class="sheet-backdrop" data-close></div>
-  <aside class="sheet-panel" role="dialog" aria-modal="true" aria-labelledby="sheet-title" tabindex="-1">
+  <article class="sheet-panel" role="dialog" aria-modal="true" aria-labelledby="sheet-title" tabindex="-1">
     <div class="sheet-bar">
-      <p class="sheet-count" id="sheet-count" aria-live="polite"></p>
-      <button type="button" class="sheet-close" data-close aria-label="Fermer la fiche"><span></span><span></span></button>
+      <p class="sheet-count" id="sheet-count"></p>
+      <button type="button" class="sheet-close" data-close aria-label="Fermer la fiche"><span aria-hidden="true"></span><span aria-hidden="true"></span><kbd aria-hidden="true">Esc</kbd></button>
     </div>
     <div class="sheet-scroll" id="sheet-body"></div>
     <div class="sheet-nav">
-      <button type="button" class="sheet-step" id="sheet-prev"><i>←</i><span id="sheet-prev-t"></span></button>
-      <button type="button" class="sheet-step next" id="sheet-next"><span id="sheet-next-t"></span><i>→</i></button>
+      <button type="button" class="sheet-step" id="sheet-prev"><i aria-hidden="true">←</i><span id="sheet-prev-t"></span></button>
+      <button type="button" class="sheet-step next" id="sheet-next"><span id="sheet-next-t"></span><i aria-hidden="true">→</i></button>
     </div>
-  </aside>
+  </article>
 </div>
 
-<!-- ================= VISIONNEUSE ================= -->
-<div class="viewer" id="viewer" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Image agrandie">
+<!-- ================= VISIONNEUSE D'IMAGES ================= -->
+<div class="viewer" id="viewer" hidden role="dialog" aria-modal="true" aria-label="Image agrandie">
   <div class="viewer-backdrop" data-vclose></div>
   <figure class="viewer-fig">
     <img id="viewer-img" alt="">
     <figcaption id="viewer-cap"></figcaption>
   </figure>
-  <button type="button" class="viewer-btn viewer-close" data-vclose aria-label="Fermer l'image"><span></span><span></span></button>
+  <button type="button" class="viewer-btn viewer-close" data-vclose aria-label="Fermer l'image">×</button>
   <button type="button" class="viewer-btn viewer-prev" id="viewer-prev" aria-label="Image précédente">←</button>
   <button type="button" class="viewer-btn viewer-next" id="viewer-next" aria-label="Image suivante">→</button>
 </div>
 
-<script src="main.js?v=5" defer></script>
+<noscript><style>[data-reveal],[data-split]{opacity:1!important;translate:none!important;filter:none!important}</style></noscript>
+<script src="main.js?v=6" defer></script>
 </body>
 </html>
